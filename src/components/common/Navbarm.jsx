@@ -307,7 +307,7 @@ function Navbarm() {
         </div>
 
         {/* CTA */}
-        <Link to="/appointment">
+        <Link to="">
           <Button>Book Demo</Button>
         </Link>
       </nav>

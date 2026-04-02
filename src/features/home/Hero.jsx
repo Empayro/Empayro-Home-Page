@@ -87,13 +87,13 @@ export default function Hero() {
 
         {/* BUTTONS */}
         <div className="mt-8 flex gap-4 flex-wrap">
-          <Link to="/appointment"  >
+          <Link to=""  >
             <Button>Get Started Free</Button>
             </Link>
 
 
           <Link
-            to="/appointment"
+            to=""
             className="flex items-center gap-2 border border-[#0078d4] text-[#0078d4] px-6 py-3 rounded-lg hover:bg-blue-50 transition"
           >
             <FaWhatsapp />
