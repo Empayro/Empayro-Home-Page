@@ -197,7 +197,7 @@ function Navbarm() {
 
   return (
     <div
-      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-101 transition-all duration-300 ${
         scrolled ? "top-4" : "top-0 bg-white shadow-sm"
       }`}
     >

@@ -71,9 +71,9 @@ const time = useCountdown(launchDate);
 
       {/*  Hero */}
       <section className="relative z-10 flex flex-col items-center text-center p-20 pt-30">
-        <div className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+        <div className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium border-[#0078D4] border flex items-center gap-2">
           <span className="w-2 h-2 bg-[#0078D4] rounded-full animate-pulse" />
-           Next-Gen HR Platform
+           WE ARE LAUNCHING SOON
         </div>
 
         <h1 className="text-[clamp(42px,8vw,88px)] font-bold text-gray-900 md:text-8xl leading-tight tracking-tight text-4xl">
