@@ -1,0 +1,21 @@
+import Faqs from "../features/home/Faqs";
+import LandingPage from "../features/home/LandingPage";
+import OurServicesSection from "../features/home/OurServicesSection";
+import SlideSection from "../features/home/SlideSection";
+
+function Home() {
+  return (
+    <>
+      <LandingPage />
+
+
+      <OurServicesSection/>
+
+      <SlideSection/>
+
+      <Faqs/>
+    </>
+  );
+}
+
+export default Home;
