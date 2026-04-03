@@ -11,9 +11,9 @@ function Features() {
 
       <OurServicesSection/>
 
-      <Faqs/>
-
       <SlideSection/>
+
+      <Faqs/>
     </>
   );
 }
