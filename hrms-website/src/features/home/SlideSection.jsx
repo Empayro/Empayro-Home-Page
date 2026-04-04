@@ -145,7 +145,11 @@ export default function SlideSection() {
                 
                 <p className="text-black text-lg opacity-90 mb-6 max-w-4xl">{item.desc}</p>
 
-                <button className="text-black rounded-lg font-medium hover:scale-105 transition">
+                <button className="text-black px-4 py-2 border rounded-3xl font-medium hover:scale-105 transition"
+                style={{
+                borderColor: item.textColor,
+              }}
+                >
                   Learn More →
                 </button>
               </div>
