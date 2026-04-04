@@ -98,7 +98,7 @@ export default function SlideSection() {
         return (
           <div
             key={item.id}
-            className="sticky top-0 h-screen w-full flex items-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] relative"
+            className="sticky top-0 h-screen w-full flex items-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] relative" id="solution"
             style={{
               backgroundColor: item.color,
               zIndex: isActive ? 100 : index,
@@ -157,7 +157,7 @@ export default function SlideSection() {
                     key={i}
                     src={img}
                     alt={`${item.title} ${i + 1}`}
-                    className={`rounded-2xl object-cover w-full h-64 transition-transform duration-500 ${
+                    className={`rounded-2xl object-cover shadow-[2px_2px_5px_#6161614d] w-full h-64 transition-transform duration-500 ${
                       index % 2 === 0
                         ? i === 0
                           ? 'col-span-2'
@@ -177,7 +177,7 @@ export default function SlideSection() {
                     key={i}
                     src={img}
                     alt={`${item.title} ${i + 1}`}
-                    className={`rounded-2xl object-cover w-full h-64 transition-transform duration-500 ${
+                    className={`rounded-2xl object-cover shadow-[2px_2px_5px_#6161614d] w-full h-64 transition-transform duration-500 ${
                       index % 2 === 0
                         ? i === 0
                           ? 'col-span-1'

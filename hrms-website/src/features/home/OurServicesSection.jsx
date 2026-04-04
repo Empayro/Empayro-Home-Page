@@ -1,200 +1,151 @@
-import { useEffect, useState } from "react";
-import {Service1, Service2, Service3, Service4} from "@/assets";
+import React from "react";
+import {
+  FaUsers,
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaChartBar,
+  FaHandHoldingUsd,
+  FaChartPie,
+} from "react-icons/fa";
+import Button from "../../components/ui/Button";
 
-const solutions = [
+// Service data
+const services = [
   {
     id: 1,
     title: "Employee Management",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
-    color: "#DEEEFA",
-    textColor: "#0078D4",
-    images: [
-      Service1,
-      Service2,
-      Service3,
-      Service4,
-    ],
+    description: "Manage employee records, roles, and information.",
+    icon: <FaUsers className="text-[#4A90E2] w-10 h-10" />,
   },
   {
     id: 2,
-    title: "Payroll Automation",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
-    color: "#E5F3D3",
-    textColor: "#5CB400",
-    images: [
-      Service1,
-      Service2,
-      Service3,
-      Service4,
-    ],
+    title: "Attendance & Leave Management",
+    description: "Automate payroll processing and track attendance.",
+    icon: <FaCalendarAlt className="text-[#33B27D] w-10 h-10" />,
   },
   {
     id: 3,
-    title: "Attendance Tracking",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
-    color: "#FDE8D4",
-    textColor: "#F47B20",
-    images: [
-      Service1,
-      Service2,
-      Service3,
-      Service4,
-    ],
+    title: "Payroll Management",
+    description: "Handle leave requests and time-off policies.",
+    icon: <FaHandHoldingUsd className="text-[#8E6FFF] w-10 h-10" />,
   },
   {
     id: 4,
-    title: "HR Analytics",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
-    color: "#D4EFFC",
-    textColor: "#00A4EF",
-    images: [
-      Service1,
-      Service2,
-      Service3,
-      Service4,
-    ],
+    title: "Performance Management",
+    description: "Conduct evaluations and manage appraisals.",
+    icon: <FaChartBar className="text-[#FF8C42] w-10 h-10" />,
   },
   {
     id: 5,
-    title: "HR Insights",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
-    color: "#FDF3C0",
-    textColor: "#8A6A00",
-    images: [
-      Service1,
-      Service2,
-      Service3,
-      Service4,
-    ],
+    title: "Training & Development",
+    description: "Conduct evaluations and manage appraisals.",
+    icon: <FaGraduationCap className="text-[#E04F5F] w-10 h-10" />,
+  },
+  {
+    id: 6,
+    title: "HR Analytics & Reports",
+    description: "Conduct evaluations and manage appraisals.",
+    icon: <FaChartPie className="text-[#33A2A2] w-10 h-10" />,
   },
 ];
 
-export default function SlideSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+// Define a shadow color for each service card
+const shadowColors = [
+  "rgba(74,144,226,0.3)", // Blue
+  "rgba(51,178,125,0.3)", // Green
+  "rgba(142,111,255,0.3)", // Purple
+  "rgba(255,140,66,0.3)", // Orange
+  "rgba(224,79,95,0.3)", // Red
+  "rgba(51,162,162,0.3)", // Teal
+];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
+const iconBg = [
+  "#D7E4FF",
+  "#DFF6ED",
+  "#E6E0FF",
+  "#FFF1E0",
+  "#FFE6E6",
+  "#E0F7F7",
+];
 
-      const index = Math.min(solutions.length - 1, Math.floor(scrollY / vh));
+const textColors = [
+  "#4A90E2",
+  "#33B27D",
+  "#8E6FFF",
+  "#FF8C42",
+  "#E04F5F",
+  "#33A2A2",
+];
 
-      setActiveIndex(index);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const OurServicesSection = () => {
   return (
-    <section
-      className="relative w-full"
-      style={{ height: `${solutions.length * 100}vh` }}
-    >
-      {solutions.map((item, index) => {
-        const isActive = index === activeIndex;
-        const isPrev = index === activeIndex - 1;
+    <section className="bg-white py-16 px-4 md:px-16 max-w-350 m-auto" id="services">
+      <div className="text-center mb-12">
+        <div className="text-center mb-4">
+          <span className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium">
+            ● Our Services
+          </span>
+        </div>
 
-        return (
+        <h1 className="text-4xl md:text-4xl font-bold text-gray-900 leading-tight">
+          Comprehensive HRMS Solution <br />
+          <span className="bg-gradient-to-r from-[#0078D4] to-[#00A4EF] text-transparent bg-clip-text">
+            to Empower your workforce
+          </span>
+        </h1>
+
+        <p className="mt-4 text-gray-600 text-lg">
+          Our HRMS platform streamlines your HR processes, boost productivity,<br /> and helps you manage your people more effectively.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {services.map((service, index) => (
           <div
-            key={item.id}
-            className="sticky top-0 h-screen w-full flex items-center transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] relative"
+            key={service.id}
+            className={`flex flex-col items-start p-6 border rounded-lg transition`}
             style={{
-              backgroundColor: item.color,
-              zIndex: isActive ? 100 : index,
-
-              transform: isPrev ? "" : "scale(1)",
-
-              filter: isPrev ? "" : "blur(0px)",
+              boxShadow: `-5px 5px 0px ${shadowColors[index]}`, // dynamic shadow
             }}
           >
-            {/* Section Index Indicator */}
-            <div className="absolute flex items-center justify-center top-8 gap-x-2 right-8 z-50"
-            style={{
-              color: item.textColor,
-            }}
+            <div
+              className="mb-4 p-4 rounded-lg"
+              style={{ backgroundColor: iconBg[index] }}
             >
-              <div className="text-4xl font-bold">
-                {String(index + 1).padStart(2, '0')}
-              </div>
-              <div className="flex gap-x-2 items-center justify-center">
-                {solutions.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-1 rounded-xl transition-all duration-300 ${
-                      i === index
-                        ? 'h-10'
-                        : 'h-4 bg-black/30'
-                    }`}
-                    style={i === index ? { backgroundColor: item.textColor } : {}}
-                  />
-                ))}
-              </div>
+              {service.icon}
             </div>
-
-            <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center gap-y-6 px-6">
-              {/* LEFT CONTENT */}
-              <div className=" text-center flex flex-col items-center"
-              style={{
-                color: item.textColor,
-              }}
-              >
-                <h2 className="text-[80px] font-bold mb-6 leading-tight">
-                  {item.title}
-                </h2>
-                
-                <p className="text-black text-lg opacity-90 mb-6 max-w-4xl">{item.desc}</p>
-
-                <button className="text-black rounded-lg font-medium hover:scale-105 transition">
-                  Learn More →
-                </button>
-              </div>
-
-              {/* RIGHT IMAGE GRID */}
-              <div className="w-full max-w-250 grid grid-cols-3 gap-6">
-                {item.images.slice(0, 2).map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt={`${item.title} ${i + 1}`}
-                    className={`rounded-2xl object-cover w-full h-64 transition-transform duration-500 ${
-                      index % 2 === 0
-                        ? i === 0
-                          ? 'col-span-2'
-                          : 'col-span-1'
-                        : i === 0
-                          ? 'col-span-1'
-                          : 'col-span-2'
-                    }`}
-                  />
-                ))}
-              </div>
-
-              {/* RIGHT IMAGE GRID */}
-              <div className="w-full max-w-250 grid grid-cols-3 gap-6">
-                {item.images.slice(2, 4).map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt={`${item.title} ${i + 1}`}
-                    className={`rounded-2xl object-cover w-full h-64 transition-transform duration-500 ${
-                      index % 2 === 0
-                        ? i === 0
-                          ? 'col-span-1'
-                          : 'col-span-2'
-                        : i === 0
-                          ? 'col-span-2'
-                          : 'col-span-1'
-                    }`}
-                  />
-                ))}
-              </div>
-
-
-            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              {service.title}
+            </h3>
+            <p className="text-gray-600">{service.description}</p>
+            <p
+              className="mt-4 cursor-pointer"
+              style={{ color: textColors[index] }}
+            >
+              Read More →
+            </p>
           </div>
-        );
-      })}
+        ))}
+      </div>
+
+      <div className="text-center flex items-center justify-between py-8 px-10 bg-[#DEEEFA] rounded-2xl w-275 m-auto">
+        
+        <div className=" text-start flex items-center justify-center gap-x-4">
+          <div className="p-4 rounded-full text-white bg-[#0078D4]">
+          <FaUsers size={50} />
+        </div>
+        <div>
+          <h3 className="font-semibold mb-2 text-2xl">Ready to Transform Your HR Processes?</h3>
+          <p className="text-grey-600">Discover how our HRMS platform can help you build a more <br /> productive and engaged workforce.</p>
+        </div>
+        </div>
+        {/* <button className="bg-blue-700 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition">
+          Get Started Today
+        </button> */}
+        <Button>Get Started Today</Button>
+      </div>
     </section>
   );
-}
+};
+
+export default OurServicesSection;

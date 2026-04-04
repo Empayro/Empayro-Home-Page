@@ -162,6 +162,11 @@ const menus = [
     type: "link",
     path: "/pricing",
   },
+  {
+    name: "Coming Soon",
+    type: "link",
+    path: "/coming-soon",
+  },
 ];
 
 const getColumns = (items, rows = 3) => {

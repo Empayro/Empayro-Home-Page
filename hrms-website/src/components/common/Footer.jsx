@@ -14,7 +14,7 @@ import FooterNewsletter from "./FooterNewsletter";
 function Footer() {
   return (
     <>
-      <footer className="text-black mt-10 max-w-full">
+      <footer className="text-black max-w-full">
         <div className=" w-full">
           <div className="rounded-b-[80px] border-none z-10 backface-hidden bg-[#f2f1f3] overflow-hidden relative">
             <div className="py-[80px] max-w-350 mx-auto flex flex-wrap justify-between items-start border-b gap-x-7">

@@ -1,21 +1,7 @@
-import Faqs from "../features/home/Faqs";
-import LandingPage from "../features/home/LandingPage";
-import OurServicesSection from "../features/home/OurServicesSection";
-import SlideSection from "../features/home/SlideSection";
-
 function Features() {
-  return (
-    <>
-      <LandingPage />
-
-
-      <OurServicesSection/>
-
-      <SlideSection/>
-
-      <Faqs/>
-    </>
-  );
+  return <h1 className="text-3xl font-bold p-10">Contact Page</h1>;
 }
 
+
 export default Features;
+  

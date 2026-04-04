@@ -44,7 +44,7 @@ const Faqs = () => {
   ];
 
   return (
-    <section className="max-w-350 mx-auto p-20 flex flex-col lg:flex-row gap-16">
+    <section className="max-w-350 mx-auto p-20 flex flex-col lg:flex-row gap-16" id="faqs">
       
       {/* LEFT SIDE */}
       <div className="lg:w-1/2 flex flex-col justify-center">

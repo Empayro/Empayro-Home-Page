@@ -51,7 +51,7 @@ const time = useCountdown(launchDate);
     <div
       ref={heroRef}
       onMouseMove={handleMouse}
-      className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] text-black overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] text-black overflow-hidden" id="home"
     >
       {/* 🌌 Gradient Mesh */}
       <div className="absolute inset-0 z-0">
