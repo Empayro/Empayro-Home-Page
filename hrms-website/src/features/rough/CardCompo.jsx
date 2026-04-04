@@ -315,13 +315,13 @@ export default function StackedScrollSection({ slides = DEFAULT_SLIDES }) {
         style={{ height: `${sectionHeight}vh` }}
       >
         <div className="text-center">
-          <span className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium">
+          <span className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium">
             ● Features
           </span>
 
           <h1 className="text-4xl md:text-4xl font-bold text-gray-900 mt-6">
             Simplify HR. Amplify{" "}
-            <span className="text-[#00A4EF]">Productivity.</span>
+            <span className="text-secondary">Productivity.</span>
           </h1>
 
           <p className="mt-4 text-gray-600 text-lg max-w-full mx-auto">

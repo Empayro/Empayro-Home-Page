@@ -50,7 +50,7 @@ const Faqs = () => {
       <div className="lg:w-1/2 flex flex-col justify-center">
         
         <div className="flex items-center gap-4 mb-6">
-          <div className="bg-[#0078D4] text-white p-4 rounded-2xl">
+          <div className="bg-primary text-white p-4 rounded-2xl">
             <FaQuestion size={28} />
           </div>
           <p className="text-sm text-gray-500 uppercase tracking-wide">
@@ -66,11 +66,6 @@ const Faqs = () => {
           Everything you need to know about our HRMS platform, features,
           and how we help you manage your workforce better.
         </p>
-
-        {/* Optional Image Preview
-        <div className="rounded-2xl overflow-hidden shadow-lg">
-          <img src={Service1} alt="Preview" className="w-full h-auto object-cover" />
-        </div> */}
       
       </div>
 

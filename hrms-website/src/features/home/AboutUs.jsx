@@ -11,7 +11,7 @@ function AboutUs() {
         {/* <!-- Section Title --> */}
         <div className="flex flex-col gap-4 items-start justify-center w-[45%]">
           {/* BADGE */}
-          <div className="inline-flex items-center bg-blue-100 text-[#0078D4] px-4 py-1 rounded-full text-sm">
+          <div className="inline-flex items-center bg-blue-100 text-primary px-4 py-1 rounded-full text-sm">
             ● About Us
           </div>
           <h2 className="text-4xl md:text-4xl font-bold text-gray-900 leading-tight">
@@ -19,7 +19,7 @@ function AboutUs() {
             <br />
             bussiness stand out
           </h2>
-          <button className="flex items-center gap-2 border border-[#0078d4] text-[#0078d4] px-6 py-3 rounded-lg hover:bg-blue-50 transition">
+          <button className="flex items-center gap-2 border border-primary text-primary px-6 py-3 rounded-lg hover:bg-blue-50 transition">
             Get Started{" "}
             <i>
               <GoArrowUpRight />

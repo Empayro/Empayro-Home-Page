@@ -8,7 +8,7 @@ const Button = ({ children, onClick }) => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
-      className="relative overflow-hidden px-6 py-3 font-semibold text-white rounded-lg shadow-lg bg-gradient-to-r from-[#78C3FF] to-[#0078D4] flex items-center gap-2"
+      className="relative overflow-hidden px-6 py-3 font-semibold text-white rounded-lg shadow-lg bg-gradient-to-r from-[#78C3FF] to-primary flex items-center gap-2"
     >
       {/* Button Text */}
       <span className="relative z-10 flex items-center gap-2">

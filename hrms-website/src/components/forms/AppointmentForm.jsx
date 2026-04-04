@@ -109,7 +109,7 @@ function AppointmentForm() {
         {/* Gradient Button */}
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-[#0078D4] to-[#76C3FF] text-white py-3 rounded-lg hover:opacity-90 transition"
+          className="w-full bg-gradient-to-r from-primary to-[#76C3FF] text-white py-3 rounded-lg hover:opacity-90 transition"
         >
           Book Now
         </button>

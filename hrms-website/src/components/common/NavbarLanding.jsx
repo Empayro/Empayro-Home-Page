@@ -80,7 +80,7 @@ function NavbarLanding() {
                 <a
                   key={menu.name}
                   href={menu.path}
-                  className="text-3xl font-semibold text-slate-700 hover:text-[#0078D4] hover:text-5xl hover:font-bold transition-all duration-300"
+                  className="text-3xl font-semibold text-slate-700 hover:text-primary hover:text-5xl hover:font-bold transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {menu.name}

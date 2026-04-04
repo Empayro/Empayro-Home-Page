@@ -14,12 +14,12 @@ function PlanCard({
       {/* 🔥 GLASS CARD */}
       <div
         className={`backdrop-blur-xl bg-white/60 border border-white/40 p-6 rounded-2xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
-          isPopular ? "ring-2 ring-[#0078D4]" : ""
+          isPopular ? "ring-2 ring-primary" : ""
         }`}
       >
         {/* 🔥 BADGE */}
         {isPopular && (
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0078D4] to-[#00A4EF] text-white text-xs px-4 py-1 rounded-full shadow">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white text-xs px-4 py-1 rounded-full shadow">
             Most Popular
           </div>
         )}
@@ -41,7 +41,7 @@ function PlanCard({
           {icons.map((item, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center p-3 rounded-xl bg-gradient-to-br from-[#0078D4]/10 to-[#00A4EF]/10 text-[#0078D4] text-center"
+              className="flex flex-col items-center justify-center p-3 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary text-center"
             >
               <div className="text-xl py-2">{item.icon}</div>
               <p className="text-xs mt-1 font-medium text-gray-600">
@@ -64,7 +64,7 @@ function PlanCard({
               <ul className="space-y-2 text-sm text-gray-600">
                 {section.items.map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <span className="text-[#00A4EF]">✔</span> {item}
+                    <span className="text-secondary">✔</span> {item}
                   </li>
                 ))}
               </ul>
@@ -75,8 +75,8 @@ function PlanCard({
         <button
           className={`mt-6 w-full py-2.5 rounded-lg font-medium transition-all ${
             isPopular
-              ? "bg-gradient-to-r from-[#0078D4] to-[#00A4EF] text-white border border-transparent"
-              : "bg-white border border-[#0078D4] text-[#0078D4] hover:bg-[#0078D4] hover:text-white"
+              ? "bg-gradient-to-r from-primary to-secondary text-white border border-transparent"
+              : "bg-white border border-primary text-primary hover:bg-primary hover:text-white"
           }`}
         >
           {buttonText}

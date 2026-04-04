@@ -89,14 +89,14 @@ export default function BookDemo() {
         <div>
             {/* 🔹 HEADER */}
       <div className="text-start mb-4">
-        <span className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium">
+        <span className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium">
           ● Book Demo
         </span>
         </div>
 
           <h1 className="text-4xl md:text-4xl font-bold text-gray-900 leading-tight">
             Experience Smarter HR with <br />
-            <span className="bg-gradient-to-r from-[#0078D4] to-[#00A4EF] text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
               Empayro Demo
             </span>
           </h1>
@@ -163,7 +163,7 @@ export default function BookDemo() {
                 className={`w-full mt-1 p-3 border rounded-lg focus:ring-2 ${
                   errors.size
                     ? "border-red-500 focus:ring-red-400"
-                    : "focus:ring-[#0078D4]"
+                    : "focus:ring-primary"
                 }`}
               >
                 <option value="">Select</option>
@@ -201,7 +201,7 @@ export default function BookDemo() {
                   className={`flex-1 p-3 border rounded-lg focus:ring-2 ${
                     errors.captcha
                       ? "border-red-500 focus:ring-red-400"
-                      : "focus:ring-[#0078D4]"
+                      : "focus:ring-primary"
                   }`}
                 />
               </div>
@@ -221,7 +221,7 @@ export default function BookDemo() {
                   name="agree"
                   checked={form.agree}
                   onChange={handleChange}
-                  className="accent-[#0078D4] w-4 h-4"
+                  className="accent-primary w-4 h-4"
                 />
                 <label className="text-sm text-gray-600">
                   I agree to Terms & <span className="font-semibold"><a href="/privacy-policy ">Privacy Policy</a>
@@ -234,7 +234,7 @@ export default function BookDemo() {
             </div>
 
             {/* BUTTON */}
-            <button className="w-full bg-[#0078D4] hover:bg-[#005fa3] text-white py-3 rounded-lg font-semibold shadow-lg">
+            <button className="w-full bg-primary hover:bg-[#005fa3] text-white py-3 rounded-lg font-semibold shadow-lg">
               Book Demo
             </button>
 
@@ -267,14 +267,14 @@ function Input({ label, name, value, onChange, error, icon }) {
         ${
           error
             ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-400"
-            : "border-gray-300 focus:border-[#0078D4] focus:ring-1 focus:ring-[#00A4EF]"
+            : "border-gray-300 focus:border-primary focus:ring-1 focus:ring-secondary"
         }`}
       />
 
       <label
         className={`absolute left-10 bg-white px-1 text-gray-500 transition-all
         peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
-        peer-focus:-top-2 peer-focus:text-sm peer-focus:text-[#0078D4]
+        peer-focus:-top-2 peer-focus:text-sm peer-focus:text-primary
         ${value ? "-top-2 text-sm" : ""}
         `}
       >

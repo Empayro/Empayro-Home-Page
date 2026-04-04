@@ -22,25 +22,25 @@ function Footer() {
               <div>
                 <h3 className="font-semibold mb-4">Quick Links</h3>
                 <div className="flex flex-col justify-center gap-y-2 text-[14px]">
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Home
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Why Empayro
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     HR Toolkit
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Blogs
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Privacy Policy
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Security
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Terms & Condition
                   </Link>
                 </div>
@@ -50,25 +50,25 @@ function Footer() {
               <div>
                 <h3 className="font-semibold mb-4">Our Products</h3>
                 <div className="flex flex-col items-start justify-center gap-y-2 text-[14px]">
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     HRMS
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Payroll
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     PMS
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     ATS
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Chat
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Survey
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Assets
                   </Link>
                 </div>
@@ -78,25 +78,25 @@ function Footer() {
               <div>
                 <h3 className="font-semibold mb-4">Compare with</h3>
                 <div className="flex flex-col items-start justify-center gap-y-2 text-[14px]">
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Keka
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Workable
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Kredily
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     GreytHR
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Global HR
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Smartoffice
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Superworks
                   </Link>
                 </div>
@@ -106,25 +106,25 @@ function Footer() {
               <div>
                 <h3 className="font-semibold mb-4">Book Demo</h3>
                 <div className="flex flex-col items-start justify-center gap-y-2 text-[14px]">
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     All In One
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     HRMS
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Project
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Payroll
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     ATS
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     EMS
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Performance
                   </Link>
                 </div>
@@ -133,22 +133,22 @@ function Footer() {
               <div>
                 <h3 className="font-semibold mb-4">Company</h3>
                 <div className="flex flex-col items-start justify-center gap-y-2 text-[14px]">
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     About Us
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Contact Us
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Blogs
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Pricing
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Testimonial
                   </Link>
-                  <Link to="/pricing" className="hover:text-[#0078D4]">
+                  <Link to="/pricing" className="hover:text-primary">
                     Career
                   </Link>
                 </div>

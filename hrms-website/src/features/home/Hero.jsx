@@ -54,7 +54,7 @@ export default function Hero() {
       {/* Content */}
       <div className="w-full flex flex-col justify-center items-center">
         {/* BADGE */}
-        <div className="inline-flex items-center bg-blue-100 text-[#0078D4] px-4 py-1 rounded-full text-sm mb-6">
+        <div className="inline-flex items-center bg-blue-100 text-primary px-4 py-1 rounded-full text-sm mb-6">
           ● Now Available: Advanced Analytics Dashboard
         </div>
 
@@ -64,7 +64,7 @@ export default function Hero() {
             {words.map((word, i) => (
               <motion.span
                 key={i}
-                className="absolute left-0 w-full text-[#0078d4]"
+                className="absolute left-0 w-full text-primary"
                 initial={{ y: "100%", opacity: 0 }}
                 animate={
                   i === wordIndex
@@ -94,7 +94,7 @@ export default function Hero() {
 
           <Link
             to=""
-            className="flex items-center gap-2 border border-[#0078d4] text-[#0078d4] px-6 py-3 rounded-lg hover:bg-blue-50 transition"
+            className="flex items-center gap-2 border border-primary text-primary px-6 py-3 rounded-lg hover:bg-blue-50 transition"
           >
             <FaWhatsapp />
             Contact Sales

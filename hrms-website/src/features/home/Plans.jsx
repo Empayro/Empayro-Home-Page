@@ -252,13 +252,13 @@ function Plans() {
     <div className="bg-gradient-to-b from-[#f5f9ff] to-[#e6f2ff] pt-28 p-20">
       {/* 🔹 HEADER */}
       <div className="text-center">
-        <span className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium">
+        <span className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium">
           ● Pricing
         </span>
 
         <h1 className="text-4xl md:text-4xl font-bold text-gray-900 mt-6">
           Flexible Plans for{" "}
-          <span className="text-[#00A4EF]">Every Business</span>
+          <span className="text-secondary">Every Business</span>
         </h1>
 
         <p className="mt-4 text-gray-600 text-lg max-w-full mx-auto">
@@ -270,7 +270,7 @@ function Plans() {
         <div className="relative inline-flex bg-gray-200 rounded-full p-1 w-50">
           {/* 🔹 Sliding pill */}
           <span
-            className={`absolute top-0 left-0 h-full w-1/2 bg-[#0078D4] rounded-full transition-all duration-300 ease-in-out ${
+            className={`absolute top-0 left-0 h-full w-1/2 bg-primary rounded-full transition-all duration-300 ease-in-out ${
               billingCycle === "yearly" ? "translate-x-full" : ""
             }`}
           ></span>
@@ -317,7 +317,7 @@ function Plans() {
       <div className="mt-16 text-center">
         <p className="text-gray-600">
           Need a custom solution?{" "}
-          <span className="text-[#0078D4] font-semibold cursor-pointer">
+          <span className="text-primary font-semibold cursor-pointer">
             Talk to our sales team →
           </span>
         </p>

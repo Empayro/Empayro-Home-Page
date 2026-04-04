@@ -84,14 +84,14 @@ const OurServicesSection = () => {
       <div className="text-center mb-12">
 
         <div className="text-center mb-4">
-          <span className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium">
+          <span className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium">
             ● Our Services
           </span>
         </div>
 
         <h1 className="text-4xl md:text-4xl font-bold text-gray-900 leading-tight">
           Comprehensive HRMS Solution <br />
-          <span className="bg-gradient-to-r from-[#0078D4] to-[#00A4EF] text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             to Empower your workforce
           </span>
         </h1>
@@ -135,7 +135,7 @@ const OurServicesSection = () => {
       <div className="text-center flex items-center justify-between py-8 px-10 bg-[#DEEEFA] rounded-2xl w-275 m-auto">
         
         <div className=" text-start flex items-center justify-center gap-x-4">
-          <div className="p-4 rounded-full text-white bg-[#0078D4]">
+          <div className="p-4 rounded-full text-white bg-primary">
           <FaUsers size={50} />
         </div>
         <div>

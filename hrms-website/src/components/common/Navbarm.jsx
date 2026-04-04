@@ -228,7 +228,7 @@ function Navbarm() {
                 <Link
                   key={menu.name}
                   to={menu.path}
-                  className="px-3 py-2 rounded-lg text-md font-medium text-slate-600 hover:text-[#0078D4] hover:bg-[#0078D4]/8 transition-all"
+                  className="px-3 py-2 rounded-lg text-md font-medium text-slate-600 hover:text-primary hover:bg-primary/8 transition-all"
                 >
                   {menu.name}
                 </Link>
@@ -246,8 +246,8 @@ function Navbarm() {
                 <button
                   className={`flex items-center gap-1 px-3 py-2 rounded-lg font-medium ${
                     openMenu === menu.name
-                      ? "bg-[#0078D4]/10 text-[#0078D4]"
-                      : "text-slate-600 hover:text-[#0078D4]"
+                      ? "bg-primary/10 text-primary"
+                      : "text-slate-600 hover:text-primary"
                   }`}
                 >
                   {menu.name}
@@ -255,7 +255,7 @@ function Navbarm() {
                     size={14}
                     className={`transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                       openMenu === menu.name
-                        ? "rotate-180 text-[#0078D4] translate-y-px"
+                        ? "rotate-180 text-primary translate-y-px"
                         : "rotate-0 text-slate-400"
                     }`}
                   />
@@ -288,7 +288,7 @@ function Navbarm() {
                               >
                                 <Icon
                                   size={17}
-                                  className="text-[#0078D4] mt-1"
+                                  className="text-primary mt-1"
                                 />
                                 <div>
                                   <p className="text-sm font-semibold">
