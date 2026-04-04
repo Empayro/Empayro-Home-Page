@@ -80,7 +80,9 @@ const textColors = [
 const OurServicesSection = () => {
   return (
     <section className="bg-white py-16 px-4 md:px-16 max-w-350 m-auto" id="services">
+
       <div className="text-center mb-12">
+
         <div className="text-center mb-4">
           <span className="bg-[#0078D4]/10 text-[#0078D4] px-5 py-2 rounded-full text-sm font-medium">
             ● Our Services
@@ -98,6 +100,8 @@ const OurServicesSection = () => {
           Our HRMS platform streamlines your HR processes, boost productivity,<br /> and helps you manage your people more effectively.
         </p>
       </div>
+
+      
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         {services.map((service, index) => (
