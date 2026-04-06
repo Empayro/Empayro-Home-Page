@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import {Service1, Service2, Service3, Service4} from "@/assets";
+import {Emp1, Emp2, Emp3, Emp4} from "@/assets";
+import {Att1, Att2, Att3, Att4} from "@/assets";
 
 const solutions = [
   {
@@ -9,10 +11,10 @@ const solutions = [
     color: "#DEEEFA",
     textColor: "#0078D4",
     images: [
-      Service1,
-      Service2,
-      Service3,
-      Service4,
+      Emp1,
+      Emp2,
+      Emp3,
+      Emp4,
     ],
   },
   {
@@ -35,10 +37,10 @@ const solutions = [
     color: "#FDE8D4",
     textColor: "#F47B20",
     images: [
-      Service1,
-      Service2,
-      Service3,
-      Service4,
+      Att1,
+      Att2,
+      Att3,
+      Att4
     ],
   },
   {

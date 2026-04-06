@@ -14,9 +14,9 @@ import Button from "../../components/ui/Button";
 const services = [
   {
     id: 1,
-    title: "Brand Strategy",
+    title: "Smart Payroll",
     description:
-      "We craft narratives that transform brands into cultural landmarks. Deep research, bold positioning.",
+      "Automate salary processing, deductions, bonuses, and payslips with high accuracy.",
     icon: <FaUsers className="w-10 h-10" />,
     accent: "#4A90E2",
     cardBg: "#FFF",
@@ -27,9 +27,9 @@ const services = [
   },
   {
     id: 2,
-    title: "UI/UX Design",
+    title: "Attendance Management",
     description:
-      "Interfaces that whisper elegance. Every pixel placed with intention, every interaction a revelation.",
+      "Track employee attendance, shifts, and leave in real-time with ease.",
     icon: <FaCalendarAlt className="w-10 h-10" />,
     accent: "#33B27D",
     cardBg: "#FFF",
@@ -40,9 +40,9 @@ const services = [
   },
   {
     id: 3,
-    title: "Web Development",
+    title: "AI Recruitment",
     description:
-      "Blazing-fast digital experiences built with modern stacks. Performance is non-negotiable.",
+      "Streamline hiring with intelligent candidate screening and faster onboarding.",
     icon: <FaHandHoldingUsd className="w-10 h-10" />,
     accent: "#8E6FFF",
     cardBg: "#FFF",
@@ -53,9 +53,9 @@ const services = [
   },
   {
     id: 4,
-    title: "Motion & 3D",
+    title: "Employee Management",
     description:
-      "Reality-bending animations and immersive 3D worlds. Make jaws drop on first scroll.",
+      "Manage employee data, roles, documents, and lifecycle in one place.",
     icon: <FaChartBar className="w-10 h-10" />,
     accent: "#FF8C42",
     cardBg: "#FFF",
@@ -66,9 +66,9 @@ const services = [
   },
   {
     id: 5,
-    title: "AI Integration",
+    title: "Performance Analytics",
     description:
-      "Future-proof your product with intelligent automation. We embed AI where it actually matters.",
+      "Gain insights into workforce productivity with real-time reports and dashboards.",
     icon: <FaGraduationCap className="w-10 h-10" />,
     accent: "#E04F5F",
     cardBg: "#FFF",
@@ -79,9 +79,9 @@ const services = [
   },
   {
     id: 6,
-    title: "Growth & Analytics",
+    title: "Compliance & Security",
     description:
-      "Data-driven decisions that compound. We track what matters and optimize relentlessly.",
+      "Ensure legal compliance, data protection, and secure HR operations.",
     icon: <FaChartPie className="w-10 h-10" />,
     accent: "#33A2A2",
     cardBg: "#FFF",
