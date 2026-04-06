@@ -72,15 +72,17 @@ export default function Popup() {
   const cardRef = useRef(null);
 
   useEffect(() => {
-    if (localStorage.getItem("popupShown")) return;
+  const alreadyShown = localStorage.getItem("popupShown");
 
-    const t = setTimeout(() => {
-      setVisible(true);
-      localStorage.setItem("popupShown", "true");
-    }, 800);
+  if (alreadyShown === "true") return;
 
-    return () => clearTimeout(t);
-  }, []);
+  const timer = setTimeout(() => {
+    setVisible(true);
+    localStorage.setItem("popupShown", "true");
+  }, 1500);
+
+  return () => clearTimeout(timer);
+}, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -97,6 +99,29 @@ export default function Popup() {
     window.addEventListener("mousemove", fn);
     return () => window.removeEventListener("mousemove", fn);
   }, []);
+
+  useEffect(() => {
+  const alreadyShown = localStorage.getItem("popupShown");
+  if (alreadyShown === "true") return;
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.documentElement.scrollHeight;
+
+    const scrolled = (scrollTop + windowHeight) / fullHeight;
+
+    if (scrolled >= 0.9) {
+      setVisible(true);
+      localStorage.setItem("popupShown", "true");
+      window.removeEventListener("scroll", handleScroll);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const handleClose = () => {
     setClosing(true);

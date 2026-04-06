@@ -13,7 +13,7 @@ const DEFAULT_SLIDES = [
       "Super ATS simply automates job posting, resume screening & candidate tracking. It helps cut down hiring time & helps you pick the right match faster.",
     cta: "Explore ATS",
     color: "#0F172A",
-    accent: "#E94560",
+    accent: "#0078D4",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const DEFAULT_SLIDES = [
       "Super HRMS takes the manual work out of daily HR work by automating daily tasks and key calculations. It speeds up processing and gives you more control over your entire workforce.",
     cta: "View HRMS",
     color: "#111827",
-    accent: "#3B82F6",
+    accent: "#5CB400",
   },
   {
     id: 3,
@@ -32,8 +32,8 @@ const DEFAULT_SLIDES = [
     description:
       "Super Payroll automates each & every step of the payroll processing—from salary calculations to compliance checks. No spreadsheets, no delays, no errors & no stress.",
     cta: "Run Payroll",
-    color: "#1E1B4B",
-    accent: "#8B5CF6",
+    color: "#0F172A",
+    accent: "#F47B20",
   },
   {
     id: 4,
@@ -42,8 +42,8 @@ const DEFAULT_SLIDES = [
     description:
       "Stop manually tracking & hoping for optimal asset utilization. Automate monitoring & allocation of your resources, ensuring they are deployed efficiently and effectively.",
     cta: "Manage Assets",
-    color: "#052E2B",
-    accent: "#10B981",
+    color: "#111827",
+    accent: "#8A6A00",
   },
 ];
 
@@ -165,12 +165,12 @@ function Card({ slide, index, style }) {
       </div>
 
       {/* Top Right (Mirrored) */}
-      <div className="absolute top-[22px] right-[24px] flex flex-col items-center gap-[1px] rotate-180">
+      {/* <div className="absolute top-[22px] right-[24px] flex flex-col items-center gap-[1px] rotate-180">
         <span className="text-[18px] font-bold text-white/50 font-serif">
           {String(index + 1).padStart(2, "0")}
         </span>
         <CardSuit index={index} />
-      </div>
+      </div> */}
 
       {/* Accent Line Top */}
       <div

@@ -6,6 +6,7 @@ import KeyFeatures from "../features/home/KeyFeatures";
 import LandingPage from "../features/home/LandingPage";
 import Plans from "../features/home/Plans";
 import VideoCompo from "../features/home/VideoCompo";
+import PlanCard from "../features/pricing/PlanCard";
 
 function Home() {
   return (
@@ -18,6 +19,8 @@ function Home() {
     <BookDemo/>
 
     <Plans />
+
+    {/* <PlanCard/> */}
 
     <KeyFeatures/>
 
