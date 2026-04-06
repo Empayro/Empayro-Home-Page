@@ -45,7 +45,7 @@ const solutions = [
   },
   {
     id: 4,
-    title: "PMS",
+    title: "Project Management System",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
     color: "#D4EFFC",
     textColor: "#00A4EF",

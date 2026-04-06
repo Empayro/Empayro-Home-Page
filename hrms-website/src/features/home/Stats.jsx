@@ -66,7 +66,7 @@ function Stats() {
           <div key={index} className="space-y-3">
 
             {/* ICON */}
-            <div className="w-12 h-12 mx-auto flex items-center justify-center bg-gradient-to-r from-[#22C2D8] via-[#3080BB] to-[#3761AD] rounded-lg shadow">
+            <div className="w-12 h-12 mx-auto flex items-center justify-center bg-gradient-to-r from-secondary to-primary rounded-lg shadow">
               {item.icon}
             </div>
 

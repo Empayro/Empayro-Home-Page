@@ -2,31 +2,30 @@ import AboutUs from "../features/home/AboutUs";
 import Blogs from "../features/home/Blogs";
 import BookDemo from "../features/home/BookDemo";
 import Hero from "../features/home/Hero";
+import Howitwork from "../features/home/Howitwork";
+import HowItWorks from "../features/home/HowItWorks";
 import KeyFeatures from "../features/home/KeyFeatures";
-import LandingPage from "../features/home/LandingPage";
 import Plans from "../features/home/Plans";
 import VideoCompo from "../features/home/VideoCompo";
-import PlanCard from "../features/pricing/PlanCard";
 
 function Home() {
   return (
     <>
-    <Hero/>
+      <Hero />
 
-    <AboutUs/>
+      <KeyFeatures />
 
+      <HowItWorks />
 
-    <BookDemo/>
+      <Howitwork/>
 
-    <Plans />
+      <BookDemo />
 
-    {/* <PlanCard/> */}
+      <Plans />
 
-    <KeyFeatures/>
+      <VideoCompo />
 
-    <VideoCompo/>
-
-    <Blogs/>
+      <Blogs />
     </>
   );
 }

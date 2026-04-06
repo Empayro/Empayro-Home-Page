@@ -88,7 +88,7 @@ export default function BookDemo() {
         {/* LEFT */}
         <div>
             {/* 🔹 HEADER */}
-      <div className="text-start mb-4">
+      <div className="FadeUp text-start mb-4">
         <span className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium">
           ● Book Demo
         </span>

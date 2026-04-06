@@ -70,7 +70,7 @@ export default function LandingPage() {
 
       {/*  Hero */}
       <section className="relative z-10 flex flex-col items-center text-center p-20 gap-y-2">
-        <div className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium border-primary border flex items-center gap-2">
+        <div className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium border-primary border flex items-center gap-2 mb-5">
           <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
           WE ARE LAUNCHING SOON
         </div>
@@ -88,7 +88,7 @@ export default function LandingPage() {
         </h1>
 
         <p className="mt-6 text-gray-400 max-w-xl">
-          One intelligent platform to hire, manage, pay, and grow your team —
+          One intelligent platform to hire, manage, pay, and grow your team <br />
           all in one place.
         </p>
 

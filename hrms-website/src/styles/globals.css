@@ -1,4 +1,19 @@
-@theme{
-    --color-primary: #0078D4;
-    --color-secondary: #00A4EF;
+@theme {
+  --color-primary: #0078d4;
+  --color-secondary: #00a4ef;
+}
+
+@keyframes FadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.FadeUp {
+  animation: FadeUp 0.65s ease both;
 }
