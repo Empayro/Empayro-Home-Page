@@ -43,7 +43,7 @@ const solutions = [
   },
   {
     id: 4,
-    title: "HR Analytics",
+    title: "PMS",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
     color: "#D4EFFC",
     textColor: "#00A4EF",
@@ -56,7 +56,7 @@ const solutions = [
   },
   {
     id: 5,
-    title: "HR Insights",
+    title: "Break Tracking",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet quae perspiciatis at laboriosam, aut ullam accusamus dolore repellat soluta! Repudiandae doloremque ea ",
     color: "#FDF3C0",
     textColor: "#8A6A00",
@@ -145,13 +145,13 @@ export default function SlideSection() {
                 
                 <p className="text-black text-lg opacity-90 mb-6 max-w-4xl">{item.desc}</p>
 
-                <button className="text-black px-4 py-2 border rounded-3xl font-medium hover:scale-105 transition"
+                {/* <button className="text-black px-4 py-2 border rounded-3xl font-medium hover:scale-105 transition"
                 style={{
                 borderColor: item.textColor,
               }}
                 >
                   Learn More →
-                </button>
+                </button> */}
               </div>
 
               {/* RIGHT IMAGE GRID */}

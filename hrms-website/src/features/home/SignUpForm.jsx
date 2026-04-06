@@ -20,10 +20,10 @@ const SignUpForm = () => {
         {/* Title Box */}
         <div className="bg-blue-100/60 backdrop-blur-md rounded-2xl px-8 py-6 mb-10 shadow-sm">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
-            Book your free demo now!
+            Join Our Waiting List
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cumque repudiandae perferendis fugiat non! Quam eum sed ducimus est odio.
+            We’re launching soon. Sign up to get notified and access exclusive early features.
           </p>
         </div>
 

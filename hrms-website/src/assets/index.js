@@ -14,8 +14,9 @@ import NewsLetter from "./images/newsletter2.webp";
 import Video from "./images/Video.mp4";
 import FooterVideo from "./images/footers.mp4";
 import MenuVideo from "./images/headers.mp4";
+import Favicon from "./images/favicon.png";
 
 
 
 
-export { logo, ComingLogo,  Frame1, Frame2, Frame3, Service1, Service2, Service3, Service4, Service5, AboutImg, Video, FooterVideo, MenuVideo, SignUpBg, NewsLetter };
+export { logo, ComingLogo,  Frame1, Frame2, Frame3, Service1, Service2, Service3, Service4, Service5, AboutImg, Video, FooterVideo, MenuVideo, SignUpBg, NewsLetter, Favicon };
