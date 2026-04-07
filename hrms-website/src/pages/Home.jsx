@@ -15,7 +15,7 @@ function Home() {
 
       <KeyFeatures />
 
-      <HowItWorks />
+      {/* <HowItWorks /> */}
 
       <Howitwork/>
 

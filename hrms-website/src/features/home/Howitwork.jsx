@@ -14,54 +14,82 @@ const STEPS = [
   {
     id: 1,
     icon: FiUserPlus,
-    label: "Step 01",
+    label: "Add Employees",
     title: "Add Employees",
     subtitle: "Build your workforce in minutes",
     description:
-      "Onboard employees with smart forms. Capture roles, departments, documents, and contracts — all in one place.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi enim quam numquam? Velit, dolores, eos cupiditate laudantium sed consequuntur error ",
     accent: "#0078D4",
     light: "#DEEEFA",
     border: "#B6D9F2",
+    shadow: "rgba(0, 120, 212, 0.3)",
     image: Service1, // 👈 ADD YOUR IMAGE PATH
+    features: [
+      "Quick employee onboarding with smart forms",
+      "Store documents & contracts securely",
+      "Assign roles & departments easily",
+      "Centralized employee database",
+    ],
   },
   {
     id: 2,
     icon: FiClock,
-    label: "Step 02",
+    label: "Track Attendance",
     title: "Track Attendance",
     subtitle: "Real-time presence",
     description:
-      "Geo-tagged check-ins, shift management, and leave balances updated live.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi enim quam numquam? Velit, dolores, eos cupiditate laudantium sed consequuntur error ",
     accent: "#5CB400",
     light: "#E5F3D3",
     border: "#CFE8A9",
+    shadow: "rgba(92, 180, 0, 0.3)",
     image: Service2,
+    features: [
+      "Real-time attendance tracking",
+      "Geo-tagged check-in & check-out",
+      "Shift & roster management",
+      "Leave balance automation",
+    ],
   },
   {
     id: 3,
     icon: FiDollarSign,
-    label: "Step 03",
+    label: "Process Payroll",
     title: "Process Payroll",
     subtitle: "One click, zero errors",
     description:
-      "Automated salary calculations, tax deductions, and compliance.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi enim quam numquam? Velit, dolores, eos cupiditate laudantium sed consequuntur error ",
     accent: "#F47B20",
     light: "#FDE8D4",
     border: "#F8C9A6",
+    shadow: "rgba(244, 123, 32, 0.3)",
     image: Service3,
+    features: [
+      "Automated salary processing",
+      "Accurate tax deductions",
+      "Compliance-ready payroll",
+      "Payslip generation in one click",
+    ],
   },
   {
     id: 4,
     icon: FiBarChart2,
-    label: "Step 04",
+    label: "Generate Reports",
     title: "Generate Reports",
     subtitle: "Insights that drive decisions",
     description:
-      "Export reports and visualize workforce trends with dashboards.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi enim quam numquam? Velit, dolores, eos cupiditate laudantium sed consequuntur error ",
     accent: "#E8410A",
     light: "#FCDDD4",
     border: "#F5B4A3",
+    shadow: "rgba(232, 65, 10, 0.3)",
     image: Service4,
+    features: [
+      "Download detailed HR reports",
+      "Visual dashboards & analytics",
+      "Track workforce trends",
+      "Make data-driven decisions",
+    ],
   },
 ];
 
@@ -83,20 +111,35 @@ export default function Howitwork() {
   }, []);
 
   /* Auto-play */
-  useEffect(() => {
-    if (!autoPlay) return;
+useEffect(() => {
+  if (intervalRef.current) {
+    clearInterval(intervalRef.current);
+  }
+
+  if (autoPlay) {
     intervalRef.current = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % STEPS.length);
     }, 3200);
-    return () => clearInterval(intervalRef.current);
-  }, [autoPlay]);
+  }
 
-  const goTo = (i) => {
-    setActiveStep(i);
-    setAutoPlay(false);
+  return () => clearInterval(intervalRef.current);
+}, [autoPlay, activeStep]);
+
+const goTo = (i) => {
+  setActiveStep(i);
+
+  // stop autoplay temporarily
+  setAutoPlay(false);
+
+  if (intervalRef.current) {
     clearInterval(intervalRef.current);
-    setTimeout(() => setAutoPlay(true), 8000);
-  };
+  }
+
+  // restart autoplay after delay
+  setTimeout(() => {
+    setAutoPlay(true);
+  }, 5000); // reduce to 5s for better UX
+};
 
   const step = STEPS[activeStep];
 
@@ -111,7 +154,7 @@ export default function Howitwork() {
     >
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 FadeUp">
           <div className="FadeUp text-center mb-4">
             <span className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium">
               ● How It Works
@@ -119,53 +162,118 @@ export default function Howitwork() {
           </div>
 
           <h1 className="text-4xl md:text-4xl font-bold text-gray-900 leading-tight">
-            Experience Smarter HR with <br />
+            From hire to payslip <br />
             <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-              Empayro Demo
+              - in four steps
             </span>
           </h1>
 
           <p className="mt-4 text-gray-600 text-lg">
-            See how EMPAYRO simplifies HR operations from hiring to payroll all
-            in one powerful platform.
+            Empayro fits how your team already works. No training required, no
+            complexity — just results.
           </p>
         </div>
 
         {/* TABS */}
-        <div className="flex justify-center mb-10 bg-white max-w-5xl m-auto rounded-lg p-4 shadow-lg">
+        <div className="FadeUp flex items-center justify-center gap-2 mb-12 bg-white/80 backdrop-blur border border-slate-100 rounded-2xl p-2 max-w-[700px] mx-auto shadow-sm">
           {STEPS.map((s, i) => {
             const Icon = s.icon;
+            const isActive = activeStep === i;
+
             return (
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`px-4 py-2 mx-1 rounded-lg ${
-                  activeStep === i ? "bg-black text-white" : "bg-gray-100"
+                className={`relative flex-1 flex flex-col items-center justify-center gap-1 py-3 rounded-xl transition-all duration-300 overflow-hidden ${
+                  isActive ? "bg-primary text-white" : "text-gray-600"
                 }`}
               >
-                <Icon />
+                {/* Icon */}
+                <Icon size={18} />
+
+                {/* Label */}
+                <span className="text-xs font-medium">{s.label}</span>
+
+                {/* Progress Bar */}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 h-[3px] w-full bg-white/30 overflow-hidden">
+                    <span
+                      key={activeStep} // reset animation
+                      className="block h-full bg-white animate-progress"
+                    />
+                  </span>
+                )}
               </button>
             );
           })}
         </div>
 
         {/* CONTENT */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* LEFT */}
-          <div>
-            <h3 className="text-3xl font-bold mb-3">{step.title}</h3>
-            <p className="text-gray-500">{step.description}</p>
+<div className="grid md:grid-cols-2 gap-10 items-center">
+  {/* LEFT */}
+  <div key={activeStep} className=" animate-left">
+    {/* TOP HEADER */}
+    <div className="flex items-start gap-4 mb-5">
+      <div
+        className="w-12 h-12 flex items-center justify-center rounded-xl relative"
+        style={{
+          backgroundColor: step.accent,
+          color: "#FFF",
+        }}
+      >
+        <span
+          className="absolute inset-0 rounded-xl animate-soft-pulse"
+          style={{ backgroundColor: step.accent }}
+        ></span>
+
+        <step.icon size={22} className="relative z-10" />
+      </div>
+
+      <div>
+        <h3 className="text-2xl font-bold text-gray-900 leading-tight">
+          {step.title}
+        </h3>
+        <p className="text-sm text-gray-500">{step.subtitle}</p>
+      </div>
+    </div>
+
+    <p className="text-gray-500 mb-6">{step.description}</p>
+
+    <div className="flex flex-col gap-3">
+      {step.features.map((item, i) => (
+        <div key={i} className="flex items-start gap-3">
+          <div
+            className="mt-1 flex-shrink-0 w-5 h-5 flex items-center border-[1.5px] justify-center rounded-full"
+            style={{
+              backgroundColor: step.accent + "20",
+              color: step.accent,
+              borderColor: step.accent,
+            }}
+          >
+            <FiCheck size={10} />
           </div>
 
-          {/* RIGHT (IMAGE REPLACED) */}
-          <div className="rounded-3xl p-4 border shadow-xl bg-white">
-            <img
-              src={step.image}
-              alt={step.title}
-              className="w-full h-auto rounded-xl object-cover"
-            />
-          </div>
+          <p className="text-sm text-gray-700">{item}</p>
         </div>
+      ))}
+    </div>
+  </div>
+
+  {/* RIGHT */}
+  <div
+    key={activeStep + "-img"}
+    className="rounded-3xl p-4 bg-white animate-right"
+    style={{
+      boxShadow: step.accent ? `5px -5px 20px ${step.shadow}` : "10px 5px 5px rgba(0,0,0,0.1)",
+    }}
+  >
+    <img
+      src={step.image}
+      alt={step.title}
+      className="w-full h-auto rounded-xl object-cover"
+    />
+  </div>
+</div>
       </div>
     </section>
   );
