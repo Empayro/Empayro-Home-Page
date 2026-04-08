@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MenuVideo } from "../../assets";
 import { color } from "framer-motion";
+import { useInView } from "../../hooks/useInView";
 
 export default function HeroSection() {
   const sections = [
@@ -41,8 +42,8 @@ export default function HeroSection() {
       subtitle: "Management",
       title: "Employee Management",
       desc: "Approve or reject leaves with one click.",
-      color: "#E8410A",
-      accent: "#FCDDD4",
+      color: "#8A6A00",
+      accent: "#FDF3C0",
       content:
         "Simplify leave requests and approvals with a streamlined workflow built for HR teams.",
       features: ["Quick approval", "Leave tracking"],
@@ -52,8 +53,9 @@ export default function HeroSection() {
       subtitle: "Insights",
       title: "Performance Analytics",
       desc: "Make better decisions with real-time analytics.",
-      color: "#8A6A00",
-      accent: "#FDF3C0",
+      color: "#E8410A",
+      accent: "#FCDDD4",
+
       content:
         "Generate powerful reports and gain insights to improve productivity and decision-making.",
       features: ["Custom reports", "Visual analytics"],
@@ -64,6 +66,8 @@ export default function HeroSection() {
   const [active, setActive] = useState(0);
   const [isManualScrolling, setIsManualScrolling] = useState(false);
   const refs = useRef([]);
+
+  const [fadeRef, fadeVisible] = useInView();
 
   // ✅ Scroll Detection (Smooth + Stable)
   useEffect(() => {
@@ -112,8 +116,10 @@ export default function HeroSection() {
   return (
     <section className="bg-white text-black py-24">
       {/* Title */}
-      <div className="text-center mb-30">
-        
+      <div
+        ref={fadeRef}
+        className={`fade-up ${fadeVisible ? "show text-center mb-10" : ""}`}
+      >
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
           Comprehensive HRMS Solution <br />
           <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
@@ -122,28 +128,21 @@ export default function HeroSection() {
         </h1>
         <p className="mt-4 text-gray-600 text-lg">
           Our HRMS platform streamlines your HR processes, boost productivity.
-         
         </p>
       </div>
 
       <div className="max-w-7xl mx-auto flex gap-10 px-6">
         {/* LEFT - Tabs */}
         <div className="w-1/4 hidden md:block border-r pr-6">
-
-        
-
           <div className="sticky top-32 space-y-4">
-
-<div className="text-start mb-12">
-        
-        <h1 className="text-4xl md:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-          HRMS Solution  <br />
-          <span className=" text-[34px] text-gray-900 leading-tight">
-            to Empower your workforce
-          </span>
-        </h1>
-        </div>
-
+            <div className="text-start mb-12">
+              <h1 className="text-4xl md:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+                HRMS Solution <br />
+                <span className=" text-[34px] text-gray-900 leading-tight">
+                  to Empower your workforce
+                </span>
+              </h1>
+            </div>
 
             {sections.map((item, index) => (
               <div
@@ -184,10 +183,11 @@ export default function HeroSection() {
             >
               {/* TEXT */}
               <div className="p-6">
-                <p className="text-sm font-semibold uppercase"
-                style={{
+                <p
+                  className="text-sm font-semibold uppercase"
+                  style={{
                     color: item.color,
-                }}
+                  }}
                 >
                   {item.subtitle}
                 </p>
@@ -209,12 +209,13 @@ export default function HeroSection() {
                         border: item.accent,
                       }}
                     >
-                      <div className="w-6 h-6 flex items-center justify-center bg-blue-600 text-white border rounded-full text-xs"
-                      style={{
-                        borderColor: item.color,
-                        backgroundColor: item.accent,
-                        color: item.color,
-                      }}
+                      <div
+                        className="w-6 h-6 flex items-center justify-center bg-blue-600 text-white border rounded-full text-xs"
+                        style={{
+                          borderColor: item.color,
+                          backgroundColor: item.accent,
+                          color: item.color,
+                        }}
                       >
                         ✓
                       </div>

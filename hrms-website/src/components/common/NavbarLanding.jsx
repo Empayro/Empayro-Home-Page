@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ComingLogo } from "@/assets";
 
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaHeadset, FaUser } from "react-icons/fa";
+import { FaHeadset, FaPhone, FaUser } from "react-icons/fa6";
 
 /* ---------------- MENU DATA ---------------- */
 const menus = [
@@ -61,7 +61,9 @@ function NavbarLanding() {
         </button>
 
         <div>
-          <FaHeadset size={25}/>
+          <a href="mailto:support@empayro.com">
+            <FaPhone size={25} />
+          </a>
         </div>
       </nav>
 
@@ -106,6 +108,8 @@ function NavbarLanding() {
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 }
