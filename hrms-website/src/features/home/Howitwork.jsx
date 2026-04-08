@@ -23,7 +23,8 @@ const STEPS = [
     accent: "#0078D4",
     light: "#DEEEFA",
     border: "#B6D9F2",
-    shadow: "rgba(0, 120, 212, 0.3)",
+    // shadow: "rgba(0, 120, 212, 0.3)",
+    shadow: "rgba(120, 120, 120, 0.3)",
     image: Service1, // 👈 ADD YOUR IMAGE PATH
     features: [
       "Quick employee onboarding with smart forms",
@@ -44,7 +45,8 @@ const STEPS = [
     accent: "#5CB400",
     light: "#E5F3D3",
     border: "#CFE8A9",
-    shadow: "rgba(92, 180, 0, 0.3)",
+    // shadow: "rgba(92, 180, 0, 0.3)",
+    shadow: "rgba(120, 120, 120, 0.3)",
     image: Service2,
     features: [
       "Real-time attendance tracking",
@@ -65,7 +67,8 @@ const STEPS = [
     accent: "#F47B20",
     light: "#FDE8D4",
     border: "#F8C9A6",
-    shadow: "rgba(244, 123, 32, 0.3)",
+    // shadow: "rgba(244, 123, 32, 0.3)",
+    shadow: "rgba(120, 120, 120, 0.3)",
     image: Service3,
     features: [
       "Automated salary processing",
@@ -86,7 +89,8 @@ const STEPS = [
     accent: "#E8410A",
     light: "#FCDDD4",
     border: "#F5B4A3",
-    shadow: "rgba(232, 65, 10, 0.3)",
+    // shadow: "rgba(232, 65, 10, 0.3)",
+    shadow: "rgba(120, 120, 120, 0.3)",
     image: Service4,
     features: [
       "Download detailed HR reports",
@@ -104,6 +108,8 @@ export default function Howitwork() {
   const sectionRef = useRef(null);
   const intervalRef = useRef(null);
 
+  const INTERVAL = 3000;
+
   /* Scroll animation */
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -115,35 +121,50 @@ export default function Howitwork() {
   }, []);
 
   /* Auto-play */
-  useEffect(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+useEffect(() => {
+  if (!autoPlay) return;
 
-    if (autoPlay) {
-      intervalRef.current = setInterval(() => {
-        setActiveStep((prev) => (prev + 1) % STEPS.length);
-      }, 3200);
-    }
+  const startInterval = () => {
+    clearInterval(intervalRef.current);
 
-    return () => clearInterval(intervalRef.current);
-  }, [autoPlay, activeStep]);
-
-  const goTo = (i) => {
-    setActiveStep(i);
-
-    // stop autoplay temporarily
-    setAutoPlay(false);
-
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-
-    // restart autoplay after delay
-    setTimeout(() => {
-      setAutoPlay(true);
-    }, 5000); // reduce to 5s for better UX
+    intervalRef.current = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % STEPS.length);
+    }, INTERVAL);
   };
+
+  startInterval();
+
+  const handleVisibility = () => {
+    if (document.hidden) {
+      clearInterval(intervalRef.current);
+    } else {
+      startInterval();
+    }
+  };
+
+  document.addEventListener("visibilitychange", handleVisibility);
+
+  return () => {
+    clearInterval(intervalRef.current);
+    document.removeEventListener("visibilitychange", handleVisibility);
+  };
+}, [autoPlay]);
+
+
+
+  const timeoutRef = useRef(null);
+
+const goTo = (i) => {
+  setActiveStep(i);
+  setAutoPlay(false);
+
+  clearInterval(intervalRef.current);
+  clearTimeout(timeoutRef.current);
+
+  timeoutRef.current = setTimeout(() => {
+    setAutoPlay(true);
+  }, 5000);
+};
 
   const step = STEPS[activeStep];
 
@@ -201,7 +222,7 @@ export default function Howitwork() {
                 {/* STEP */}
                 <button
                   onClick={() => goTo(i)}
-                  className="flex flex-col items-center relative"
+                  className="flex flex-col items-center relative cursor-pointer"
                 >
                   {/* Circle */}
                   <div

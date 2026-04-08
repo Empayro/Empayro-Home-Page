@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ComingLogo } from "@/assets";
 
 import { FiMenu, FiX } from "react-icons/fi";
+import { FaHeadset, FaUser } from "react-icons/fa";
 
 /* ---------------- MENU DATA ---------------- */
 const menus = [
@@ -58,6 +59,10 @@ function NavbarLanding() {
             <FiMenu size={24} className="text-slate-600" />
           )}
         </button>
+
+        <div>
+          <FaHeadset size={25}/>
+        </div>
       </nav>
 
       {/* FULL SCREEN MENU OVERLAY */}

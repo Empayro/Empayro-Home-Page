@@ -1,6 +1,8 @@
 import Faqs from "../features/home/Faqs";
+import HeroSection from "../features/home/HeroSection";
 import LandingPage from "../features/home/LandingPage";
 import Popup from "../features/home/Popup";
+import ScrollRevealSection from "../features/home/ScrollRevealSection";
 // import OurServicesSection from "../features/home/OurServicesSection";
 import ServicesPreview from "../features/home/ServicesPreview";
 import SignUpForm from "../features/home/SignUpForm";
@@ -15,9 +17,13 @@ function ComingSoon() {
 
       {/* <OurServicesSection/> */}
 
-      <ServicesPreview/>
+      <HeroSection/>
 
-      <SlideSection/>
+      <ScrollRevealSection/>
+
+      {/* <ServicesPreview/> */}
+
+      {/* <SlideSection/> */}
 
       <Faqs/>
 
