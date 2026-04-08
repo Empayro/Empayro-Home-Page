@@ -14,7 +14,7 @@ import NewsLetter from "./images/newsletter2.webp";
 import Video from "./images/Video.mp4";
 import FooterVideo from "./images/footers.mp4";
 import MenuVideo from "./images/headers.mp4";
-// import AttendanceVideo from "./images/attendance.mp4";
+import AttendanceVideo from "./images/Attendance.mp4";
 import Favicon from "./images/favicon.png";
 import Emp1 from "./images/Emp_01.webp";
 import Emp2 from "./images/Emp_02.webp";
