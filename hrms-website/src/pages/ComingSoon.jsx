@@ -1,4 +1,5 @@
 import Faqs from "../features/home/Faqs";
+import Features from "../features/home/Features";
 import HeroSection from "../features/home/HeroSection";
 import LandingPage from "../features/home/LandingPage";
 import Popup from "../features/home/Popup";
@@ -18,6 +19,8 @@ function ComingSoon() {
       {/* <OurServicesSection/> */}
 
       <HeroSection/>
+      
+      <Features/>
 
       <ScrollRevealSection/>
 
