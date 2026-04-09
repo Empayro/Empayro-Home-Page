@@ -5,6 +5,7 @@ import { ComingLogo } from "@/assets";
 
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaHeadset, FaPhone, FaUser } from "react-icons/fa6";
+import { FcAssistant, FcVoicePresentation } from "react-icons/fc";
 
 /* ---------------- MENU DATA ---------------- */
 const menus = [
@@ -54,15 +55,16 @@ function NavbarLanding() {
           className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
         >
           {isMenuOpen ? (
-            <FiX size={24} className="text-slate-600" />
+            <FiX size={24} className="text-black" />
           ) : (
-            <FiMenu size={24} className="text-slate-600" />
+            <FiMenu size={24} className="text-black" />
           )}
         </button>
 
         <div>
           <a href="mailto:support@empayro.com">
-            <FaPhone size={25} />
+            {/* <FaPhone size={25} /> */}
+            <FcVoicePresentation size={40} />
           </a>
         </div>
       </nav>

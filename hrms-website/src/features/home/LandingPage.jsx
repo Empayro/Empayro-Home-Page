@@ -98,9 +98,9 @@ export default function LandingPage() {
         </div>
 
         {/* Title */}
-        <h1 className="text-[clamp(42px,8vw,88px)] font-bold text-gray-900 md:text-8xl tracking-tight text-4xl">
-          Think Ahead <span className="text-gray-900">of</span> <br />
-          <span className="stroke text-black [WebkitTextStroke:2px_rgba(91,127,255,0.5)]">
+        <h1 className="text-[clamp(42px,8vw,88px)] font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text md:text-8xl tracking-tight text-4xl">
+          Think Ahead <span className="font-bold text-black">of</span> <br />
+          <span className="stroke text-black font-bold [WebkitTextStroke:2px_rgba(91,127,255,0.5)]">
             everything
           </span>
         </h1>
