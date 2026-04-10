@@ -1,6 +1,23 @@
 @theme {
-  --color-primary: #0078d4;
-  --color-secondary: #00a4ef;
+  --color-primary: #0078D4;
+  --color-secondary: #76C3FF;
+
+  --color-green-primary: #5CB400;
+  --color-green-secondary: #E5F3D3;
+
+  --color-orange-primary: #F47B20;
+  --color-orange-secondary: #FDE8D4;
+
+  --color-red-primary: #E8410A;
+  --color-red-secondary: #FCDDD4;
+
+  --color-dgreen-primary: #8A6A00;
+  --color-dgreen-secondary: #FDF3C0;
+
+  --color-dblue-primary: #00A4EF;
+  --color-dblue-secondary: #D4EFFC;
+
+  --primary-gradient: linear-gradient(to left, #0078D4, #76C3FF);
 }
 
 @keyframes FadeUp {
@@ -82,4 +99,10 @@
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+@keyframes floatX {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(15px); }
 }

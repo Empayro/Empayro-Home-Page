@@ -8,7 +8,9 @@ import { useInView } from "../../hooks/useInView";
 function StatCard({ label, icon: Icon, color }) {
   return (
     <div className="flex flex-col items-center gap-2 px-5 py-4 rounded-xl bg-white shadow-sm hover:shadow-md transition">
-      <div className={`w-12 h-12 flex items-center justify-center rounded-lg ${color}`}>
+      <div
+        className={`w-12 h-12 flex items-center justify-center rounded-lg ${color}`}
+      >
         <Icon className="text-lg" size={24} />
       </div>
       <p className="text-sm font-medium text-gray-700 text-center">{label}</p>
@@ -36,10 +38,26 @@ export default function LandingPage() {
   };
 
   const stats = [
-    { label: "Save 10+ hours weekly", icon: FiUsers, color: "bg-[#DEEEFA]" },
-    { label: "Automate Payroll", icon: MdOutlinePayments, color: "bg-[#E5F3D3]" },
-    { label: "Automated HR Tasks", icon: RiRocketLine, color: "bg-[#FDE8D4]" },
-    { label: "Hire Smarter with AI", icon: RiStarSmileLine, color: "bg-[#FCDDD4]" },
+    {
+      label: "Save 10+ hours weekly",
+      icon: FiUsers,
+      color: "bg-dblue-secondary",
+    },
+    {
+      label: "Automate Payroll",
+      icon: MdOutlinePayments,
+      color: "bg-green-secondary",
+    },
+    {
+      label: "Automated HR Tasks",
+      icon: RiRocketLine,
+      color: "bg-orange-secondary",
+    },
+    {
+      label: "Hire Smarter with AI",
+      icon: RiStarSmileLine,
+      color: "bg-red-secondary",
+    },
   ];
 
   // ✅ Form submission
@@ -70,7 +88,8 @@ export default function LandingPage() {
     <div
       ref={heroRef}
       onMouseMove={handleMouse}
-      className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] text-black overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] text-black overflow-hidden 
+             pl-0" // 👈 space for left header
       id="home"
     >
       {/* Gradient Mesh */}
@@ -89,7 +108,11 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section
         ref={fadeRef}
-        className={`fade-up ${fadeVisible ? "show relative z-10 flex flex-col items-center text-center p-20 gap-y-2" : ""}`}
+        className={`fade-up ${
+          fadeVisible
+            ? "show relative z-10 flex flex-col items-center text-center px-6 py-16 md:px-10 md:py-20 gap-y-2"
+            : ""
+        }`}
       >
         {/* Launching Badge */}
         <div className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium border-primary border flex items-center gap-2 mb-5">
@@ -98,7 +121,10 @@ export default function LandingPage() {
         </div>
 
         {/* Title */}
-        <h1 className="text-[clamp(42px,8vw,88px)] font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text md:text-8xl tracking-tight text-4xl">
+        <h1
+          className="text-[clamp(32px,6vw,80px)] font-bold leading-[1.1] md:leading-[1.05] bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text tracking-tight
+"
+        >
           Think Ahead <span className="font-bold text-black">of</span> <br />
           <span className="stroke text-black font-bold [WebkitTextStroke:2px_rgba(91,127,255,0.5)]">
             everything
@@ -106,43 +132,70 @@ export default function LandingPage() {
         </h1>
 
         {/* Description */}
-        <p className="mt-6 text-gray-400 max-w-xl">
-          One intelligent platform to hire, manage, pay, and grow your team <br /> all in one place.
+        <p className="mt-6 text-gray-400 max-w-xl text-sm md:text-base">
+          One intelligent platform to hire, manage, pay, and grow your team{" "}
+          <br /> all in one place.
         </p>
 
         {/* CTA Form */}
-        <form onSubmit={handleSubmit} className="flex gap-3 mt-8 flex-wrap justify-center w-full max-w-md">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row gap-3 mt-8 justify-center w-full max-w-md"
+        >
           <input
             type="email"
             placeholder="Enter your work email"
-            className="px-5 py-3 rounded-xl border border-primary focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition w-1/2"
+            className="px-5 py-3 rounded-xl border border-primary focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition w-full sm:w-2/4"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Button type="submit" className="w-1/3">
+          <Button type="submit" className="w-full sm:w-1/3">
             Get Early Access
           </Button>
         </form>
 
         {/* Feedback Messages */}
-        {error && <p className="mt-2 text-red-500">{error}</p>}
-        {submitted && <p className="mt-2 text-primary font-medium">Thank you for joining! We'll keep you updated.</p>}
+        {error && <p className="mt-2 text-red-primary">{error}</p>}
+        {submitted && (
+          <p className="mt-2 text-primary font-medium">
+            Thank you for joining! We'll keep you updated.
+          </p>
+        )}
 
         {/* Stats Cards */}
-        <div ref={statsRef} className="emp-fadeup emp-d4 grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-[680px] mb-5 mt-10">
+        <div
+          ref={statsRef}
+          className="emp-fadeup emp-d4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-[680px] mb-5 mt-10"
+        >
           {stats.map((s) => (
             <StatCard key={s.label} {...s} />
           ))}
         </div>
 
         {/* Tags */}
-        <div className="mt-5 flex flex-wrap justify-center items-center gap-x-4 gap-y-6 w-170">
-          <span className="px-2 py-2 border rounded-[10px] border-[#DC2626]">Smart Payroll</span>
-          <span className="px-2 py-2 border rounded-[10px] border-[#2563EB]">Attendance</span>
-          <span className="px-2 py-2 border rounded-[10px] border-[#7C3AED]">Compliance</span>
-          <span className="px-2 py-2 border rounded-[10px] border-[#059669]">AI Recruitment</span>
-          <span className="px-2 py-2 border rounded-[10px] border-[#EA580C]">Leave Tracking</span>
-          <span className="px-2 py-2 border rounded-[10px] border-[#334155]">Performance</span>
+        <div
+          className="mt-5 flex flex-wrap justify-center items-center 
+                gap-x-3 gap-y-3 sm:gap-x-4 sm:gap-y-4 md:gap-x-5 md:gap-y-5 
+                w-full max-w-2xl px-2"
+        >
+          <span className="px-2 py-2 border rounded-[10px] border-red-primary">
+            Smart Payroll
+          </span>
+          <span className="px-2 py-2 border rounded-[10px] border-dgreen-primary">
+            Compliance
+          </span>
+          <span className="px-2 py-2 border rounded-[10px] border-green-primary">
+            AI Recruitment
+          </span>
+          <span className="px-2 py-2 border rounded-[10px] border-primary">
+            Performance
+          </span>
+          <span className="px-2 py-2 border rounded-[10px] border-dblue-primary">
+            Attendance
+          </span>
+          <span className="px-2 py-2 border rounded-[10px] border-orange-primary">
+            Leave Tracking
+          </span>
         </div>
       </section>
     </div>

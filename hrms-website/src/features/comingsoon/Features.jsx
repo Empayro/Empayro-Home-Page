@@ -71,14 +71,22 @@ function PaperCard({ card, progress, exitProgress }) {
 
   return (
     <div
-      className="flex-1 min-w-0 max-w-[240px] will-change-transform"
+  className="
+    flex-1 min-w-[220px] sm:min-w-[240px] md:min-w-0 
+    max-w-[260px] 
+    will-change-transform
+  "
       style={{
         transform: `translateY(${translateY}px) rotate(${card.rotate})`,
         opacity: eased * (1 - exit * 0.5), // slight fade on exit
       }}
     >
       <div
-        className="w-full rounded-[11px] flex flex-col items-center justify-center p-[18px_20px_20px] relative overflow-hidden min-h-90 shadow-xl "
+  className="w-full rounded-[11px] flex flex-col items-center justify-center 
+             p-4 sm:p-[18px_20px_20px] 
+             relative overflow-hidden 
+             min-h-[260px] sm:min-h-[320px] md:min-h-[360px] 
+             shadow-xl"
         style={{
           border: `3px solid ${card.borderColor}`,
           background: `${card.bgColor}`,
@@ -88,12 +96,12 @@ function PaperCard({ card, progress, exitProgress }) {
         <div className="absolute inset-0 pointer-events-none opacity-50" />
 
         <div className="flex items-center justify-center py-4">
-          <h3 className="text-center uppercase font-bold leading-tight tracking-wide text-[24px] whitespace-pre-line text-[#111]">
+          <h3 className="text-center uppercase font-bold leading-tight tracking-wide text-[18px] sm:text-[20px] md:text-[24px]">
             {card.title}
           </h3>
         </div>
 
-        <p className="text-center text-[14px] leading-relaxed text-[#5a5040] mb-3 px-1">
+        <p className="text-center text-[12px] sm:text-[13px] md:text-[14px] leading-relaxed text-[#5a5040] mb-3 px-1">
           {card.content}
         </p>
 
@@ -150,7 +158,7 @@ export default function Features() {
   const anyRevealed = progresses.some((p) => p > 0);
 
   return (
-    <div className="p-20">
+    <div className="px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
       <div
         ref={zoneRef}
         className="relative"
@@ -161,16 +169,20 @@ export default function Features() {
       >
         <div
           ref={fadeRef}
-          className={`fade-up ${fadeVisible ? "show sticky top-0 h-screen w-full flex flex-col overflow-hidden" : ""}`}
+          className={`fade-up ${
+            fadeVisible
+              ? "show sticky top-0 h-screen w-full flex flex-col overflow-hidden"
+              : ""
+          }`}
         >
-          <div className="text-center p-10">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+          <div className="text-center px-2 sm:px-4 md:p-10">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               One Unified Platform For <br />
               <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 All HR Operations
               </span>
             </h1>
-            <p className="mt-4 text-gray-600 text-lg">
+            <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
               We eliminate scattered processes, manual chaos, and disconnected
               systems - <br />
               so your team spends less time managing work, and more time
@@ -179,10 +191,7 @@ export default function Features() {
           </div>
 
           <div
-            className="flex-1 flex items-start justify-center gap-5 px-8 overflow-hidden pt-10"
-            // style={{
-            //   transform: `translateY(-${extraOffset}px)`,
-            // }}
+            className=" flex-1 flex items-start justify-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-4 md:px-8 overflow-x-auto md:overflow-hidden pt-6 md:pt-10"
           >
             {CARDS.map((card, i) => (
               <PaperCard

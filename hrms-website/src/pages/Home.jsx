@@ -7,6 +7,7 @@ import HRMSSections from "../features/rough/HRMSSections";
 import KeyFeatures from "../features/home/KeyFeatures";
 import Plans from "../features/home/Plans";
 import VideoCompo from "../features/home/VideoCompo";
+import Popup from "../features/comingsoon/Popup";
 // import HeroSection from "../features/home/HeroSection";
 
 function Home() {
@@ -31,6 +32,8 @@ function Home() {
       <VideoCompo />
 
       <Blogs />
+
+      <Popup/>
     </>
   );
 }

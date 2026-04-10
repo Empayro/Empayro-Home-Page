@@ -114,26 +114,28 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-white text-black py-24">
+    <section className="bg-white text-black py-16 md:py-24">
       {/* Title */}
       <div
         ref={fadeRef}
-        className={`fade-up ${fadeVisible ? "show text-center mb-10" : ""}`}
+        className={`fade-up ${
+          fadeVisible ? "show text-center mb-8 md:mb-12 px-4" : ""
+        }`}
       >
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
           Comprehensive HRMS Solution <br />
           <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             to Empower your workforce
           </span>
         </h1>
-        <p className="mt-4 text-gray-600 text-lg">
+        <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
           Our HRMS platform streamlines your HR processes, boost productivity.
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto flex gap-10 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-10 px-4 sm:px-6">
         {/* LEFT - Tabs */}
-        <div className="w-1/4 hidden md:block border-r pr-6">
+        <div className="w-1/4 hidden md:block border-r pr-4 lg:pr-6">
           <div className="sticky top-32 space-y-4">
             <div className="text-start mb-12">
               <h1 className="text-4xl md:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
@@ -179,10 +181,10 @@ export default function HeroSection() {
             <div
               key={index}
               ref={(el) => (refs.current[index] = el)}
-              className="grid md:grid-cols-2 items-center py-24 min-h-[80vh] border-b border-gray-200"
+              className="grid grid-cols-1 md:grid-cols-2 items-center py-12 md:py-20 min-h-[auto] md:min-h-[80vh] border-b border-gray-200"
             >
               {/* TEXT */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6 text-center md:text-left">
                 <p
                   className="text-sm font-semibold uppercase"
                   style={{
@@ -192,7 +194,7 @@ export default function HeroSection() {
                   {item.subtitle}
                 </p>
 
-                <h3 className="text-3xl md:text-4xl font-bold mt-2">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2">
                   {item.title}
                 </h3>
 
@@ -200,11 +202,11 @@ export default function HeroSection() {
                 <p className="text-gray-400 mt-3 text-sm">{item.content}</p>
 
                 {/* Features */}
-                <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   {item.features.map((feature, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg border border-blue-100"
+                      className="flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-blue-100"
                       style={{
                         border: item.accent,
                       }}
@@ -226,7 +228,7 @@ export default function HeroSection() {
               </div>
 
               {/* VISUAL (Smooth Animation) */}
-              <div className="relative h-[350px] overflow-hidden">
+              <div className="relative h-[220px] sm:h-[280px] md:h-[350px] overflow-hidden mt-6 md:mt-0">
                 <div
                   className={`transition-all duration-700 ease-out transform ${
                     active === index
@@ -235,13 +237,13 @@ export default function HeroSection() {
                   }`}
                 >
                   <video
-                    key={active === index ? "active" : "inactive"} // 🔥 force re-render
+                    key={active === index ? "active" : "inactive"}
                     src={item.video}
                     autoPlay={active === index}
                     muted
                     loop
                     playsInline
-                    className="w-full h-[350px] object-cover rounded-xl"
+                    className="w-full h-full object-cover rounded-xl"
                   />
                 </div>
               </div>

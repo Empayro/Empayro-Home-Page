@@ -41,7 +41,7 @@ function NavbarLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="fixed left-0 z-101 transition-all duration-300 max-w-31 h-screen top-0 bg-transparent backdrop-blur-lg">
+    <div className="fixed left-0 z-101 transition-all duration-300 max-w-31 h-screen top-0 bg-transparent ">
       {/* INNER CONTAINER */}
       <nav className="flex flex-col justify-between items-center transition-all duration-300 h-screen mx-auto px-8 py-10">
         {/* LOGO */}
@@ -55,9 +55,9 @@ function NavbarLanding() {
           className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
         >
           {isMenuOpen ? (
-            <FiX size={24} className="text-black" />
+            <FiX size={24} className="text-black cursor-pointer" />
           ) : (
-            <FiMenu size={24} className="text-black" />
+            <FiMenu size={24} className="text-black cursor-pointer" />
           )}
         </button>
 

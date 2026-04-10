@@ -1,50 +1,52 @@
 import { CiMail } from "react-icons/ci";
 import {
-  FaLinkedin,
-  FaTwitter,
   FaInstagram,
-  FaYoutube,
-  FaFacebook,
-  FaUsers,
   FaFacebookF,
   FaLinkedinIn,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { Link } from "react-router-dom";
 
 function NavbarFooter() {
   return (
-    <>
-      <footer className="text-black max-w-full">
-        <div className="border-none z-10 bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff]">
-          {/* Copy Right Section */}
-          <div className="py-10 max-w-350 flex items-center justify-between m-auto ">
+    <footer className="text-black w-full">
+      <div className="bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff]">
+        
+        {/* Container */}
+        <div className="py-8 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto 
+                        flex flex-col md:flex-row items-center justify-between gap-6">
 
-            <div className="flex items-center justify-center gap-2">
-              <CiMail size={25}/>
-              <p><a href="mailto:support@empayro.com">support@empayro.com</a></p>
-            </div>
-
-            <div className="">© 2026 Empayro . All rights reserved.</div>
-
-            <div className=" flex items-center justify-between gap-4">
-              <Link to="www.instagram.com">
-                <FaInstagram  size={24} />
-              </Link>
-              <Link to="www.facebook.com">
-                <FaFacebookF  size={24} />
-              </Link>
-              <Link to="www.twitter.com">
-                <FaXTwitter size={24} />
-              </Link>
-              <Link to="www.linkdin.com">
-                <FaLinkedinIn  size={24} />
-              </Link>
-            </div>
+          {/* Email */}
+          <div className="flex items-center gap-2 text-sm sm:text-base text-center md:text-left">
+            <CiMail size={22} />
+            <a href="mailto:support@empayro.com" className="hover:underline">
+              support@empayro.com
+            </a>
           </div>
+
+          {/* Copyright */}
+          <div className="text-xs sm:text-sm text-center">
+            © 2026 Empayro. All rights reserved.
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-4">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+              <FaInstagram size={20} className="hover:scale-110 transition" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+              <FaFacebookF size={20} className="hover:scale-110 transition" />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+              <FaXTwitter size={20} className="hover:scale-110 transition" />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+              <FaLinkedinIn size={20} className="hover:scale-110 transition" />
+            </a>
+          </div>
+
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }
 

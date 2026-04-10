@@ -5,10 +5,10 @@ export default function ScrollRevealSection() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const text = [
-  "One", "platform.", "Total", "control.", "Zero", "chaos.",
-  "EMPAYRO", "brings", "attendance,", "payroll,", "and", "people",
-  "management", "into", "perfect", "sync."
-];
+    "One", "platform.", "Total", "control.", "Zero", "chaos.",
+    "EMPAYRO", "brings", "attendance,", "payroll,", "and", "people",
+    "management", "into", "perfect", "sync."
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +20,7 @@ export default function ScrollRevealSection() {
 
       progress = Math.min(Math.max(progress, 0), 1);
 
-      // 🔥 IMPORTANT: Speed up animation (finish early)
-      const acceleratedProgress = progress * 1.8; // adjust 1.5 → 2.5
+      const acceleratedProgress = progress * 1.8;
 
       setScrollProgress(Math.min(acceleratedProgress, 1));
     };
@@ -33,13 +32,16 @@ export default function ScrollRevealSection() {
   }, []);
 
   return (
-    <section className="pb-40">
+    <section className="pb-24 sm:pb-32 md:pb-40">
       <div
         ref={containerRef}
-        className="max-w-5xl mx-auto px-6 text-center"
+        className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-center"
       >
-        <p className="text-2xl md:text-4xl lg:text-5xl font-bold leading-relaxed text-black ">
-          
+        <p className="
+          font-bold text-black
+          text-xl sm:text-2xl md:text-4xl lg:text-5xl
+          leading-snug sm:leading-relaxed
+        ">
           {text.map((word, i) => {
             const total = text.length;
             const start = i / total;
@@ -52,14 +54,18 @@ export default function ScrollRevealSection() {
                 ? 1
                 : (scrollProgress - start) / (end - start);
 
-            const translateY = 20 * (1 - opacity);
-
-
+            // 👇 smaller movement on mobile, bigger on desktop
+            const baseTranslate = window.innerWidth < 640 ? 10 : 20;
+            const translateY = baseTranslate * (1 - opacity);
 
             return (
               <span
                 key={i}
-                className="inline-block mr-2 transition-all duration-200 text-primary "
+                className="
+                  inline-block mr-2 mb-2
+                  transition-all duration-300 ease-out
+                  text-primary
+                "
                 style={{
                   opacity,
                   transform: `translateY(${translateY}px)`,
@@ -69,7 +75,6 @@ export default function ScrollRevealSection() {
               </span>
             );
           })}
-
         </p>
       </div>
     </section>
