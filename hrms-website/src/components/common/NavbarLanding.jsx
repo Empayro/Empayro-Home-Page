@@ -49,36 +49,46 @@ const [scrolled, setScrolled] = useState(false);
 
 useEffect(() => {
   const handleScroll = () => {
-    setScrolled(window.scrollY > 20);
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
-useEffect(() => {
-  const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
+    // ✅ Background toggle
+    setScrolled(currentScrollY > 20);
+
+    // ✅ Always show at top
+    if (currentScrollY < 10) {
+      setShowHeader(true);
+      lastScrollY.current = currentScrollY;
+      return;
+    }
+
+    // ✅ Prevent jitter (threshold)
+    if (Math.abs(currentScrollY - lastScrollY.current) < 10) return;
+
     if (currentScrollY > lastScrollY.current) {
-      // scrolling DOWN
+      // 🔽 scrolling DOWN
       setShowHeader(false);
     } else {
-      // scrolling UP
+      // 🔼 scrolling UP
       setShowHeader(true);
     }
 
     lastScrollY.current = currentScrollY;
   };
 
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
   return (
     // <div className=" fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0">
     <div
-  className={`relative md:fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0 transition-transform duration-300
+  className={`
+    sticky top-0 md:fixed
+    z-50 bg-transparent 
+    w-full md:w-[200px] 
+    h-auto md:h-screen 
+    transition-transform duration-300 ease-in-out
 
     ${showHeader ? "translate-y-0" : "-translate-y-full"} 
     md:translate-y-0
@@ -92,7 +102,7 @@ useEffect(() => {
   h-auto md:h-screen
   transition-all duration-300
 
-  ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
+  ${scrolled ? "bg-white shadow-md" : "bg-white"}
   md:bg-transparent md:shadow-none
 `}>
         {/* LOGO */}

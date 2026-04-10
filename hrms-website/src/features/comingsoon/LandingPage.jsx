@@ -165,7 +165,7 @@ export default function LandingPage() {
         {/* Stats Cards */}
         <div
           ref={statsRef}
-          className="emp-fadeup emp-d4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-[680px] mb-5 mt-10"
+          className="emp-fadeup emp-d4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-[680px] mb-5 mt-10"
         >
           {stats.map((s) => (
             <StatCard key={s.label} {...s} />
