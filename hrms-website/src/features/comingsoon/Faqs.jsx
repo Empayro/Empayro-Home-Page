@@ -59,7 +59,7 @@ const Faqs = () => {
       id="faqs"
     >
       {/* LEFT SIDE */}
-      <div className="lg:w-1/2 flex flex-col justify-center">
+      <div className=" lg:w-1/2 flex flex-col justify-center items-center sm:items-center lg:items-start">
         
         <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
           <div className="bg-primary text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl">
@@ -71,13 +71,14 @@ const Faqs = () => {
         </div>
 
         <h2 className="
-          font-bold text-gray-900 leading-tight mb-4 sm:mb-6
-          text-2xl sm:text-3xl md:text-4xl lg:text-5xl
-        ">
+  font-bold text-gray-900 leading-tight mb-4 sm:mb-6
+  text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
+  text-center sm:text-center lg:text-start
+">
           Got Questions? <br /> We’ve Got Answers
         </h2>
 
-        <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-lg">
+        <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-lg  text-center sm:text-center lg:text-start">
           Everything you need to know about our HRMS platform, features,
           and how we help you manage your workforce better.
         </p>
