@@ -55,7 +55,7 @@ const BUFFER = 200;
 
 const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-function PaperCard({ card, progress, exitProgress }) {
+function PaperCard({ card, progress, exitProgress, index }) {
   const p = Math.max(0, Math.min(1, progress));
   const eased = 1 - Math.pow(1 - p, 3);
 
@@ -95,7 +95,8 @@ function PaperCard({ card, progress, exitProgress }) {
 
         opacity: isMobile ? (progress > 0 ? 1 : 0) : eased * (1 - exit * 0.5),
 
-        zIndex: isMobile ? Math.floor(progress * 100) : "auto",
+        // zIndex: isMobile ? Math.floor(progress * 100) : "auto",
+        zIndex: isMobile ? 100 + index : "auto",
       }}
     >
       <div
@@ -212,6 +213,7 @@ export default function Features() {
               <PaperCard
                 key={card.id}
                 card={card}
+                index={i} 
                 progress={progresses[i]}
                 exitProgress={exitProgresses[i]}
               />

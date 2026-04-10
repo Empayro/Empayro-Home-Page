@@ -212,7 +212,7 @@ export default function HeroSection() {
                       }}
                     >
                       <div
-                        className="w-6 h-6 flex items-center justify-center bg-blue-600 text-white border rounded-full text-xs"
+                        className="w-6 h-6 flex items-center justify-center bg-blue-600 text-white border rounded-full text-xs p-2.5"
                         style={{
                           borderColor: item.color,
                           backgroundColor: item.accent,

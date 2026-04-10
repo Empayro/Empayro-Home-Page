@@ -84,26 +84,26 @@ useEffect(() => {
     // <div className=" fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0">
     <div
   className={`
-    sticky top-0 md:fixed
+    sticky top-0 lg:fixed
     z-50 bg-transparent 
-    w-full md:w-[200px] 
-    h-auto md:h-screen 
+    w-full lg:w-[200px] 
+    h-auto lg:h-screen 
     transition-transform duration-300 ease-in-out
 
     ${showHeader ? "translate-y-0" : "-translate-y-full"} 
-    md:translate-y-0
+    lg:translate-y-0
   `}
 >
       {/* INNER CONTAINER */}
       {/* <nav className=" flex md:flex-col justify-between items-center mx-auto px-4 md:px-6 py-4 md:py-10 h-auto md:h-screen"> */}
         <nav className={`
-  flex md:flex-col justify-between items-center 
-  px-4 md:px-6 py-4 md:py-10 
-  h-auto md:h-screen
+  flex lg:flex-col justify-between items-center 
+  px-4 lg:px-6 py-4 lg:py-10 
+  h-auto lg:h-screen
   transition-all duration-300
 
   ${scrolled ? "bg-white shadow-md" : "bg-white"}
-  md:bg-transparent md:shadow-none
+  lg:bg-transparent lg:shadow-none
 `}>
         {/* LOGO */}
         <Link to="/" className="flex  items-center gap-2">
@@ -126,7 +126,7 @@ useEffect(() => {
           )}
         </button>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <a href="mailto:support@empayro.com">
             <FcVoicePresentation size={40} />
           </a>
@@ -135,7 +135,7 @@ useEffect(() => {
 
       {/* FULL SCREEN MENU OVERLAY */}
       <div
-        className={` fixed top-0 left-0 md:left-[80px] w-full md:w-[calc(100%-80px)] h-screen bg-white z-40 transition-all duration-500
+        className={` fixed top-0 left-0 lg:left-[80px] w-full lg:w-[calc(100%-80px)] h-screen bg-white z-40 transition-all duration-500
         ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"} `}
       >
         {/* Close Button */}
