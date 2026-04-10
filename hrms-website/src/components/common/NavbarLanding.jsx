@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { MenuVideo } from "@/assets";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ComingLogo } from "@/assets";
 
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaHeadset, FaPhone, FaUser } from "react-icons/fa6";
 import { FcAssistant, FcVoicePresentation } from "react-icons/fc";
+import { logo } from "../../assets";
 
 /* ---------------- MENU DATA ---------------- */
 const menus = [
@@ -40,16 +41,66 @@ const menus = [
 function NavbarLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [showHeader, setShowHeader] = useState(true);
+const lastScrollY = useRef(0);
+
+
+const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 20);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY.current) {
+      // scrolling DOWN
+      setShowHeader(false);
+    } else {
+      // scrolling UP
+      setShowHeader(true);
+    }
+
+    lastScrollY.current = currentScrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
-    <div className=" fixed z-50 bg-transparent w-full md:w-[100px] h-auto md:h-screen top-0 left-0">
+    // <div className=" fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0">
+    <div
+  className={`relative md:fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0 transition-transform duration-300
+
+    ${showHeader ? "translate-y-0" : "-translate-y-full"} 
+    md:translate-y-0
+  `}
+>
       {/* INNER CONTAINER */}
-      <nav className=" flex md:flex-col justify-between items-center mx-auto px-4 md:px-6 py-4 md:py-10 h-auto md:h-screen">
+      {/* <nav className=" flex md:flex-col justify-between items-center mx-auto px-4 md:px-6 py-4 md:py-10 h-auto md:h-screen"> */}
+        <nav className={`
+  flex md:flex-col justify-between items-center 
+  px-4 md:px-6 py-4 md:py-10 
+  h-auto md:h-screen
+  transition-all duration-300
+
+  ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
+  md:bg-transparent md:shadow-none
+`}>
         {/* LOGO */}
         <Link to="/" className="flex  items-center gap-2">
           <img
-            src={ComingLogo}
+            src={logo}
             alt="Logo"
-            className="h-10 w-10 md:h-16 md:w-16"
+            className="h-16 w-full"
           />
         </Link>
 
