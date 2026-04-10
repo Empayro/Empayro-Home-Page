@@ -63,16 +63,11 @@ function PaperCard({ card, progress, exitProgress }) {
   const entryY = (1 - eased) * 120;
 
   // EXIT (center → top)
-//   const exitY = exit * -200; // move upward
+  //   const exitY = exit * -200; // move upward
 
   const exitY = -200 * (1 - Math.pow(1 - exit, 3));
 
-  
-
-  const translateY =
-  exit > 0
-    ? exitY
-    : (1 - eased) * 120;
+  const translateY = exit > 0 ? exitY : (1 - eased) * 120;
 
   return (
     <div
@@ -83,7 +78,7 @@ function PaperCard({ card, progress, exitProgress }) {
       }}
     >
       <div
-        className="w-full rounded-[11px] flex flex-col items-center justify-center p-[18px_20px_20px] relative overflow-hidden min-h-[360px] shadow-xl "
+        className="w-full rounded-[11px] flex flex-col items-center justify-center p-[18px_20px_20px] relative overflow-hidden min-h-90 shadow-xl "
         style={{
           border: `3px solid ${card.borderColor}`,
           background: `${card.bgColor}`,
@@ -113,7 +108,7 @@ function PaperCard({ card, progress, exitProgress }) {
 export default function Features() {
   const zoneRef = useRef(null);
   const [progresses, setProgresses] = useState([0, 0, 0, 0]);
-//   const [extraOffset, setExtraOffset] = useState(0);
+  //   const [extraOffset, setExtraOffset] = useState(0);
   const [exitProgresses, setExitProgresses] = useState([0, 0, 0, 0]);
 
   const [fadeRef, fadeVisible] = useInView();
@@ -122,7 +117,9 @@ export default function Features() {
     const onScroll = () => {
       const zone = zoneRef.current;
       if (!zone) return;
-      const scrolledPast = window.scrollY - zone.offsetTop;
+      //   const scrolledPast = window.scrollY - zone.offsetTop;
+      const rect = zone.getBoundingClientRect();
+      const scrolledPast = -rect.top;
 
       const newProgresses = CARDS.map((_, i) => {
         const start = i * SCROLL_PER_CARD;
@@ -153,13 +150,13 @@ export default function Features() {
   const anyRevealed = progresses.some((p) => p > 0);
 
   return (
-    <div className=" min-h-screen">
+    <div className="p-20">
       <div
         ref={zoneRef}
         className="relative"
         style={{
           // height: `calc(100vh + ${TOTAL_SCROLL}px)`
-          height: `calc(100vh + ${TOTAL_SCROLL + TOTAL_EXIT_SCROLL + BUFFER}px)`,
+          height: `${TOTAL_SCROLL + TOTAL_EXIT_SCROLL + BUFFER}px`,
         }}
       >
         <div

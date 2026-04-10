@@ -33,7 +33,7 @@ export default function ScrollRevealSection() {
   }, []);
 
   return (
-    <section className="py-40">
+    <section className="pb-40">
       <div
         ref={containerRef}
         className="max-w-5xl mx-auto px-6 text-center"

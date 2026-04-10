@@ -24,6 +24,8 @@ function ComingSoon() {
 
       <ScrollRevealSection/>
 
+      {/* <HRMSGallery/> */}
+
       {/* <ServicesPreview/> */}
 
       {/* <SlideSection/> */}
