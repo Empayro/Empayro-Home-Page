@@ -53,6 +53,8 @@ const TOTAL_EXIT_SCROLL = EXIT_PER_CARD * CARDS.length;
 
 const BUFFER = 200;
 
+const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
 function PaperCard({ card, progress, exitProgress }) {
   const p = Math.max(0, Math.min(1, progress));
   const eased = 1 - Math.pow(1 - p, 3);
@@ -67,22 +69,37 @@ function PaperCard({ card, progress, exitProgress }) {
 
   const exitY = -200 * (1 - Math.pow(1 - exit, 3));
 
-  const translateY = exit > 0 ? exitY : (1 - eased) * 120;
+  const translateY = isMobile
+  ? (1 - eased) * 80
+  : exit > 0
+  ? exitY
+  : (1 - eased) * 120;
+
+  
 
   return (
     <div
-  className="
-    flex-1 min-w-[220px] sm:min-w-[240px] md:min-w-0 
-    max-w-[260px] 
-    will-change-transform
-  "
+      className={`
+    absolute md:relative min-w-[220px] max-w-[240px]
+    w-[85%] sm:w-[70%] md:w-auto
+    transition-all duration-700 ease-out
+  `}
       style={{
-        transform: `translateY(${translateY}px) rotate(${card.rotate})`,
-        opacity: eased * (1 - exit * 0.5), // slight fade on exit
+        marginTop: isMobile ? `-${progress * 120}px` : "0px",
+        transform: isMobile
+          ? `
+        translateY(${translateY}px)
+        scale(${1 - (1 - eased) * 0.1})
+      `
+          : `translateY(${translateY}px) rotate(${card.rotate})`,
+
+        opacity: isMobile ? (progress > 0 ? 1 : 0) : eased * (1 - exit * 0.5),
+
+        zIndex: isMobile ? Math.floor(progress * 100) : "auto",
       }}
     >
       <div
-  className="w-full rounded-[11px] flex flex-col items-center justify-center 
+        className="w-full rounded-[11px] flex flex-col items-center justify-center 
              p-4 sm:p-[18px_20px_20px] 
              relative overflow-hidden 
              min-h-[260px] sm:min-h-[320px] md:min-h-[360px] 
@@ -190,9 +207,7 @@ export default function Features() {
             </p>
           </div>
 
-          <div
-            className=" flex-1 flex items-start justify-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-4 md:px-8 overflow-x-auto md:overflow-hidden pt-6 md:pt-10"
-          >
+          <div className=" flex-1 flex items-center justify-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-4 md:px-8 overflow-x-auto md:overflow-hidden pt-6 md:pt-10">
             {CARDS.map((card, i) => (
               <PaperCard
                 key={card.id}

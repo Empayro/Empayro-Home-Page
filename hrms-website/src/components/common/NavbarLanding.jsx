@@ -41,12 +41,16 @@ function NavbarLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="fixed left-0 z-101 transition-all duration-300 max-w-31 h-screen top-0 bg-transparent ">
+    <div className=" fixed z-50 bg-transparent w-full md:w-[100px] h-auto md:h-screen top-0 left-0">
       {/* INNER CONTAINER */}
-      <nav className="flex flex-col justify-between items-center transition-all duration-300 h-screen mx-auto px-8 py-10">
+      <nav className=" flex md:flex-col justify-between items-center mx-auto px-4 md:px-6 py-4 md:py-10 h-auto md:h-screen">
         {/* LOGO */}
         <Link to="/" className="flex  items-center gap-2">
-          <img src={ComingLogo} alt="Logo" className="h-20 w-20" />
+          <img
+            src={ComingLogo}
+            alt="Logo"
+            className="h-10 w-10 md:h-16 md:w-16"
+          />
         </Link>
 
         {/* BARS ICON */}
@@ -61,9 +65,8 @@ function NavbarLanding() {
           )}
         </button>
 
-        <div>
+        <div className="hidden md:block">
           <a href="mailto:support@empayro.com">
-            {/* <FaPhone size={25} /> */}
             <FcVoicePresentation size={40} />
           </a>
         </div>
@@ -71,25 +74,27 @@ function NavbarLanding() {
 
       {/* FULL SCREEN MENU OVERLAY */}
       <div
-        className={`fixed top-0 left-32 right-0 w-screen h-screen bg-white z-999 transition-all duration-500 ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={` fixed top-0 left-0 md:left-[80px] w-full md:w-[calc(100%-80px)] h-screen bg-white z-40 transition-all duration-500
+        ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"} `}
       >
         {/* Close Button */}
         <button
           onClick={() => setIsMenuOpen(false)}
-          className="absolute bottom-6 left-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
+          className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
         >
-          {/* <FiX size={24} className="text-slate-600" /> */}
+          <FiX size={24} className="text-slate-600" />
         </button>
 
         {/* Menu with left video + right item list */}
-        <div className="w-full h-full grid grid-cols-2">
-          <div className="h-full bg-white flex flex-col items-start justify-center gap-6 px-16 py-16">
+        <div className="w-full h-full grid grid-cols-1 md:grid-cols-2">
+          <div className="h-full bg-white flex flex-col items-center md:items-start justify-center gap-6 px-6 md:px-16 py-10 md:py-16
+">
             {menus.map((menu) => {
               return (
                 <a
                   key={menu.name}
                   href={menu.path}
-                  className="text-3xl font-semibold text-slate-700 hover:text-primary hover:text-5xl hover:font-bold transition-all duration-300"
+                  className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700  hover:text-primary md:hover:text-5xl md:hover:font-bold transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {menu.name}
@@ -98,7 +103,7 @@ function NavbarLanding() {
             })}
           </div>
 
-          <div className="h-full flex items-center justify-center pr-50">
+          <div className="hidden md:flex h-full items-center justify-center pr-10 lg:pr-20">
             <video
               className="w-[90%] h-auto rounded-2xl "
               src={MenuVideo}
@@ -110,8 +115,6 @@ function NavbarLanding() {
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 }
