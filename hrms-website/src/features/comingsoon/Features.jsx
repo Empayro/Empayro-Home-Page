@@ -106,6 +106,7 @@ function PaperCard({ card, progress, exitProgress, index }) {
              min-h-[260px] sm:min-h-[320px] md:min-h-[360px] 
              shadow-xl"
         style={{
+          rotate: `${card.rotate}`,
           border: `3px solid ${card.borderColor}`,
           background: `${card.bgColor}`,
         }}
