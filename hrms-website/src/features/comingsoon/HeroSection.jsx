@@ -6,59 +6,53 @@ import { useInView } from "../../hooks/useInView";
 export default function HeroSection() {
   const sections = [
     {
-      subtitle: "Overview",
-      title: "Smart Payroll Dashboard",
-      desc: "Get a complete overview of your workforce in one place.",
+      subtitle: "Indian Compliant",
+      title: "Indian Compliance, Built In",
+      desc: "PF, ESI, PT, TDS, gratuity, labour welfare — all state-wise rules automated. No more chasing your CA for every statutory update.",
       color: "#0078D4",
       accent: "#DEEEFA",
-      content:
-        "Monitor attendance, payroll, and employee activity from a single dashboard designed for clarity and speed.",
-      features: ["Real-time insights", "Custom widgets"],
+      // content:"Monitor attendance, payroll, and employee activity from a single dashboard designed for clarity and speed.",
+      features: ["Statutory Ready (PF, ESI, PT)", "Auto Compliance Updates"],
       video: MenuVideo,
     },
     {
-      subtitle: "Tracking",
-      title: "Attendance Management",
-      desc: "Track employee attendance in real-time effortlessly.",
+      subtitle: "Fast Deployment",
+      title: "Up and Running in 48 Hours",
+      desc: "Import your employee data, set your leave policies, connect your biometric — and you're live. No 6-week implementations here.",
       color: "#5CB400",
       accent: "#E5F3D3",
-      content:
-        "Eliminate manual errors with automated attendance tracking and real-time updates across teams.",
-      features: ["Live tracking", "Geo tagging"],
+      // content:"Eliminate manual errors with automated attendance tracking and real-time updates across teams.",
+      features: ["Quick Setup & Go-Live", "Hassle-Free Onboarding"],
       video: MenuVideo,
     },
     {
-      subtitle: "Automation",
-      title: "AI Recruitment",
-      desc: "Process salaries without errors in seconds.",
+      subtitle: "Mobile Ready",
+      title: "Mobile-First for Field Teams",
+      desc: "Geo-fenced attendance, selfie clock-in, mobile payslips — purpose-built for workforces that aren't always at a desk.",
       color: "#F47B20",
       accent: "#FDE8D4",
-      content:
-        "Automate payroll calculations, deductions, and compliance without worrying about mistakes.",
-      features: ["Auto calculations", "Tax handling"],
+      // content:"Automate payroll calculations, deductions, and compliance without worrying about mistakes.",
+      features: ["Attendance on the Go", "Real-Time Field Tracking"],
       video: MenuVideo,
     },
     {
-      subtitle: "Management",
-      title: "Employee Management",
-      desc: "Approve or reject leaves with one click.",
+      subtitle: "Transparent Pricing",
+      title: "Honest Pricing, Indian Scale",
+      desc: "No hidden per-module fees. No enterprise lock-in. Plans designed for Indian business budgets — from founder-led to large corporations.",
       color: "#8A6A00",
       accent: "#FDF3C0",
-      content:
-        "Simplify leave requests and approvals with a streamlined workflow built for HR teams.",
-      features: ["Quick approval", "Leave tracking"],
+      // content: "Simplify leave requests and approvals with a streamlined workflow built for HR teams.",
+      features: ["Transparent Costing", "Scales with Your Team"],
       video: MenuVideo,
     },
     {
-      subtitle: "Insights",
-      title: "Performance Analytics",
-      desc: "Make better decisions with real-time analytics.",
+      subtitle: "Local Data Storage",
+      title: "Your Data Stays in India",
+      desc: "Servers on Indian soil. Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
       color: "#E8410A",
-      accent: "#FCDDD4",
-
-      content:
-        "Generate powerful reports and gain insights to improve productivity and decision-making.",
-      features: ["Custom reports", "Visual analytics"],
+      accent:"#FCDDD4",
+      // content: "Generate powerful reports and gain insights to improve productivity and decision-making.",
+      features: ["India-Based Data Hosting", "Secure & Local Storage"],
       video: MenuVideo,
     },
   ];
@@ -123,13 +117,13 @@ export default function HeroSection() {
         }`}
       >
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-          Comprehensive HRMS Solution <br />
-          <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-            to Empower your workforce
+          HR software that 
+          <span className="bg-gradient-to-r ml-4 from-primary to-secondary text-transparent bg-clip-text">
+            gets India
           </span>
         </h1>
         <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
-          Our HRMS platform streamlines your HR processes, boost productivity.
+          State-wise compliance, multi-location teams, field workforce, Indian <br />payroll structures - we built Empayro keeping every bit of that in mind.
         </p>
       </div>
 

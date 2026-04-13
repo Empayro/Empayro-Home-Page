@@ -11,7 +11,7 @@ const CARDS = [
     bgColor: "#DEEEFA",
     rotate: "-4deg",
     content:
-      "No more manual fixes. Auto-handled shifts, policies, and edge cases - always accurate.",
+      "Location-verified clock-in — accurate for remote and field teams",
   },
   {
     id: 2,
@@ -21,27 +21,27 @@ const CARDS = [
     bgColor: "#E5F3D3",
     rotate: "4deg",
     content:
-      "Run payroll without chaos. Accurate, compliant, and done in minutes - not days.",
+      "Run accurate payroll for your entire company in minutes",
   },
   {
     id: 3,
-    title: "Unified System",
+    title: "Self-Service",
     borderColor: "#F47B20",
     btnColor: "#F47B20",
     bgColor: "#FDE8D4",
     rotate: "-4deg",
     content:
-      "Everything in one place. Attendance, payroll, and people - fully connected, zero gaps.",
+      "Leave applications, payslip downloads, profile updates — no HR needed",
   },
   {
     id: 4,
-    title: "Built for Teams",
+    title: "Analytics",
     borderColor: "#8A6A00",
     btnColor: "#8A6A00",
     bgColor: "#FDF3C0",
     rotate: "4deg",
     content:
-      "Not just for HR. Designed for employees, managers, and founders alike.",
+      "Age, tenure, gender, department — real-time people intelligence",
   },
 ];
 
@@ -196,16 +196,13 @@ export default function Features() {
         >
           <div className="text-center px-2 sm:px-4 md:p-10">
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              One Unified Platform For <br />
+              Everything for HR. <br />
               <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-                All HR Operations
+                In one platform.
               </span>
             </h1>
             <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-              We eliminate scattered processes, manual chaos, and disconnected
-              systems - <br />
-              so your team spends less time managing work, and more time
-              actually doing it.
+              From the day someone joins to the day they exit - every HR <br /> touchpoint, covered. No more juggling 5 different tools.
             </p>
           </div>
 

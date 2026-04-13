@@ -97,7 +97,7 @@ useEffect(() => {
       {/* INNER CONTAINER */}
       {/* <nav className=" flex md:flex-col justify-between items-center mx-auto px-4 md:px-6 py-4 md:py-10 h-auto md:h-screen"> */}
         <nav className={`
-  flex lg:flex-col justify-between items-center 
+  flex lg:flex-col justify-between items-start 
   px-4 lg:px-6 py-4 lg:py-10 
   h-auto lg:h-screen
   transition-all duration-300
@@ -135,7 +135,7 @@ useEffect(() => {
 
       {/* FULL SCREEN MENU OVERLAY */}
       <div
-        className={` fixed top-0 left-0 lg:left-[80px] w-full lg:w-[calc(100%-80px)] h-screen bg-white z-40 transition-all duration-500
+        className={` fixed top-0  left-[80px] h-screen w-[calc(100vw-80px)] bg-white z-30 transition-all duration-500
         ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"} `}
       >
         {/* Close Button */}
@@ -147,7 +147,7 @@ useEffect(() => {
         </button>
 
         {/* Menu with left video + right item list */}
-        <div className="w-full h-full grid grid-cols-1 md:grid-cols-2">
+        <div className="w-full h-full  grid grid-cols-1 items-center md:grid-cols-2">
           <div className="h-full bg-white flex flex-col items-center md:items-start justify-center gap-6 px-6 md:px-16 py-10 md:py-16
 ">
             {menus.map((menu) => {
@@ -166,7 +166,7 @@ useEffect(() => {
 
           <div className="hidden md:flex h-full items-center justify-center pr-10 lg:pr-20">
             <video
-              className="w-[90%] h-auto rounded-2xl "
+              className="h-auto rounded-2xl"
               src={MenuVideo}
               autoPlay
               loop

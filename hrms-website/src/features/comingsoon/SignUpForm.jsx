@@ -58,11 +58,10 @@ const SignUpForm = () => {
         {/* Title Box */}
         <div className="bg-blue-100/60 backdrop-blur-md rounded-xl sm:rounded-2xl px-5 sm:px-8 py-5 sm:py-6 mb-8 sm:mb-10 shadow-sm">
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-slate-800 mb-2 sm:mb-3">
-            Join Our Waiting List
+            Don't let your team miss <br /> <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text ">India's HR, Finally Sorted.</span> 
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-            We’re launching soon. Sign up to get notified and access exclusive
-            early features.
+            Secure your place at the front of the queue. Get first access <br /> the moment Empayro goes live.
           </p>
         </div>
 

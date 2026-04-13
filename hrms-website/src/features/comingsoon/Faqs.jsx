@@ -13,45 +13,46 @@ const Faqs = () => {
   const items = [
     {
       num: "01",
-      title: "Technology Solutions",
-      img: Service1,
+      title: "When is Empayro launching?",
       content:
-        "We provide scalable tech solutions to streamline HR operations and boost efficiency across teams.",
+        "We're launching this winter. Waitlist members get early access before the general public - giving you time to set up your company, explore the platform, and be fully ready from day one.",
     },
     {
       num: "02",
-      title: "Education & Training",
-      img: Service2,
+      title: "We're a small team just getting started - is this right for us?",
       content:
-        "Upskill your workforce with structured training programs and performance tracking tools.",
+        "Absolutely. Our Basic plan gives you attendance, leave management, payroll, and compliance without any bloat. As your company grows, upgrading takes a single click and all your data moves with you - nothing to reconfigure.",
     },
     {
       num: "03",
-      title: "Invitation & Design",
-      img: Service3,
+      title: "We already use another HRMS. How hard is migration?",
       content:
-        "Create engaging internal communications and onboarding experiences with ease.",
+        "Our onboarding team handles the heavy lifting. We support Excel and CSV imports, and direct integrations with most commonly used tools. Most companies are fully live within 48 hours — employee data, leave balances, and payroll history included.",
     },
     {
       num: "04",
-      title: "Creative Printing",
-      img: Service4,
+      title: "How exactly does the referral reward work?",
       content:
-        "Design employee assets and HR materials with a creative edge.",
+        "After joining the waitlist, we email you a personalised referral link. Every person who signs up through it counts as one referral. Reach 3 referrals and PMS is unlocked free for 1 month (limited users). Reach 5 and the Chat app is unlocked free for 1 month (limited users). Rewards are automatically applied to your account at launch — no action needed.",
     },
     {
       num: "05",
-      title: "Marketing Strategies",
-      img: Service5,
+      title: "Is our employee data safe?",
       content:
-        "Build employer branding and internal engagement strategies that work.",
+        "Your data is stored on servers physically located in India — fully compliant with the DPDP Act 2023 and IT Act. We use AES-256 encryption, role-based access controls, and regular third-party security audits. Your employee data never leaves Indian borders.",
+    },
+    {
+      num: "06",
+      title: "What's the advantage of joining the waitlist now?",
+      content:
+        "Waitlist members get first access before general availability, priority onboarding support, early-adopter status, and the ability to earn add-on rewards through referrals — all of which are only available during the pre-launch period.",
     },
   ];
 
   return (
     <section
       className="
-        max-w-7xl mx-auto 
+        max-w-350 mx-auto 
         px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 
         py-12 sm:py-16 md:py-20
         flex flex-col lg:flex-row gap-10 lg:gap-16
@@ -66,7 +67,7 @@ const Faqs = () => {
             <FaQuestion className="text-lg sm:text-2xl" />
           </div>
           <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
-            Support & Help
+            Questions? Answered.
           </p>
         </div>
 
@@ -75,7 +76,7 @@ const Faqs = () => {
   text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
   text-center sm:text-center lg:text-start
 ">
-          Got Questions? <br /> We’ve Got Answers
+          Everything you <br /><span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">wanted to know</span> 
         </h2>
 
         <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-lg  text-center sm:text-center lg:text-start">

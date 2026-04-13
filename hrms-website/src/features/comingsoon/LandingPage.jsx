@@ -115,26 +115,23 @@ export default function LandingPage() {
         }`}
       >
         {/* Launching Badge */}
-        <div className="bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-medium border-primary border flex items-center gap-2 mb-5">
+        <div className="bg-primary/10 text-primary px-5 py-2 rounded-full text-xs md:text-sm font-medium border-primary border flex items-center gap-2 mb-5">
           <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-          WE ARE LAUNCHING SOON
+          India's Next-Generation HRMS Platform
         </div>
 
         {/* Title */}
         <h1
-          className="text-[clamp(32px,6vw,80px)] font-bold leading-[1.1] md:leading-[1.05] bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text tracking-tight
-"
-        >
-          Think Ahead <span className="font-bold text-black">of</span> <br />
-          <span className="stroke text-black font-bold [WebkitTextStroke:2px_rgba(91,127,255,0.5)]">
-            everything
+          className="text-[clamp(32px,6vw,80px)] leading-[1.1] md:leading-[1.05] stroke text-black font-bold [WebkitTextStroke:2px_rgba(91,127,255,0.5)]">
+          India's HR,<br />
+          <span className=" font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text tracking-tight ">
+            Finally Sorted.
           </span>
         </h1>
 
         {/* Description */}
-        <p className="mt-6 text-gray-400 max-w-xl text-sm md:text-base">
-          One intelligent platform to hire, manage, pay, and grow your team{" "}
-          <br /> all in one place.
+        <p className="mt-6 text-gray-900 max-w-xl text-sm md:text-base">
+          From <strong>attendance & payroll</strong> to <strong> compliance & people analytics - </strong> <br /> everything for HR, in one platform. Purpose-built for the way Indian <br /> businesses actually work.
         </p>
 
         {/* CTA Form */}
@@ -174,7 +171,7 @@ export default function LandingPage() {
 
         {/* Tags */}
         <div
-          className="mt-5 flex flex-wrap justify-center items-center 
+          className="mt-5 flex flex-wrap justify-between md:justify-center items-center 
                 gap-x-3 gap-y-3 sm:gap-x-4 sm:gap-y-4 md:gap-x-5 md:gap-y-5 
                 w-full max-w-2xl px-2"
         >
