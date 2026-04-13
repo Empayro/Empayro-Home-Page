@@ -86,7 +86,7 @@ useEffect(() => {
   className={`
     sticky top-0 lg:fixed
     z-50 bg-transparent 
-    w-full lg:w-[200px] 
+    w-full lg:w-[250px] 
     h-auto lg:h-screen 
     transition-transform duration-300 ease-in-out
 
@@ -106,11 +106,11 @@ useEffect(() => {
   lg:bg-transparent lg:shadow-none
 `}>
         {/* LOGO */}
-        <Link to="/" className="flex  items-center gap-2">
+        <Link to="/">
           <img
             src={logo}
             alt="Logo"
-            className="h-16 w-full"
+            className="w-full h-auto"
           />
         </Link>
 
@@ -135,16 +135,16 @@ useEffect(() => {
 
       {/* FULL SCREEN MENU OVERLAY */}
       <div
-        className={` fixed top-0  left-[80px] h-screen w-[calc(100vw-80px)] bg-white z-30 transition-all duration-500
+        className={` fixed top-0 left-0 h-screen w-screen bg-white z-[-30] transition-all duration-500 p-20
         ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"} `}
       >
         {/* Close Button */}
-        <button
+        {/* <button
           onClick={() => setIsMenuOpen(false)}
           className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
         >
           <FiX size={24} className="text-slate-600" />
-        </button>
+        </button> */}
 
         {/* Menu with left video + right item list */}
         <div className="w-full h-full  grid grid-cols-1 items-center md:grid-cols-2">
