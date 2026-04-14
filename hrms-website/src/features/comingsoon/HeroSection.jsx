@@ -108,7 +108,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-white text-black py-16 md:py-24">
+    // <section className="bg-white text-black py-16 md:py-24">
+    <section className="bg-white text-black dark:bg-black dark:text-white py-16 md:py-24">
       {/* Title */}
       <div
         ref={fadeRef}
@@ -116,7 +117,7 @@ export default function HeroSection() {
           fadeVisible ? "show text-center mb-8 md:mb-12 px-4" : ""
         }`}
       >
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
           HR software that 
           <span className="bg-gradient-to-r ml-4 from-primary to-secondary text-transparent bg-clip-text">
             gets India
@@ -134,7 +135,7 @@ export default function HeroSection() {
             <div className="text-start mb-12">
               <h1 className="text-4xl md:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 HRMS Solution <br />
-                <span className=" text-[34px] text-gray-900 leading-tight">
+                <span className=" text-[34px] text-gray-900 dark:text-white leading-tight">
                   to Empower your workforce
                 </span>
               </h1>

@@ -39,6 +39,20 @@ const menus = [
 
 /* ---------------- COMPONENT ---------------- */
 function NavbarLanding() {
+
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved) setTheme(saved);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("light", "dark");
+document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [showHeader, setShowHeader] = useState(true);
@@ -80,8 +94,12 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
+
+
   return (
-    // <div className=" fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0">
+    <>
+    
+    {/* // <div className=" fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0"> */}
     <div
   className={`
     sticky top-0 lg:fixed
@@ -110,12 +128,12 @@ useEffect(() => {
           <img
             src={logo}
             alt="Logo"
-            className="w-full h-auto"
+            className="w-40 h-auto lg:w-full lg:h-auto"
           />
         </Link>
 
         {/* BARS ICON */}
-        <button
+        {/* <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
         >
@@ -124,7 +142,21 @@ useEffect(() => {
           ) : (
             <FiMenu size={24} className="text-black cursor-pointer" />
           )}
-        </button>
+        </button> */}
+
+         <div className="toggle-container">
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          checked={theme === "dark"}
+          onChange={() =>
+            setTheme(theme === "light" ? "dark" : "light")
+          }
+        />
+        <label htmlFor="theme-toggle" className="toggle-label">
+          <span className="toggle-ball"></span>
+        </label>
+      </div>
 
         <div className="hidden lg:block">
           <a href="mailto:support@empayro.com">
@@ -133,9 +165,12 @@ useEffect(() => {
         </div>
       </nav>
 
-      {/* FULL SCREEN MENU OVERLAY */}
+      
+    </div>
+
+    {/* FULL SCREEN MENU OVERLAY */}
       <div
-        className={` fixed top-0 left-0 h-screen w-screen bg-white z-[-30] transition-all duration-500 p-20
+        className={` fixed top-0 left-0 h-screen w-screen bg-white z-40 transition-all duration-500 p-20
         ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"} `}
       >
         {/* Close Button */}
@@ -148,14 +183,14 @@ useEffect(() => {
 
         {/* Menu with left video + right item list */}
         <div className="w-full h-full  grid grid-cols-1 items-center md:grid-cols-2">
-          <div className="h-full bg-white flex flex-col items-center md:items-start justify-center gap-6 px-6 md:px-16 py-10 md:py-16
+          <div className="h-full bg-white flex flex-col items-center md:items-start justify-center gap-6 px-6 md:px-16 py-10 md:py-16 lg:pl-32
 ">
             {menus.map((menu) => {
               return (
                 <a
                   key={menu.name}
                   href={menu.path}
-                  className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700  hover:text-primary md:hover:text-5xl md:hover:font-bold transition-all duration-300"
+                  className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700  hover:text-primary md:hover:text-5xl md:hover:font-bold transition-all duration-300 cursor-pointer"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {menu.name}
@@ -166,7 +201,7 @@ useEffect(() => {
 
           <div className="hidden md:flex h-full items-center justify-center pr-10 lg:pr-20">
             <video
-              className="h-auto rounded-2xl"
+              className="h-auto rounded-2xl border-none"
               src={MenuVideo}
               autoPlay
               loop
@@ -176,7 +211,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-    </div>
+      </>
   );
 }
 

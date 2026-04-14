@@ -202,7 +202,7 @@ export default function Features() {
               </span>
             </h1>
             <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-              From the day someone joins to the day they exit - every HR <br /> touchpoint, covered. No more juggling 5 different tools.
+              From the day someone joins to the day they exit - every HR <br /> touchpoint, covered. No more juggling 4 different tools.
             </p>
           </div>
 

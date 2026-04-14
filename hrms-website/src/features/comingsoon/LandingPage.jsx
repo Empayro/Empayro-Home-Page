@@ -7,13 +7,13 @@ import { useInView } from "../../hooks/useInView";
 
 function StatCard({ label, icon: Icon, color }) {
   return (
-    <div className="flex flex-col items-center gap-2 px-5 py-4 rounded-xl bg-white shadow-sm hover:shadow-md transition">
+    <div className="flex flex-col items-center gap-2 px-5 py-4 rounded-xl bg-white border-white dark:bg-black dark:border  shadow-sm hover:shadow-md transition">
       <div
         className={`w-12 h-12 flex items-center justify-center rounded-lg ${color}`}
       >
-        <Icon className="text-lg" size={24} />
+        <Icon className="text-lg text-black " size={24} />
       </div>
-      <p className="text-sm font-medium text-gray-700 text-center">{label}</p>
+      <p className="text-sm font-medium text-gray-700 dark:text-white text-center">{label}</p>
     </div>
   );
 }
@@ -88,8 +88,12 @@ export default function LandingPage() {
     <div
       ref={heroRef}
       onMouseMove={handleMouse}
-      className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] text-black overflow-hidden 
-             pl-0" // 👈 space for left header
+      // className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] text-black overflow-hidden
+      className="relative min-h-screen 
+bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] 
+dark:from-[#0b0b0b] dark:to-[#000000] 
+text-black dark:text-white 
+overflow-hidden pl-0" // 👈 space for left header
       id="home"
     >
       {/* Gradient Mesh */}
@@ -121,17 +125,20 @@ export default function LandingPage() {
         </div>
 
         {/* Title */}
-        <h1
-          className="text-[clamp(32px,6vw,80px)] leading-[1.1] md:leading-[1.05] stroke text-black font-bold [WebkitTextStroke:2px_rgba(91,127,255,0.5)]">
-          India's HR,<br />
+        <h1 className="text-[clamp(32px,6vw,80px)] leading-[1.1] md:leading-[1.05] stroke text-black dark:text-white font-bold [WebkitTextStroke:2px_rgba(91,127,255,0.5)]">
+          India's HR,
+          <br />
           <span className=" font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text tracking-tight ">
             Finally Sorted.
           </span>
         </h1>
 
         {/* Description */}
-        <p className="mt-6 text-gray-900 max-w-xl text-sm md:text-base">
-          From <strong>attendance & payroll</strong> to <strong> compliance & people analytics - </strong> <br /> everything for HR, in one platform. Purpose-built for the way Indian <br /> businesses actually work.
+        <p className="mt-6 text-gray-900 dark:text-white max-w-xl text-sm md:text-base">
+          From <strong>attendance & payroll</strong> to{" "}
+          <strong> compliance & people analytics - </strong> <br /> everything
+          for HR, in one platform. Purpose-built for the way Indian <br />{" "}
+          businesses actually work.
         </p>
 
         {/* CTA Form */}
@@ -142,7 +149,7 @@ export default function LandingPage() {
           <input
             type="email"
             placeholder="Enter your work email"
-            className="px-5 py-3 rounded-xl border border-primary focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition w-full sm:w-2/4"
+            className="px-5 py-3 rounded-xl border border-primary focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition w-full sm:w-2/4 placeholder:text-gray-500 dark:placeholder:text-gray-400"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
