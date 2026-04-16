@@ -126,7 +126,7 @@ function NavbarLanding() {
       >
         <nav
           className={`
-                      max-w-350 mx-auto flex justify-between items-center lg:px-6 lg:py-5 h-auto transition-all duration-300 
+                      max-w-350 mx-auto flex justify-between items-center lg:px-6 lg:py-5 py-2 px-4 h-auto transition-all duration-300 
                       ${scrolled ? "border-none" : "border-b border-b-[#6161615e]"}
   `}
         >
