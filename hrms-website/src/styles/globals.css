@@ -1,23 +1,23 @@
 @theme {
-  --color-primary: #0078D4;
-  --color-secondary: #76C3FF;
+  --color-primary: #0078d4;
+  --color-secondary: #76c3ff;
 
-  --color-green-primary: #5CB400;
-  --color-green-secondary: #E5F3D3;
+  --color-green-primary: #5cb400;
+  --color-green-secondary: #e5f3d3;
 
-  --color-orange-primary: #F47B20;
-  --color-orange-secondary: #FDE8D4;
+  --color-orange-primary: #f47b20;
+  --color-orange-secondary: #fde8d4;
 
-  --color-red-primary: #E8410A;
-  --color-red-secondary: #FCDDD4;
+  --color-red-primary: #e8410a;
+  --color-red-secondary: #fcddd4;
 
-  --color-dgreen-primary: #8A6A00;
-  --color-dgreen-secondary: #FDF3C0;
+  --color-dgreen-primary: #8a6a00;
+  --color-dgreen-secondary: #fdf3c0;
 
-  --color-dblue-primary: #00A4EF;
-  --color-dblue-secondary: #D4EFFC;
+  --color-dblue-primary: #00a4ef;
+  --color-dblue-secondary: #d4effc;
 
-  --primary-gradient: linear-gradient(to left, #0078D4, #76C3FF);
+  --primary-gradient: linear-gradient(to left, #0078d4, #76c3ff);
 }
 
 @keyframes FadeUp {
@@ -49,9 +49,17 @@
 }
 
 @keyframes softPulse {
-  0% { transform: scale(1); opacity: 0.4; }
-  70% { transform: scale(1.4); opacity: 0; }
-  100% { opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .animate-soft-pulse {
@@ -88,8 +96,6 @@
   animation: fadeSlideRight 0.6s ease forwards;
 }
 
-
-
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
@@ -101,12 +107,15 @@
   transform: translateY(0);
 }
 
-
 @keyframes floatX {
-  0%, 100% { transform: translateX(0px); }
-  50% { transform: translateX(15px); }
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
 }
-
 
 /* Theme Colors */
 :root {
@@ -129,7 +138,7 @@ body {
     border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     fill 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   will-change: background-color, color;
 }
 
@@ -172,8 +181,10 @@ body {
   top: 2px;
   left: 2px;
   border-radius: 50%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Active State (Dark Mode ON) */
@@ -184,3 +195,12 @@ body {
 .toggle-container input:checked + .toggle-label .toggle-ball {
   transform: translateX(24px);
 }
+
+
+
+
+
+
+
+
+

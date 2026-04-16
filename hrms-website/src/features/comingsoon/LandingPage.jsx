@@ -5,17 +5,21 @@ import { RiRocketLine, RiStarSmileLine } from "react-icons/ri";
 import { FiUsers } from "react-icons/fi";
 import { useInView } from "../../hooks/useInView";
 
-function StatCard({ label, icon: Icon, color }) {
+function Digit({ value }) {
   return (
-    <div className="flex flex-col items-center gap-2 px-5 py-4 rounded-xl bg-white border-white dark:bg-black dark:border  shadow-sm hover:shadow-md transition">
+    <div className="relative h-[60px] overflow-hidden">
       <div
-        className={`w-12 h-12 flex items-center justify-center rounded-lg ${color}`}
+        className="flex flex-col transition-transform duration-500 ease-out will-change-transform"
+        style={{
+          transform: `translateY(-${value * 60}px)`,
+        }}
       >
-        <Icon className="text-lg text-black " size={24} />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+          <span key={num} className="h-[60px] flex items-center justify-center">
+            {num}
+          </span>
+        ))}
       </div>
-      <p className="text-sm font-medium text-gray-700 dark:text-white text-center">
-        {label}
-      </p>
     </div>
   );
 }
@@ -25,6 +29,10 @@ export default function LandingPage() {
   const heroRef = useRef(null);
   const statsRef = useRef(null);
 
+  const [count, setCount] = useState(2847);
+
+  const [setAnimate] = useState(false);
+
   const [fadeRef, fadeVisible] = useInView();
 
   const [email, setEmail] = useState("");
@@ -32,35 +40,17 @@ export default function LandingPage() {
   const [error, setError] = useState("");
 
   const handleMouse = (e) => {
-    const rect = heroRef.current.getBoundingClientRect();
+  if (!heroRef.current) return;
+
+  const rect = heroRef.current.getBoundingClientRect();
+
+  requestAnimationFrame(() => {
     setMousePos({
       x: ((e.clientX - rect.left) / rect.width) * 100,
       y: ((e.clientY - rect.top) / rect.height) * 100,
     });
-  };
-
-  const stats = [
-    {
-      label: "Save 10+ hours weekly",
-      icon: FiUsers,
-      color: "bg-dblue-secondary",
-    },
-    {
-      label: "Automate Payroll",
-      icon: MdOutlinePayments,
-      color: "bg-green-secondary",
-    },
-    {
-      label: "Automated HR Tasks",
-      icon: RiRocketLine,
-      color: "bg-orange-secondary",
-    },
-    {
-      label: "Hire Smarter with AI",
-      icon: RiStarSmileLine,
-      color: "bg-red-secondary",
-    },
-  ];
+  });
+};
 
   // ✅ Form submission
   const handleSubmit = (e) => {
@@ -72,19 +62,48 @@ export default function LandingPage() {
       return;
     }
 
-    // Simple email validation
     const emailRegex = /\S+@\S+\.\S+/;
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email address.");
       return;
     }
 
-    // Simulate API call / submission
     setTimeout(() => {
       setSubmitted(true);
       setEmail("");
+
+      // ✅ increase counter
+      setCount((prev) => prev + 1);
     }, 500);
   };
+
+  const [displayCount, setDisplayCount] = useState(count);
+
+  useEffect(() => {
+    if (displayCount === count) return;
+
+    let start = displayCount;
+    let end = count;
+    let increment = (end - start) / 10;
+
+    const timer = setInterval(() => {
+      start += increment;
+
+      if (increment > 0 && start >= end) {
+        start = end;
+        clearInterval(timer);
+      }
+
+      setDisplayCount(Math.floor(start));
+    }, 30);
+
+    return () => clearInterval(timer);
+  }, [count]);
+
+  const digits = displayCount
+    .toLocaleString()
+    .split("")
+    .map((char) => (char === "," ? "," : Number(char)));
 
   return (
     <div
@@ -163,14 +182,70 @@ export default function LandingPage() {
           </p>
         )}
 
-        {/* Stats Cards */}
-        <div
-          ref={statsRef}
-          className="emp-fadeup emp-d4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-[680px] mb-5 mt-10"
-        >
-          {stats.map((s) => (
-            <StatCard key={s.label} {...s} />
-          ))}
+        {/* <!-- COUNTER --> */}
+        <div className="flex justify-center items-center m-6 sm:mt-8 sm:mb-4 px-4">
+          <div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 bg-white dark:bg-black backdrop-blur-md rounded-2xl px-6 sm:px-8 py-6 shadow-sm">
+            {/* MAIN COUNTER */}
+            <div className="flex flex-col items-center justify-center text-center md:w-[30%]">
+              {/* COUNTER */}
+              <div className="flex items-center justify-center gap-[2px] text-4xl sm:text-5xl font-serif text-orange-primary leading-none">
+                {digits.map((digit, index) =>
+                  digit === "," ? (
+                    <span key={index} className="px-[2px]">
+                      {digit}
+                    </span>
+                  ) : (
+                    <Digit key={index} value={digit} />
+                  ),
+                )}
+              </div>
+
+              {/* LABEL */}
+              <div className="text-xs text-slate-400 uppercase mt-2 tracking-wide flex items-center justify-center flex-wrap gap-1">
+                On the Waitlist
+                <span className="inline-flex items-center gap-1 ml-1 px-2 py-1 text-[10px] font-semibold rounded-full border border-green-400/30 bg-green-400/10 text-green-400">
+                  <span className="w-[5px] h-[5px] bg-green-400 rounded-full animate-pulse"></span>
+                  Live
+                </span>
+              </div>
+            </div>
+
+            {/* DIVIDER */}
+            <div className="hidden md:block w-px h-16 bg-gray-200 dark:bg-white/10"></div>
+
+            {/* STATS WRAPPER */}
+            <div className="flex flex-col sm:flex-row items-center justify-between w-full md:w-[70%] gap-4 sm:gap-6">
+              {/* STAT 1 */}
+              <div className="flex flex-col items-center text-center gap-2 flex-1">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-dblue-secondary text-black">
+                  <FiUsers size={24} />
+                </div>
+                <div className="text-sm font-medium text-gray-700 dark:text-white">
+                  Save 10+ hours weekly
+                </div>
+              </div>
+
+              {/* STAT 2 */}
+              <div className="flex flex-col items-center text-center gap-2 flex-1">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-green-secondary text-black">
+                  <RiStarSmileLine size={24} />
+                </div>
+                <div className="text-sm font-medium text-gray-700 dark:text-white">
+                  Hire Smarter with AI
+                </div>
+              </div>
+
+              {/* STAT 3 */}
+              <div className="flex flex-col items-center text-center gap-2 flex-1">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-secondary text-black">
+                  <RiRocketLine size={24} />
+                </div>
+                <div className="text-sm font-medium text-gray-700 dark:text-white">
+                  Automated HR Tasks
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Tags */}

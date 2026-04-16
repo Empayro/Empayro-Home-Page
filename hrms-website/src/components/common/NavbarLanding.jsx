@@ -132,7 +132,7 @@ function NavbarLanding() {
         >
           {/* LOGO */}
           <Link to="/">
-            <img src={logo} alt="Logo" className="w-50 h-auto" />
+            <img src={logo} alt="Logo" className="w-full h-full" />
           </Link>
 
             <div className="flex items-center justify-between gap-x-4">

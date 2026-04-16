@@ -1,4 +1,4 @@
-import logo from "./images/logo.png";
+import logo from "./images/updatedlogo.png";
 import ComingLogo from "./images/logo-coming-soon.png";
 import Frame1 from "./images/Frame 13.png";
 import Frame2 from "./images/Frame 14.png";
