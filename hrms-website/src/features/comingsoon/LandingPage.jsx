@@ -29,9 +29,12 @@ export default function LandingPage() {
   const heroRef = useRef(null);
   const statsRef = useRef(null);
 
-  const [count, setCount] = useState(2847);
+  const [count, setCount] = useState(() => {
+    const saved = localStorage.getItem("waitlistCount");
+    return saved ? Number(saved) : 2847;
+  });
 
-  const [setAnimate] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   const [fadeRef, fadeVisible] = useInView();
 
@@ -40,17 +43,17 @@ export default function LandingPage() {
   const [error, setError] = useState("");
 
   const handleMouse = (e) => {
-  if (!heroRef.current) return;
+    if (!heroRef.current) return;
 
-  const rect = heroRef.current.getBoundingClientRect();
+    const rect = heroRef.current.getBoundingClientRect();
 
-  requestAnimationFrame(() => {
-    setMousePos({
-      x: ((e.clientX - rect.left) / rect.width) * 100,
-      y: ((e.clientY - rect.top) / rect.height) * 100,
+    requestAnimationFrame(() => {
+      setMousePos({
+        x: ((e.clientX - rect.left) / rect.width) * 100,
+        y: ((e.clientY - rect.top) / rect.height) * 100,
+      });
     });
-  });
-};
+  };
 
   // ✅ Form submission
   const handleSubmit = (e) => {
@@ -84,12 +87,12 @@ export default function LandingPage() {
 
     let start = displayCount;
     let end = count;
-    let increment = (end - start) / 10;
+    let increment = Math.ceil((end - start) / 10);
 
     const timer = setInterval(() => {
       start += increment;
 
-      if (increment > 0 && start >= end) {
+      if (start >= end) {
         start = end;
         clearInterval(timer);
       }
@@ -100,10 +103,12 @@ export default function LandingPage() {
     return () => clearInterval(timer);
   }, [count]);
 
-  const digits = displayCount
-    .toLocaleString()
-    .split("")
-    .map((char) => (char === "," ? "," : Number(char)));
+  // ✅ SAVE separately
+  useEffect(() => {
+    localStorage.setItem("waitlistCount", count);
+  }, [count]);
+
+  const digits = displayCount.toLocaleString().split("");
 
   return (
     <div
@@ -191,11 +196,9 @@ export default function LandingPage() {
               <div className="flex items-center justify-center gap-[2px] text-4xl sm:text-5xl font-serif text-orange-primary leading-none">
                 {digits.map((digit, index) =>
                   digit === "," ? (
-                    <span key={index} className="px-[2px]">
-                      {digit}
-                    </span>
+                    <span key={index}>{digit}</span>
                   ) : (
-                    <Digit key={index} value={digit} />
+                    <Digit key={index} value={Number(digit)} />
                   ),
                 )}
               </div>

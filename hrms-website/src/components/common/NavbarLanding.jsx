@@ -3,7 +3,7 @@ import { MenuVideo } from "@/assets";
 import { useEffect, useRef, useState } from "react";
 import { ComingLogo } from "@/assets";
 
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { FaHeadset, FaPhone, FaUser } from "react-icons/fa6";
 import { FcAssistant, FcVoicePresentation } from "react-icons/fc";
 import { logo } from "../../assets";
@@ -132,31 +132,34 @@ function NavbarLanding() {
         >
           {/* LOGO */}
           <Link to="/">
-            <img src={logo} alt="Logo" className="w-full h-full" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="lg:w-full lg:h-full w-50 h-auto"
+            />
           </Link>
 
-            <div className="flex items-center justify-between gap-x-4">
-
+          <div className="flex items-center justify-between gap-x-4">
             <div className="hidden lg:block">
-            <a href="mailto:support@empayro.com">
-              <FcVoicePresentation size={40} />
-            </a>
-          </div>
+              <a href="mailto:support@empayro.com">
+                <FcVoicePresentation size={40} />
+              </a>
+            </div>
 
-          <div className="toggle-container">
-            <input
-              type="checkbox"
-              id="theme-toggle"
-              checked={theme === "dark"}
-              onChange={() => setTheme(theme === "light" ? "dark" : "light")}
-            />
-            <label htmlFor="theme-toggle" className="toggle-label">
-              <span className="toggle-ball"></span>
-            </label>
+            <div
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              className="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer 
+             bg-secondary dark:bg-white/10 hover:scale-110 transition-all duration-300 "
+            >
+              <div className="transition-all duration-300 rotate-0 dark:rotate-180">
+                {theme === "light" ? (
+                  <FiSun className="text-black-500 text-lg" />
+                ) : (
+                  <FiMoon className="text-blue-400 text-lg" />
+                )}
+              </div>
+            </div>
           </div>
-          
-          </div>
-
         </nav>
       </div>
     </>
