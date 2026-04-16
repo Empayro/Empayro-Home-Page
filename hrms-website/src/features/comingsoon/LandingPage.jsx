@@ -111,7 +111,7 @@ export default function LandingPage() {
         ref={fadeRef}
         className={`fade-up ${
           fadeVisible
-            ? "show relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 md:px-10 md:py-30 md:pb-10 gap-y-2"
+            ? "show relative z-10 flex flex-col items-center justify-center text-center px-6 py-22 md:px-10 md:py-30 md:pb-10 gap-y-2"
             : ""
         }`}
       >
