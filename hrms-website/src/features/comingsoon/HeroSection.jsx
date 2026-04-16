@@ -216,7 +216,7 @@ export default function HeroSection() {
                       >
                         ✓
                       </div>
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-400">{feature}</span>
                     </div>
                   ))}
                 </div>

@@ -9,10 +9,10 @@ import { FaXTwitter } from "react-icons/fa6";
 function NavbarFooter() {
   return (
     <footer className="text-black w-full">
-      <div className="bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff]">
+      <div className="bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] dark:from-[#000] dark:to-[#000000] dark:text-gray-400">
         
         {/* Container */}
-        <div className="py-8 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto 
+        <div className="py-8 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto dark:border-t-1
                         flex flex-col md:flex-row items-center justify-between gap-6">
 
           {/* Email */}

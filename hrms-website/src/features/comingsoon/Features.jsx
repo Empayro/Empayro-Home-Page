@@ -177,7 +177,7 @@ export default function Features() {
   const anyRevealed = progresses.some((p) => p > 0);
 
   return (
-    <div className="px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+    <div className="px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 dark:bg-black">
       <div
         ref={zoneRef}
         className="relative"
@@ -195,7 +195,7 @@ export default function Features() {
           }`}
         >
           <div className="text-center px-2 sm:px-4 md:p-10">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               Everything for HR. <br />
               <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 In one platform.
@@ -219,7 +219,7 @@ export default function Features() {
           </div>
 
           {!allRevealed && (
-            <p className="text-center text-black text-xs italic tracking-wide pb-6 animate-bounce">
+            <p className="text-center text-black dark:text-gray-400 text-xs italic tracking-wide pb-6 animate-bounce">
               {anyRevealed
                 ? `${progresses.filter((p) => p >= 1).length} of 4 revealed — keep scrolling ↓`
                 : "scroll to reveal ↓"}

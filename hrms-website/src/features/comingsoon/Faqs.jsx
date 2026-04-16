@@ -51,86 +51,87 @@ const Faqs = () => {
 
   return (
     <section
-      className="
-        max-w-350 mx-auto 
-        px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 
-        py-12 sm:py-16 md:py-20
-        flex flex-col lg:flex-row gap-10 lg:gap-16
-      "
-      id="faqs"
-    >
-      {/* LEFT SIDE */}
-      <div className=" lg:w-1/2 flex flex-col justify-center items-center sm:items-center lg:items-start">
-        
-        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-          <div className="bg-primary text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl">
-            <FaQuestion className="text-lg sm:text-2xl" />
+      className="dark:bg-black" id="faqs">
+      <div className="max-w-350 mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20 flex flex-col lg:flex-row gap-10 lg:gap-16"
+      >
+        {/* LEFT SIDE */}
+        <div className=" lg:w-1/2 flex flex-col justify-center items-center sm:items-center lg:items-start">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div className="bg-primary text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl">
+              <FaQuestion className="text-lg sm:text-2xl" />
+            </div>
+            <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
+              Questions? Answered.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
-            Questions? Answered.
+
+          <h2
+            className="
+            font-bold text-gray-900 dark:text-white leading-tight mb-4 sm:mb-6
+            text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
+            text-center sm:text-center lg:text-start
+          "
+          >
+            Everything you <br />
+            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+              wanted to know
+            </span>
+          </h2>
+
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-lg  text-center sm:text-center lg:text-start">
+            Everything you need to know about our HRMS platform, features, and
+            how we help you manage your workforce better.
           </p>
         </div>
 
-        <h2 className="
-  font-bold text-gray-900 leading-tight mb-4 sm:mb-6
-  text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
-  text-center sm:text-center lg:text-start
-">
-          Everything you <br /><span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">wanted to know</span> 
-        </h2>
-
-        <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-lg  text-center sm:text-center lg:text-start">
-          Everything you need to know about our HRMS platform, features,
-          and how we help you manage your workforce better.
-        </p>
-      </div>
-
-      {/* RIGHT SIDE */}
-      <div className="lg:w-1/2">
-        <h3 className="
-          font-semibold text-gray-900 mb-6 sm:mb-8
+        {/* RIGHT SIDE */}
+        <div className="lg:w-1/2">
+          <h3
+            className="
+          font-semibold text-gray-900 dark:text-white mb-6 sm:mb-8
           text-lg sm:text-xl md:text-2xl
-        ">
-          Frequently Asked Questions
-        </h3>
+        "
+          >
+            Frequently Asked Questions
+          </h3>
 
-        <ul className="space-y-3 sm:space-y-4">
-          {items.map((item, index) => (
-            <li
-              key={index}
-              className="border border-blue-400 rounded-lg sm:rounded-xl overflow-hidden transition-all"
-            >
-              {/* Header */}
-              <div
-                className="
+          <ul className="space-y-3 sm:space-y-4">
+            {items.map((item, index) => (
+              <li
+                key={index}
+                className="border border-blue-400 rounded-lg sm:rounded-xl overflow-hidden transition-all"
+              >
+                {/* Header */}
+                <div
+                  className="
                   flex justify-between items-center 
                   p-4 sm:p-5 
                   cursor-pointer 
-                  group hover:bg-[#DEEEFA]
+                  group hover:bg-[#DEEEFA] dark:hover:bg-black
                 "
-                onClick={() => toggleAccordion(index)}
-              >
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <span className="text-gray-400 text-xs sm:text-sm">
-                    {item.num}
-                  </span>
-                  <span className="font-medium text-gray-800 text-sm sm:text-base">
-                    {item.title}
+                  onClick={() => toggleAccordion(index)}
+                >
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <span className="text-gray-400 text-xs sm:text-sm">
+                      {item.num}
+                    </span>
+                    <span className="font-medium text-gray-800 dark:text-gray-400 text-sm sm:text-base">
+                      {item.title}
+                    </span>
+                  </div>
+
+                  <span
+                    className={`text-lg sm:text-xl transition-transform duration-300 ${
+                      activeIndex === index ? "rotate-45" : ""
+                    }`}
+                  >
+                    <GoArrowUpRight className="dark:text-white" />
                   </span>
                 </div>
 
-                <span
-                  className={`text-lg sm:text-xl transition-transform duration-300 ${
-                    activeIndex === index ? "rotate-45" : ""
-                  }`}
-                >
-                  <GoArrowUpRight />
-                </span>
-              </div>
-
-              {/* Content */}
-              <div
-                className={`
+                {/* Content */}
+                <div
+                  className={`
                   transition-all duration-500 ease-in-out overflow-hidden
                   ${
                     activeIndex === index
@@ -138,14 +139,15 @@ const Faqs = () => {
                       : "max-h-0 opacity-0"
                   }
                 `}
-              >
-                <p className="px-4 sm:px-5 text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">
-                  {item.content}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+                >
+                  <p className="px-4 sm:px-5 text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed">
+                    {item.content}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

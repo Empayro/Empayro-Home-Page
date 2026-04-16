@@ -32,7 +32,7 @@ export default function ScrollRevealSection() {
   }, []);
 
   return (
-    <section className="pb-24 sm:pb-32 md:pb-40">
+    <section className="pb-24 sm:pb-32 md:pb-40 dark:bg-black">
       <div
         ref={containerRef}
         className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-center"
@@ -64,7 +64,7 @@ export default function ScrollRevealSection() {
                 className="
                   inline-block mr-2 mb-2
                   transition-all duration-300 ease-out
-                  text-primary
+                  text-primary dark:text-secondary
                 "
                 style={{
                   opacity,

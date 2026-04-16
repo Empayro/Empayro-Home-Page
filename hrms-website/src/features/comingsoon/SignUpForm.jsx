@@ -34,13 +34,14 @@ const SignUpForm = () => {
         py-12 sm:py-16 md:py-20 lg:py-24 
         px-4 sm:px-6 md:px-10 
         bg-gradient-to-b from-blue-50 to-white 
-        overflow-hidden
+        overflow-hidden dark:from-[#000] dark:to-[#000000] 
+      text-black dark:text-white 
       "
       id="getintouch"
     >
       {/* Background */}
-      <div className="absolute inset-0 opacity-40 pointer-events-none">
-        <div className="w-full h-full bg-[radial-gradient(circle_at_top,_#dbeafe,_transparent_70%)]"></div>
+      <div className="absolute inset-0 opacity-40  pointer-events-none">
+        <div className="w-full h-full bg-[radial-gradient(circle_at_top,_#dbeafe,_transparent_70%)] dark:bg-[radial-gradient(circle_at_top,_#000000,_transparent_70%)]"></div>
       </div>
 
       {/* Container */}
@@ -56,12 +57,12 @@ const SignUpForm = () => {
         </div>
 
         {/* Title Box */}
-        <div className="bg-blue-100/60 backdrop-blur-md rounded-xl sm:rounded-2xl px-5 sm:px-8 py-5 sm:py-6 mb-8 sm:mb-10 shadow-sm">
-          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-slate-800 mb-2 sm:mb-3">
+        <div className="bg-blue-100/60 dark:border dark:bg-black backdrop-blur-md rounded-xl sm:rounded-2xl px-5 sm:px-8 py-5 sm:py-6 mb-8 sm:mb-10 shadow-sm">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-slate-800 dark:text-white mb-2 sm:mb-3">
             Don't let your team miss <br /> <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text ">India's HR, Finally Sorted.</span> 
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-            Secure your place at the front of the queue. Get first access <br /> the moment Empayro goes live.
+            Secure your place at the front of the queue. Get first access <br /> the moment Empayros goes live.
           </p>
         </div>
 
@@ -74,7 +75,7 @@ const SignUpForm = () => {
 
           {/* Floating Icons (Responsive Positions) */}
           <div
-            className="absolute left-2 sm:-left-10 top-6 sm:top-10 bg-white p-2 sm:p-3 rounded-full shadow-md animate-float"
+            className="absolute left-2 sm:-left-10 top-6 sm:top-10 bg-white dark:bg-black dark:border p-2 sm:p-3 rounded-full shadow-md animate-float"
             style={{
               animation: "floatX 4s ease-in-out infinite",
             }}
@@ -83,7 +84,7 @@ const SignUpForm = () => {
           </div>
 
           <div
-            className="absolute right-2 sm:-right-10 top-4 sm:top-6 bg-white p-2 sm:p-3 rounded-full shadow-md animate-float-reverse"
+            className="absolute right-2 sm:-right-10 top-4 sm:top-6 bg-white dark:bg-black dark:border p-2 sm:p-3 rounded-full shadow-md animate-float-reverse"
             style={{
               animation: "floatX 4s ease-in-out infinite reverse",
             }}
@@ -92,7 +93,7 @@ const SignUpForm = () => {
           </div>
 
           <div
-            className="absolute right-0 sm:-right-16 bottom-0 bg-white p-2 sm:p-3 rounded-full shadow-md animate-float"
+            className="absolute right-0 sm:-right-16 bottom-0 bg-white dark:bg-black dark:border p-2 sm:p-3 rounded-full shadow-md animate-float"
             style={{
               animation: "floatX 4s ease-in-out infinite",
             }}
@@ -101,7 +102,7 @@ const SignUpForm = () => {
           </div>
 
           <div
-            className="absolute left-0 bottom-0 bg-white p-2 sm:p-3 rounded-full shadow-md animate-float"
+            className="absolute left-0 bottom-0 bg-white dark:bg-black dark:border p-2 sm:p-3 rounded-full shadow-md animate-float"
             style={{
               animation: "floatX 4s ease-in-out infinite",
             }}
