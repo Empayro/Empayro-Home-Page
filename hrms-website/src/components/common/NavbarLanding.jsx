@@ -39,7 +39,6 @@ const menus = [
 
 /* ---------------- COMPONENT ---------------- */
 function NavbarLanding() {
-
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -49,169 +48,118 @@ function NavbarLanding() {
 
   useEffect(() => {
     document.documentElement.classList.remove("light", "dark");
-document.documentElement.classList.add(theme);
+    document.documentElement.classList.add(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   const [showHeader, setShowHeader] = useState(true);
-const lastScrollY = useRef(0);
+  const lastScrollY = useRef(0);
 
+  const [scrolled, setScrolled] = useState(false);
 
-const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 20);
 
-    // ✅ Background toggle
-    setScrolled(currentScrollY > 20);
+      // 💻 Desktop behavior
+      if (!isMobile) {
+        if (currentScrollY > 10) {
+          setShowHeader(false); // always hide after scroll
+        } else {
+          setShowHeader(true); // only show at top
+        }
+        return;
+      }
 
-    // ✅ Always show at top
-    if (currentScrollY < 10) {
-      setShowHeader(true);
+      // 📱 Mobile behavior
+      if (currentScrollY < 10) {
+        setShowHeader(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      if (Math.abs(currentScrollY - lastScrollY.current) < 10) return;
+
+      if (currentScrollY > lastScrollY.current) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+
       lastScrollY.current = currentScrollY;
-      return;
-    }
+    };
 
-    // ✅ Prevent jitter (threshold)
-    if (Math.abs(currentScrollY - lastScrollY.current) < 10) return;
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile]);
 
-    if (currentScrollY > lastScrollY.current) {
-      // 🔽 scrolling DOWN
-      setShowHeader(false);
-    } else {
-      // 🔼 scrolling UP
-      setShowHeader(true);
-    }
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
 
-    lastScrollY.current = currentScrollY;
-  };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
-
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   return (
     <>
-    
-    {/* // <div className=" fixed z-50 bg-transparent w-full md:w-[200px] h-auto md:h-screen top-0 left-0"> */}
-    <div
-  className={`
-    sticky top-0 lg:fixed
-    z-50 bg-transparent 
-    w-full lg:w-[250px] 
-    h-auto lg:h-screen 
-    transition-transform duration-300 ease-in-out
-
-    ${showHeader ? "translate-y-0" : "-translate-y-full"} 
-    lg:translate-y-0
-  `}
->
-      {/* INNER CONTAINER */}
-      {/* <nav className=" flex md:flex-col justify-between items-center mx-auto px-4 md:px-6 py-4 md:py-10 h-auto md:h-screen"> */}
-        <nav className={`
-  flex lg:flex-col justify-between items-start 
-  px-4 lg:px-6 py-4 lg:py-10 
-  h-auto lg:h-screen
-  transition-all duration-300
-
-  ${scrolled ? "bg-white shadow-md" : "bg-white"}
-  lg:bg-transparent lg:shadow-none
-`}>
-        {/* LOGO */}
-        <Link to="/">
-          <img
-            src={logo}
-            alt="Logo"
-            className="w-40 h-auto lg:w-full lg:h-auto"
-          />
-        </Link>
-
-        {/* BARS ICON */}
-        {/* <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-        >
-          {isMenuOpen ? (
-            <FiX size={24} className="text-black cursor-pointer" />
-          ) : (
-            <FiMenu size={24} className="text-black cursor-pointer" />
-          )}
-        </button> */}
-
-         <div className="toggle-container">
-        <input
-          type="checkbox"
-          id="theme-toggle"
-          checked={theme === "dark"}
-          onChange={() =>
-            setTheme(theme === "light" ? "dark" : "light")
-          }
-        />
-        <label htmlFor="theme-toggle" className="toggle-label">
-          <span className="toggle-ball"></span>
-        </label>
-      </div>
-
-        <div className="hidden lg:block">
-          <a href="mailto:support@empayro.com">
-            <FcVoicePresentation size={40} />
-          </a>
-        </div>
-      </nav>
-
-      
-    </div>
-
-    {/* FULL SCREEN MENU OVERLAY */}
       <div
-        className={` fixed top-0 left-0 h-screen w-screen bg-white z-40 transition-all duration-500 p-20
-        ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"} `}
+        className={`z-50 w-full h-auto transition-all duration-300 ease-in-out fixed top-0
+    ${!showHeader ? "-translate-y-full" : "translate-y-0"}
+    ${
+      isMobile
+        ? scrolled
+          ? "bg-white shadow-sm"
+          : "bg-transparent"
+        : "bg-transparent"
+    }
+  `}
       >
-        {/* Close Button */}
-        {/* <button
-          onClick={() => setIsMenuOpen(false)}
-          className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
+        <nav
+          className={`
+                      max-w-350 mx-auto flex justify-between items-center lg:px-6 lg:py-5 h-auto transition-all duration-300 
+                      ${scrolled ? "border-none" : "border-b border-b-[#6161615e]"}
+  `}
         >
-          <FiX size={24} className="text-slate-600" />
-        </button> */}
+          {/* LOGO */}
+          <Link to="/">
+            <img src={logo} alt="Logo" className="w-50 h-auto" />
+          </Link>
 
-        {/* Menu with left video + right item list */}
-        <div className="w-full h-full  grid grid-cols-1 items-center md:grid-cols-2">
-          <div className="h-full bg-white flex flex-col items-center md:items-start justify-center gap-6 px-6 md:px-16 py-10 md:py-16 lg:pl-32
-">
-            {menus.map((menu) => {
-              return (
-                <a
-                  key={menu.name}
-                  href={menu.path}
-                  className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700  hover:text-primary md:hover:text-5xl md:hover:font-bold transition-all duration-300 cursor-pointer"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {menu.name}
-                </a>
-              );
-            })}
+            <div className="flex items-center justify-between gap-x-4">
+
+            <div className="hidden lg:block">
+            <a href="mailto:support@empayro.com">
+              <FcVoicePresentation size={40} />
+            </a>
           </div>
 
-          <div className="hidden md:flex h-full items-center justify-center pr-10 lg:pr-20">
-            <video
-              className="h-auto rounded-2xl border-none"
-              src={MenuVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
+          <div className="toggle-container">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              checked={theme === "dark"}
+              onChange={() => setTheme(theme === "light" ? "dark" : "light")}
             />
+            <label htmlFor="theme-toggle" className="toggle-label">
+              <span className="toggle-ball"></span>
+            </label>
           </div>
-        </div>
+          
+          </div>
+
+        </nav>
       </div>
-      </>
+    </>
   );
 }
 

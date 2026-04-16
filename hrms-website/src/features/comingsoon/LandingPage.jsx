@@ -13,7 +13,9 @@ function StatCard({ label, icon: Icon, color }) {
       >
         <Icon className="text-lg text-black " size={24} />
       </div>
-      <p className="text-sm font-medium text-gray-700 dark:text-white text-center">{label}</p>
+      <p className="text-sm font-medium text-gray-700 dark:text-white text-center">
+        {label}
+      </p>
     </div>
   );
 }
@@ -88,12 +90,7 @@ export default function LandingPage() {
     <div
       ref={heroRef}
       onMouseMove={handleMouse}
-      // className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] text-black overflow-hidden
-      className="relative min-h-screen 
-bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] 
-dark:from-[#0b0b0b] dark:to-[#000000] 
-text-black dark:text-white 
-overflow-hidden pl-0" // 👈 space for left header
+      className="relative min-h-screen bg-gradient-to-b from-[#f8fbff] to-[#e6f0ff] dark:from-[#0b0b0b] dark:to-[#000000] text-black dark:text-white overflow-hidden"
       id="home"
     >
       {/* Gradient Mesh */}
@@ -114,7 +111,7 @@ overflow-hidden pl-0" // 👈 space for left header
         ref={fadeRef}
         className={`fade-up ${
           fadeVisible
-            ? "show relative z-10 flex flex-col items-center text-center px-6 py-16 md:px-10 md:py-20 gap-y-2"
+            ? "show relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 md:px-10 md:py-30 md:pb-10 gap-y-2"
             : ""
         }`}
       >
