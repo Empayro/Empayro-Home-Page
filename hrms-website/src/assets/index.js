@@ -13,6 +13,7 @@ import SignUpBg from "./images/signupbg.png";
 import NewsLetter from "./images/newsletter2.webp";
 import Video from "./images/Video.mp4";
 import FooterVideo from "./images/footers.mp4";
+import Footer from "./images/footer.mp4";
 import MenuVideo from "./images/headers.mp4";
 import AttendanceVideo from "./images/Attendance.mp4";
 import Favicon from "./images/favicon.png";
@@ -24,6 +25,7 @@ import Att1 from "./images/Att_01.webp";
 import Att2 from "./images/Att_02.png";
 import Att3 from "./images/Att_03.png";
 import Att4 from "./images/Att_04.webp";
+import Music from "./images/music.mp3";
 
 
 
@@ -42,6 +44,7 @@ export{
     AboutImg, 
     Video, 
     FooterVideo, 
+    Footer, 
     MenuVideo, 
     SignUpBg, 
     NewsLetter, 
@@ -54,5 +57,6 @@ export{
     Att2,
     Att3,
     Att4,
-    AttendanceVideo
+    AttendanceVideo,
+    Music
 };

@@ -189,7 +189,7 @@ export default function LandingPage() {
 
         {/* <!-- COUNTER --> */}
         <div className="flex justify-center items-center m-6 sm:mt-8 sm:mb-4 px-4">
-          <div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 bg-white dark:bg-black backdrop-blur-md rounded-2xl px-6 sm:px-8 py-6 shadow-sm">
+          <div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 bg-white dark:bg-black backdrop-blur-md rounded-2xl dark:border-white/10 dark:border px-6 sm:px-8 py-6 shadow-sm">
             {/* MAIN COUNTER */}
             <div className="flex flex-col items-center justify-center text-center md:w-[30%]">
               {/* COUNTER */}

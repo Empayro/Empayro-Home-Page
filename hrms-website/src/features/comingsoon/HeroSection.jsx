@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { MenuVideo } from "../../assets";
+import { MenuVideo } from "@/assets";
 import { color } from "framer-motion";
 import { useInView } from "../../hooks/useInView";
+import { Check } from "lucide-react";
 
 export default function HeroSection() {
   const sections = [
@@ -50,7 +51,7 @@ export default function HeroSection() {
       title: "Your Data Stays in India",
       desc: "Servers on Indian soil. Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
       color: "#E8410A",
-      accent:"#FCDDD4",
+      accent: "#FCDDD4",
       // content: "Generate powerful reports and gain insights to improve productivity and decision-making.",
       features: ["India-Based Data Hosting", "Secure & Local Storage"],
       video: MenuVideo,
@@ -118,13 +119,16 @@ export default function HeroSection() {
         }`}
       >
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-          HR software that 
+          HR software that
           <span className="bg-gradient-to-r ml-4 from-primary to-secondary text-transparent bg-clip-text">
             gets India
           </span>
         </h1>
         <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
-          State-wise compliance, multi-location teams, field workforce, Indian <br />payroll structures - we built Empayro keeping every bit of that in mind.
+          State-wise compliance, multi-location teams, field workforce, Indian{" "}
+          <br />
+          payroll structures - we built Empayro keeping every bit of that in
+          mind.
         </p>
       </div>
 
@@ -133,9 +137,9 @@ export default function HeroSection() {
         <div className="w-1/4 hidden md:block border-r pr-4 lg:pr-6">
           <div className="sticky top-32 space-y-4">
             <div className="text-start mb-12">
-              <h1 className="text-4xl md:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+              <h1 className="text-3xl lg:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 HRMS Solution <br />
-                <span className=" text-[34px] text-gray-900 dark:text-white leading-tight">
+                <span className=" text-[24px] lg:text-[34px] text-gray-900 dark:text-white leading-tight">
                   to Empower your workforce
                 </span>
               </h1>
@@ -159,7 +163,7 @@ export default function HeroSection() {
                 />
 
                 <p
-                  className={`ml-2 font-medium ${
+                  className={`ml-2 text-sm lg:text-base font-medium ${
                     active === index ? "text-blue-600" : "text-gray-500"
                   }`}
                 >
@@ -189,7 +193,7 @@ export default function HeroSection() {
                   {item.subtitle}
                 </p>
 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2">
+                <h3 className="text-2xl md:text-2xl lg:text-4xl font-bold mt-2">
                   {item.title}
                 </h3>
 
@@ -197,33 +201,42 @@ export default function HeroSection() {
                 <p className="text-gray-400 mt-3 text-sm">{item.content}</p>
 
                 {/* Features */}
-                <div className="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                <div className="mt-6 md:mt-8 grid grid-cols-1 gap-3 md:gap-4">
                   {item.features.map((feature, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-blue-100"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-200 hover:shadow-sm"
                       style={{
-                        border: item.accent,
+                        borderColor: item.accent,
                       }}
                     >
+                      {/* Icon */}
                       <div
-                        className="w-6 h-6 flex items-center justify-center bg-blue-600 text-white border rounded-full text-xs p-2.5"
+                        className="flex items-center justify-center w-7 h-7 min-w-[28px] rounded-full border"
                         style={{
                           borderColor: item.color,
                           backgroundColor: item.accent,
-                          color: item.color,
                         }}
                       >
-                        ✓
+                        <Check
+                          size={16}
+                          style={{
+                            color: item.color,
+                          }}
+                        />
                       </div>
-                      <span className="text-sm text-gray-700 dark:text-gray-400">{feature}</span>
+
+                      {/* Text */}
+                      <span className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-snug">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* VISUAL (Smooth Animation) */}
-              <div className="relative h-[220px] sm:h-[280px] md:h-[350px] overflow-hidden mt-6 md:mt-0">
+              <div className="relative h-[220px] sm:h-[280px] md:h-[350px] overflow-hidden mt-6 md:mt-0 flex iteems-center justify-center">
                 <div
                   className={`transition-all duration-700 ease-out transform ${
                     active === index
@@ -238,7 +251,7 @@ export default function HeroSection() {
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover rounded-xl"
+                    className="w-full h-full object-contain lg:object-cover rounded-xl"
                   />
                 </div>
               </div>

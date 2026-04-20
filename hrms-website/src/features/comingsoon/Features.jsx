@@ -10,8 +10,7 @@ const CARDS = [
     btnColor: "#0078D4",
     bgColor: "#DEEEFA",
     rotate: "-4deg",
-    content:
-      "Location-verified clock-in — accurate for remote and field teams",
+    content: "Location-verified clock-in — accurate for remote and field teams",
   },
   {
     id: 2,
@@ -20,8 +19,7 @@ const CARDS = [
     btnColor: "#5CB400",
     bgColor: "#E5F3D3",
     rotate: "4deg",
-    content:
-      "Run accurate payroll for your entire company in minutes",
+    content: "Run accurate payroll for your entire company in minutes",
   },
   {
     id: 3,
@@ -40,8 +38,7 @@ const CARDS = [
     btnColor: "#8A6A00",
     bgColor: "#FDF3C0",
     rotate: "4deg",
-    content:
-      "Age, tenure, gender, department — real-time people intelligence",
+    content: "Age, tenure, gender, department — real-time people intelligence",
   },
 ];
 
@@ -54,6 +51,11 @@ const TOTAL_EXIT_SCROLL = EXIT_PER_CARD * CARDS.length;
 const BUFFER = 200;
 
 const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+const isTablet =
+  typeof window !== "undefined" &&
+  window.innerWidth >= 768 &&
+  window.innerWidth < 1024;
 
 function PaperCard({ card, progress, exitProgress, index }) {
   const p = Math.max(0, Math.min(1, progress));
@@ -70,12 +72,10 @@ function PaperCard({ card, progress, exitProgress, index }) {
   const exitY = -200 * (1 - Math.pow(1 - exit, 3));
 
   const translateY = isMobile
-  ? (1 - eased) * 80
-  : exit > 0
-  ? exitY
-  : (1 - eased) * 120;
-
-  
+    ? (1 - eased) * 80
+    : exit > 0
+      ? exitY
+      : (1 - eased) * 120;
 
   return (
     <div
@@ -85,18 +85,29 @@ function PaperCard({ card, progress, exitProgress, index }) {
     transition-all duration-700 ease-out
   `}
       style={{
-        marginTop: isMobile ? `-${progress * 120}px` : "0px",
+        marginTop: isMobile
+          ? `-${progress * 120}px`
+          : isTablet
+            ? `-${progress * 80}px`
+            : "0px",
+
         transform: isMobile
-          ? `
-        translateY(${translateY}px)
-        scale(${1 - (1 - eased) * 0.1})
-      `
-          : `translateY(${translateY}px) rotate(${card.rotate})`,
+          ? `translateY(${translateY}px) scale(${1 - (1 - eased) * 0.1})`
+          : isTablet
+            ? `
+      translateY(${translateY}px)
+      translateX(${index % 2 === 0 ? "-40px" : "40px"})
+      scale(${1 - (1 - eased) * 0.05})
+    `
+            : `translateY(${translateY}px) rotate(${card.rotate})`,
 
         opacity: isMobile ? (progress > 0 ? 1 : 0) : eased * (1 - exit * 0.5),
 
-        // zIndex: isMobile ? Math.floor(progress * 100) : "auto",
-        zIndex: isMobile ? 100 + index : "auto",
+        zIndex: isMobile
+          ? 100 + index
+          : isTablet
+            ? 100 + Math.floor(index / 2)
+            : "auto",
       }}
     >
       <div
@@ -202,16 +213,17 @@ export default function Features() {
               </span>
             </h1>
             <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-              From the day someone joins to the day they exit - every HR <br /> touchpoint, covered. No more juggling 4 different tools.
+              From the day someone joins to the day they exit - every HR <br />{" "}
+              touchpoint, covered. No more juggling 4 different tools.
             </p>
           </div>
 
-          <div className=" flex-1 flex items-center justify-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-4 md:px-8 overflow-x-auto md:overflow-hidden pt-6 md:pt-10">
+          <div className=" flex-1 flex md:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 px-2 sm:px-4 md:px-8 overflow-x-auto md:overflow-hidden pt-6 md:pt-10">
             {CARDS.map((card, i) => (
               <PaperCard
                 key={card.id}
                 card={card}
-                index={i} 
+                index={i}
                 progress={progresses[i]}
                 exitProgress={exitProgresses[i]}
               />
