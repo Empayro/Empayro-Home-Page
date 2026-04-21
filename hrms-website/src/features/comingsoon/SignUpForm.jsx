@@ -52,7 +52,7 @@ const SignUpForm = () => {
           <img
             src={logo}
             alt="Empayro"
-            className="h-12 sm:h-16 md:w-70"
+            className="w-60 md:w-75 md:h-auto"
           />
         </div>
 
