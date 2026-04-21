@@ -62,7 +62,7 @@ const SignUpForm = () => {
             Don't let your team miss <br /> <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text ">India's HR, Finally Sorted.</span> 
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-            Secure your place at the front of the queue. Get first access <br /> the moment Empayros goes live.
+            Secure your place at the front of the queue. Get first access <br /> the moment Empayro goes live.
           </p>
         </div>
 

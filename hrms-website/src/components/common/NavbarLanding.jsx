@@ -135,7 +135,7 @@ function NavbarLanding() {
             <img
               src={logo}
               alt="Logo"
-              className="lg:w-70 lg:h-auto w-50 h-auto"
+              className="lg:w-75 lg:h-auto w-50 h-auto"
             />
           </Link>
 
