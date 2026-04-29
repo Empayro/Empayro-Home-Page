@@ -89,7 +89,7 @@ function FloatDot({ style }) {
 /* ═══════════════════════════════════════════════════════════════════════════ */
 /*  MAIN PAGE                                                                  */
 /* ═══════════════════════════════════════════════════════════════════════════ */
-export default function EmpayroComingSoon() {
+export default function EMPAYROComingSoon() {
   const [email, setEmail]         = useState("");
   const [error, setError]         = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -370,7 +370,7 @@ export default function EmpayroComingSoon() {
                 <div className="w-3 h-3 rounded-full bg-amber-400" />
                 <div className="w-3 h-3 rounded-full bg-emerald-400" />
                 <div className="flex-1 mx-4 h-6 rounded-lg bg-slate-100 flex items-center px-3">
-                  <span className="text-[10px] text-slate-400 font-medium">app.empayro.com/dashboard</span>
+                  <span className="text-[10px] text-slate-400 font-medium">app.EMPAYRO.com/dashboard</span>
                 </div>
                 <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
                   <span className="text-white text-[8px] font-black">E</span>
@@ -527,7 +527,7 @@ export default function EmpayroComingSoon() {
                   <div className="inline-flex items-center gap-3 bg-white/15 border border-white/30 rounded-2xl px-7 py-4">
                     <HiCheckCircle className="text-white text-2xl" />
                     <div className="text-left">
-                      <p className="font-bold text-white text-sm">You're in! Welcome to Empayro.</p>
+                      <p className="font-bold text-white text-sm">You're in! Welcome to EMPAYRO.</p>
                       <p className="text-white/65 text-xs mt-0.5">We'll reach out with exclusive early access.</p>
                     </div>
                   </div>
@@ -553,7 +553,7 @@ export default function EmpayroComingSoon() {
             <span className="font-black text-[16px] text-[#0f172a]">Emp<span className="text-blue-500">ayro</span></span>
           </div>
           <p className="text-slate-400 text-[12px]">
-            © 2025 Empayro. Crafted with care for modern HR teams.
+            © 2025 EMPAYRO. Crafted with care for modern HR teams.
           </p>
         </footer>
       </div>

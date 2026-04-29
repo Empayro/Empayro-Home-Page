@@ -25,8 +25,8 @@ const blogPosts = [
   },
   {
     id: 3,
-    title: "Empayro Integrations You Should Know",
-    summary: "Learn about the latest tools that integrate seamlessly with Empayro.",
+    title: "EMPAYRO Integrations You Should Know",
+    summary: "Learn about the latest tools that integrate seamlessly with EMPAYRO.",
     image: Service3,
     date: "March 15, 2026",
     author: "Admin",

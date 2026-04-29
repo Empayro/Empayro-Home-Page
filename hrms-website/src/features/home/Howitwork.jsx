@@ -204,7 +204,7 @@ const goTo = (i) => {
           </h2>
 
           <p className="mt-4 text-gray-600 text-lg">
-            Empayro fits how your team already works. No training required, no
+            EMPAYRO fits how your team already works. No training required, no
             complexity — just results.
           </p>
         </div>

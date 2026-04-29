@@ -229,7 +229,7 @@ export default function Popup() {
             <div className="flex items-center gap-2.5">
               {/* <img
                 src={logo} // 👉 replace with your logo path
-                alt="Empayro Logo"
+                alt="EMPAYRO Logo"
                 className="h-8 w-auto object-contain"
               /> */}
             </div>
@@ -271,7 +271,7 @@ export default function Popup() {
                 </h1>
 
                 <p className=" text-[13.5px] leading-[1.65] text-black/50 max-w-[320px] mx-auto">
-                  Empayro redefines workforce management — intelligent, unified,
+                  EMPAYRO redefines workforce management — intelligent, unified,
                   and built for the way modern teams actually operate.
                 </p>
               </div>
@@ -356,7 +356,7 @@ export default function Popup() {
               </h2>
 
               <p className=" text-[13px] leading-[1.65] text-blue-100/55 max-w-[290px] mx-auto mb-6">
-                We'll reach out before anyone else when Empayro launches.
+                We'll reach out before anyone else when EMPAYRO launches.
                 Something exceptional is on its way — stay tuned.
               </p>
 

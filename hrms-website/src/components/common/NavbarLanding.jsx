@@ -133,15 +133,16 @@ function NavbarLanding() {
           {/* LOGO */}
           <Link to="/">
             <img
-              src={logo}
+              // src={logo}
+              src="https://EMPAYRO-assets.s3.ap-south-1.amazonaws.com/assets/website-logo.png"
               alt="Logo"
-              className="lg:w-full lg:h-auto w-50 h-auto"
+              className="lg:w-65 lg:h-auto w-50 h-auto"
             />
           </Link>
 
           <div className="flex items-center justify-between gap-x-4">
             <div className="hidden lg:block">
-              <a href="mailto:support@empayro.com">
+              <a href="mailto:support@EMPAYRO.com">
                 <FcVoicePresentation size={40} />
               </a>
             </div>

@@ -97,7 +97,7 @@ export default function BookDemo() {
           <h1 className="text-4xl md:text-4xl font-bold text-gray-900 leading-tight">
             Experience Smarter HR with <br />
             <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-              Empayro Demo
+              EMPAYRO Demo
             </span>
           </h1>
 
@@ -121,7 +121,7 @@ export default function BookDemo() {
         {/* RIGHT FORM */}
         <div className="bg-white p-8 rounded-2xl shadow-2xl">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Get Started with Empayro
+            Get Started with EMPAYRO
           </h2>
 
           <form className="space-y-5" onSubmit={handleSubmit}>

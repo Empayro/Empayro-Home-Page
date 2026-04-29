@@ -13,7 +13,7 @@ const Faqs = () => {
   const items = [
     {
       num: "01",
-      title: "When is Empayro launching?",
+      title: "When is EMPAYRO launching?",
       content:
         "We're launching this winter. Waitlist members get early access before the general public - giving you time to set up your company, explore the platform, and be fully ready from day one.",
     },

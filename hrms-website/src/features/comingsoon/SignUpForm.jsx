@@ -49,11 +49,17 @@ const SignUpForm = () => {
         
         {/* Logo */}
         <div className="flex justify-center items-center mb-4 sm:mb-6">
-          <img
+          {/* <img
             src={logo}
-            alt="Empayro"
+            alt="EMPAYRO"
             className="w-60 md:w-75 md:h-auto"
-          />
+          /> */}
+          <img
+              // src={logo}
+              src="https://EMPAYRO-assets.s3.ap-south-1.amazonaws.com/assets/website-logo.png"
+              alt="Logo"
+              className="lg:w-65 lg:h-auto w-50 h-auto"
+            />
         </div>
 
         {/* Title Box */}
@@ -62,7 +68,7 @@ const SignUpForm = () => {
             Don't let your team miss <br /> <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text ">India's HR, Finally Sorted.</span> 
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-            Secure your place at the front of the queue. Get first access <br /> the moment Empayro goes live.
+            Secure your place at the front of the queue. Get first access <br /> the moment EMPAYRO goes live.
           </p>
         </div>
 

@@ -387,7 +387,7 @@ export default function HowItWorks() {
 
             <p className="emp-reveal emp-reveal-3 text-slate-500 font-medium max-w-[480px] mx-auto leading-relaxed"
               style={{ fontSize: "clamp(14px, 1.8vw, 16px)",  }}>
-              Empayro fits how your team already works. No training required, no complexity — just results.
+              EMPAYRO fits how your team already works. No training required, no complexity — just results.
             </p>
           </div>
 
@@ -509,7 +509,7 @@ export default function HowItWorks() {
                   <div className="w-2.5 h-2.5 rounded-full bg-amber-300" />
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-300" />
                   <div className="ml-3 flex-1 h-5 rounded-md bg-white/60 border border-slate-100 flex items-center px-2">
-                    <span className="text-[8.5px] text-slate-400 font-medium">empayro.com</span>
+                    <span className="text-[8.5px] text-slate-400 font-medium">EMPAYRO.com</span>
                   </div>
                   {/* Live badge */}
                   <div className="flex items-center gap-1 bg-white border rounded-full px-2.5 py-1" style={{ borderColor: step.border }}>

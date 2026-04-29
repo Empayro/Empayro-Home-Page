@@ -127,7 +127,7 @@ export default function HeroSection() {
         <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
           State-wise compliance, multi-location teams, field workforce, Indian{" "}
           <br />
-          payroll structures - we built Empayro keeping every bit of that in
+          payroll structures - we built EMPAYRO keeping every bit of that in
           mind.
         </p>
       </div>

@@ -15,7 +15,7 @@ const footerSections = [
     title: "Quick Links",
     links: [
       "Home",
-      "Why Empayro",
+      "Why EMPAYRO",
       "HR Toolkit",
       "Blogs",
       "Privacy Policy",
@@ -119,7 +119,7 @@ function Footer() {
           {/* COPYRIGHT SECTION */}
           <div className="py-20 max-w-350 flex items-center justify-between mx-auto">
             
-            <div>© 2026 Empayro . All rights reserved.</div>
+            <div>© 2026 EMPAYRO . All rights reserved.</div>
 
             <div className="flex items-center gap-4">
               {socialLinks.map((item, index) => (
