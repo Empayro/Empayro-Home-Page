@@ -35,7 +35,7 @@ export default function ScrollRevealSection() {
     <section className="pb-24 sm:pb-32 md:pb-40 dark:bg-black">
       <div
         ref={containerRef}
-        className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-center"
+        className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 text-center"
       >
         <p className="
           font-bold text-black

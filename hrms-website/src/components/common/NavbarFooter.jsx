@@ -18,8 +18,8 @@ function NavbarFooter() {
           {/* Email */}
           <div className="flex items-center gap-2 text-sm sm:text-base text-center md:text-left">
             <CiMail size={22} />
-            <a href="mailto:support@EMPAYRO.com" className="hover:underline">
-              support@EMPAYRO.com
+            <a href="mailto:support@empayro.com" className="hover:underline">
+              support@empayro.com
             </a>
           </div>
 

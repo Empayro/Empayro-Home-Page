@@ -10,7 +10,8 @@ const CARDS = [
     btnColor: "#0078D4",
     bgColor: "#DEEEFA",
     rotate: "-4deg",
-    content: "Location-verified clock-in — accurate for remote and field teams",
+    content:
+      "Biometric and location-verified attendance clock-ins built for remote and field teams",
   },
   {
     id: 2,
@@ -29,7 +30,7 @@ const CARDS = [
     bgColor: "#FDE8D4",
     rotate: "-4deg",
     content:
-      "Leave applications, payslip downloads, profile updates — no HR needed",
+      "Leave applications, payslip downloads, profile updates",
   },
   {
     id: 4,
@@ -184,8 +185,18 @@ export default function Features() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const allRevealed = progresses.every((p) => p >= 1);
-  const anyRevealed = progresses.some((p) => p > 0);
+  // const allRevealed = progresses.every((p) => p >= 1);
+  // const allRevealed = progresses.every((p) => p >= 0.7);
+  // const anyRevealed = progresses.some((p) => p > 0);
+
+  const REVEAL_THRESHOLD = 0.15;
+
+  const revealedCount = progresses.filter(
+    (p, i) => p >= REVEAL_THRESHOLD && exitProgresses[i] < 1,
+  ).length;
+
+  const anyRevealed = revealedCount > 0;
+  const allRevealed = progresses.every((p) => p >= REVEAL_THRESHOLD);
 
   return (
     <div className="px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 dark:bg-black">
@@ -213,7 +224,7 @@ export default function Features() {
               </span>
             </h1>
             <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-              From the day someone joins to the day they exit - every HR <br />{" "}
+              From the day employee joins to the day they exit - every HR <br />{" "}
               touchpoint, covered. No more juggling 4 different tools.
             </p>
           </div>
@@ -233,7 +244,7 @@ export default function Features() {
           {!allRevealed && (
             <p className="text-center text-black dark:text-gray-400 text-xs italic tracking-wide pb-6 animate-bounce">
               {anyRevealed
-                ? `${progresses.filter((p) => p >= 1).length} of 4 revealed — keep scrolling ↓`
+                ? `${revealedCount} of 4 revealed — keep scrolling ↓`
                 : "scroll to reveal ↓"}
             </p>
           )}

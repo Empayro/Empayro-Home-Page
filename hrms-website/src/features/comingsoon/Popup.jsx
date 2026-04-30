@@ -4,9 +4,11 @@ import {
   MdOutlinePayments,
   MdOutlineAccessTime,
   MdOutlineVerifiedUser,
+  MdOutlineMore,
 } from "react-icons/md";
 import { TbChartBar } from "react-icons/tb";
 import { logo, Favicon } from "@/assets";
+import { CiCircleMore, CiSquareMore } from "react-icons/ci";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Sub-components
@@ -52,7 +54,7 @@ const Feature = ({ icon: Icon, label, first }) => (
     <div className="w-12 h-12 rounded-[8px] bg-primary/10 flex items-center justify-center">
       <Icon className="text-primary text-[20px]" />
     </div>
-    <span className="text-[12px] font-semibold text-primary uppercase tracking-wide text-center ">
+    <span className="text-[11px] font-semibold text-primary uppercase tracking-wide text-center ">
       {label}
     </span>
   </div>
@@ -264,7 +266,7 @@ export default function Popup() {
                 <h1 className="emp-display text-[30px] leading-[1.18] text-[#000] mb-3 tracking-[-0.4px]">
                   HR that works
                   <br />
-                  as hard as{" "}
+                  as smart as{" "}
                   <em className="text-blue-400" style={{ fontStyle: "italic" }}>
                     you do
                   </em>
@@ -291,6 +293,7 @@ export default function Popup() {
                 <Feature icon={TbChartBar} label="Analytics" />
                 <Feature icon={MdOutlineAccessTime} label="Attendance" />
                 <Feature icon={MdOutlineVerifiedUser} label="Compliance" />
+                <Feature icon={MdOutlineMore} label="Many More" />
               </div>
 
               {/* Form area */}

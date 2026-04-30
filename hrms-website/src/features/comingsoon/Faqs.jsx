@@ -27,19 +27,22 @@ const Faqs = () => {
       num: "03",
       title: "We already use another HRMS. How hard is migration?",
       content:
-        "Our onboarding team handles the heavy lifting. We support Excel and CSV imports, and direct integrations with most commonly used tools. Most companies are fully live within 48 hours — employee data, leave balances, and payroll history included.",
+        "Our onboarding team handles the heavy lifting. We support Excel and CSV imports, and direct integrations with most commonly used tools. Most companies are fully live within 2 hours — employee data, leave balances, and payroll history included.",
     },
     {
       num: "04",
       title: "How exactly does the referral reward work?",
       content:
-        "After joining the waitlist, we email you a personalised referral link. Every person who signs up through it counts as one referral. Reach 3 referrals and PMS is unlocked free for 1 month (limited users). Reach 5 and the Chat app is unlocked free for 1 month (limited users). Rewards are automatically applied to your account at launch — no action needed.",
+        "After joining the waitlist, we email you a personalised referral link. Every person who signs up through it counts as one referral. Rewards are automatically applied to your account at launch — no action needed.",
+      // content:
+      //   "After joining the waitlist, we email you a personalised referral link. Every person who signs up through it counts as one referral. Reach 3 referrals and PMS is unlocked free for 1 month (limited users). Reach 5 and the Chat app is unlocked free for 1 month (limited users). Rewards are automatically applied to your account at launch — no action needed.",
     },
     {
       num: "05",
       title: "Is our employee data safe?",
       content:
-        "Your data is stored on servers physically located in India — fully compliant with the DPDP Act 2023 and IT Act. We use AES-256 encryption, role-based access controls, and regular third-party security audits. Your employee data never leaves Indian borders.",
+        // "Your data is stored on servers physically located in India. Fully compliant with the DPDP Act 2023 and IT Act 2000. We use AES-256 encryption, role-based access controls, and regular third-party security audits. Your employee data never leaves Indian borders.",
+        "Fully compliant with the DPDP Act 2023 and IT Act 2000. We use AES-256 encryption, role-based access controls, and regular third-party security audits. Your employee data never leaves Indian borders.",
     },
     {
       num: "06",

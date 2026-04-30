@@ -218,13 +218,14 @@ export default function LandingPage() {
 
             {/* STATS WRAPPER */}
             <div className="flex flex-col sm:flex-row items-center justify-between w-full md:w-[70%] gap-4 sm:gap-6">
-              {/* STAT 1 */}
+
+              {/* STAT 3 */}
               <div className="flex flex-col items-center text-center gap-2 flex-1">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-dblue-secondary text-black">
-                  <FiUsers size={24} />
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-secondary text-black">
+                  <RiRocketLine size={24} />
                 </div>
                 <div className="text-sm font-medium text-gray-700 dark:text-white">
-                  Save 10+ hours weekly
+                  Automated HR <br /> Tasks
                 </div>
               </div>
 
@@ -234,19 +235,24 @@ export default function LandingPage() {
                   <RiStarSmileLine size={24} />
                 </div>
                 <div className="text-sm font-medium text-gray-700 dark:text-white">
-                  Hire Smarter with AI
+                  Hire Smarter with EMPAYRO
                 </div>
               </div>
 
-              {/* STAT 3 */}
+
+              {/* STAT 1 */}
               <div className="flex flex-col items-center text-center gap-2 flex-1">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-secondary text-black">
-                  <RiRocketLine size={24} />
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-dblue-secondary text-black">
+                  <FiUsers size={24} />
                 </div>
                 <div className="text-sm font-medium text-gray-700 dark:text-white">
-                  Automated HR Tasks
+                  Save 10+ working hours
                 </div>
               </div>
+
+              
+
+              
             </div>
           </div>
         </div>
@@ -255,25 +261,25 @@ export default function LandingPage() {
         <div
           className="mt-5 flex flex-wrap justify-between md:justify-center items-center 
                 gap-x-3 gap-y-3 sm:gap-x-4 sm:gap-y-4 md:gap-x-5 md:gap-y-5 
-                w-full max-w-2xl px-2"
+                w-full max-w-xl px-2"
         >
           <span className="px-2 py-2 border rounded-[10px] border-red-primary">
-            Smart Payroll
+            Smart Reports
           </span>
           <span className="px-2 py-2 border rounded-[10px] border-dgreen-primary">
             Compliance
           </span>
           <span className="px-2 py-2 border rounded-[10px] border-green-primary">
-            AI Recruitment
+            Attendance
           </span>
           <span className="px-2 py-2 border rounded-[10px] border-primary">
             Performance
           </span>
           <span className="px-2 py-2 border rounded-[10px] border-dblue-primary">
-            Attendance
+            Analytics
           </span>
           <span className="px-2 py-2 border rounded-[10px] border-orange-primary">
-            Leave Tracking
+            Geo-Fencing
           </span>
         </div>
       </section>

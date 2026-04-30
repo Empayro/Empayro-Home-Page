@@ -7,7 +7,7 @@ import { Check } from "lucide-react";
 export default function HeroSection() {
   const sections = [
     {
-      subtitle: "Indian Compliant",
+      subtitle: "Statutory Requirements",
       title: "Indian Compliance, Built In",
       desc: "PF, ESI, PT, TDS, gratuity, labour welfare — all state-wise rules automated. No more chasing your CA for every statutory update.",
       color: "#0078D4",
@@ -18,7 +18,7 @@ export default function HeroSection() {
     },
     {
       subtitle: "Fast Deployment",
-      title: "Up and Running in 48 Hours",
+      title: "Up and Running in 2 Hours",
       desc: "Import your employee data, set your leave policies, connect your biometric — and you're live. No 6-week implementations here.",
       color: "#5CB400",
       accent: "#E5F3D3",
@@ -49,7 +49,8 @@ export default function HeroSection() {
     {
       subtitle: "Local Data Storage",
       title: "Your Data Stays in India",
-      desc: "Servers on Indian soil. Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
+      // desc: "Servers on Indian soil. Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
+      desc: "Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
       color: "#E8410A",
       accent: "#FCDDD4",
       // content: "Generate powerful reports and gain insights to improve productivity and decision-making.",
@@ -119,7 +120,7 @@ export default function HeroSection() {
         }`}
       >
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-          HR software that
+          HR Software that
           <span className="bg-gradient-to-r ml-4 from-primary to-secondary text-transparent bg-clip-text">
             gets India
           </span>
@@ -137,9 +138,9 @@ export default function HeroSection() {
         <div className="w-1/4 hidden md:block border-r pr-4 lg:pr-6">
           <div className="sticky top-32 space-y-4">
             <div className="text-start mb-12">
-              <h1 className="text-3xl lg:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+              <h1 className="text-2xl lg:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text uppercase">
                 HRMS Solution <br />
-                <span className=" text-[24px] lg:text-[34px] text-gray-900 dark:text-white leading-tight">
+                <span className=" text-[24px] lg:text-[28px] text-gray-900 dark:text-white leading-tight">
                   to Empower your workforce
                 </span>
               </h1>
