@@ -9,7 +9,7 @@ export default function HeroSection() {
     {
       subtitle: "Statutory Requirements",
       title: "Indian Compliance, Built In",
-      desc: "PF, ESI, PT, TDS, gratuity, labour welfare — all state-wise rules automated. No more chasing your CA for every statutory update.",
+      desc: "PF, ESI, PT, TDS, gratuity, labour welfare - all state-wise rules automated. No more chasing your CA for every statutory update.",
       color: "#0078D4",
       accent: "#DEEEFA",
       // content:"Monitor attendance, payroll, and employee activity from a single dashboard designed for clarity and speed.",
@@ -19,7 +19,7 @@ export default function HeroSection() {
     {
       subtitle: "Fast Deployment",
       title: "Up and Running in 2 Hours",
-      desc: "Import your employee data, set your leave policies, connect your biometric — and you're live. No 6-week implementations here.",
+      desc: "Import your employee data, set your leave policies, connect your biometric and you're live. No 6-week implementations here.",
       color: "#5CB400",
       accent: "#E5F3D3",
       // content:"Eliminate manual errors with automated attendance tracking and real-time updates across teams.",
@@ -29,7 +29,7 @@ export default function HeroSection() {
     {
       subtitle: "Mobile Ready",
       title: "Mobile-First for Field Teams",
-      desc: "Geo-fenced attendance, selfie clock-in, mobile payslips — purpose-built for workforces that aren't always at a desk.",
+      desc: "Geo-fenced attendance, selfie clock-in, mobile payslips - purpose-built for workforces that aren't always at a desk.",
       color: "#F47B20",
       accent: "#FDE8D4",
       // content:"Automate payroll calculations, deductions, and compliance without worrying about mistakes.",
@@ -39,7 +39,7 @@ export default function HeroSection() {
     {
       subtitle: "Transparent Pricing",
       title: "Honest Pricing, Indian Scale",
-      desc: "No hidden per-module fees. No enterprise lock-in. Plans designed for Indian business budgets — from founder-led to large corporations.",
+      desc: "No hidden per-module fees. No enterprise lock-in. Plans designed for Indian business budgets  from founder-led to large corporations.",
       color: "#8A6A00",
       accent: "#FDF3C0",
       // content: "Simplify leave requests and approvals with a streamlined workflow built for HR teams.",
@@ -50,7 +50,8 @@ export default function HeroSection() {
       subtitle: "Local Data Storage",
       title: "Your Data Stays in India",
       // desc: "Servers on Indian soil. Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
-      desc: "Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
+      // desc: "Full DPDP Act 2023 compliance. AES-256 encryption. Your employee data never crosses borders.",
+      desc: "Full DPDP Act 2023 compliance. AES-256 encryption which means your employee data remains secure.",
       color: "#E8410A",
       accent: "#FCDDD4",
       // content: "Generate powerful reports and gain insights to improve productivity and decision-making.",
@@ -126,7 +127,7 @@ export default function HeroSection() {
           </span>
         </h1>
         <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg">
-          State-wise compliance, multi-location teams, field workforce, Indian{" "}
+          state-wise compliance, multi-location teams, field workforce, Indian{" "}
           <br />
           payroll structures - we built EMPAYRO keeping every bit of that in
           mind.
@@ -138,10 +139,10 @@ export default function HeroSection() {
         <div className="w-1/4 hidden md:block border-r pr-4 lg:pr-6">
           <div className="sticky top-32 space-y-4">
             <div className="text-start mb-12">
-              <h1 className="text-2xl lg:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text uppercase">
+              <h1 className="text-2xl lg:text-4xl font-bold  bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 HRMS Solution <br />
-                <span className=" text-[24px] lg:text-[28px] text-gray-900 dark:text-white leading-tight">
-                  to Empower your workforce
+                <span className=" text-[24px] lg:text-[34px] text-gray-900 dark:text-white leading-tight">
+                  To Empower Your Workforce
                 </span>
               </h1>
             </div>

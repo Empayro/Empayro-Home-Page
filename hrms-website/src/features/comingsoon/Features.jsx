@@ -11,7 +11,7 @@ const CARDS = [
     bgColor: "#DEEEFA",
     rotate: "-4deg",
     content:
-      "Biometric and location-verified attendance clock-ins built for remote and field teams",
+      "Biometric and location-verified attendance clock-in built for remote and field teams",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const CARDS = [
     btnColor: "#5CB400",
     bgColor: "#E5F3D3",
     rotate: "4deg",
-    content: "Run accurate payroll for your entire company in minutes",
+    content: "Run accurate payroll for your entire organization in minutes",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const CARDS = [
     bgColor: "#FDE8D4",
     rotate: "-4deg",
     content:
-      "Leave applications, payslip downloads, profile updates",
+      "Leave applications, payslip downloads, profile updates & many more..",
   },
   {
     id: 4,
@@ -39,7 +39,8 @@ const CARDS = [
     btnColor: "#8A6A00",
     bgColor: "#FDF3C0",
     rotate: "4deg",
-    content: "Age, tenure, gender, department — real-time people intelligence",
+    // content: "Age, tenure, gender, department — real-time people intelligence",
+    content: "Advanced HR Reports, Interactive Dashboard, Employee Demographics",
   },
 ];
 
@@ -218,7 +219,7 @@ export default function Features() {
         >
           <div className="text-center px-2 sm:px-4 md:p-10">
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-              Everything for HR. <br />
+              Everything for HR <br />
               <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 In one platform.
               </span>

@@ -273,7 +273,7 @@ export default function Popup() {
                 </h1>
 
                 <p className=" text-[13.5px] leading-[1.65] text-black/50 max-w-[320px] mx-auto">
-                  EMPAYRO redefines workforce management — intelligent, unified,
+                  EMPAYRO redefines workforce management - intelligent, unified,
                   and built for the way modern teams actually operate.
                 </p>
               </div>

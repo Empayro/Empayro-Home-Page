@@ -235,7 +235,7 @@ export default function LandingPage() {
                   <RiStarSmileLine size={24} />
                 </div>
                 <div className="text-sm font-medium text-gray-700 dark:text-white">
-                  Hire Smarter with EMPAYRO
+                  Work Smarter with EMPAYRO
                 </div>
               </div>
 
@@ -246,7 +246,7 @@ export default function LandingPage() {
                   <FiUsers size={24} />
                 </div>
                 <div className="text-sm font-medium text-gray-700 dark:text-white">
-                  Save 10+ working hours
+                  Save 10+ working hours weekly
                 </div>
               </div>
 
@@ -264,7 +264,7 @@ export default function LandingPage() {
                 w-full max-w-xl px-2"
         >
           <span className="px-2 py-2 border rounded-[10px] border-red-primary">
-            Smart Reports
+            Smart Payroll
           </span>
           <span className="px-2 py-2 border rounded-[10px] border-dgreen-primary">
             Compliance
@@ -280,6 +280,9 @@ export default function LandingPage() {
           </span>
           <span className="px-2 py-2 border rounded-[10px] border-orange-primary">
             Geo-Fencing
+          </span>
+          <span className="px-2 py-2 border rounded-[10px] border-dgreen-primary">
+            Leave Tracking
           </span>
         </div>
       </section>
