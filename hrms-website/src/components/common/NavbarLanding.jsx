@@ -136,7 +136,7 @@ function NavbarLanding() {
   `}
         >
           {/* LOGO */}
-          <Link to="/">
+          <Link to="#">
             {/* <img
               // src={logo}
 
