@@ -1,5 +1,8 @@
 import logo from "./images/logoupdatedd.png";
+// import logo from "./images/logo-coming-soon.png";
 import ComingLogo from "./images/logo-coming-soon.png";
+import Favicon from "./images/favicon.png";
+
 import Frame1 from "./images/Frame 13.png";
 import Frame2 from "./images/Frame 14.png";
 import Frame3 from "./images/Frame 15.png";
@@ -16,7 +19,6 @@ import FooterVideo from "./images/footers.mp4";
 import Footer from "./images/footer.mp4";
 import MenuVideo from "./images/headers.mp4";
 import AttendanceVideo from "./images/Attendance.mp4";
-import Favicon from "./images/favicon.png";
 import Emp1 from "./images/Emp_01.webp";
 import Emp2 from "./images/Emp_02.webp";
 import Emp3 from "./images/Emp_03.jpg";
