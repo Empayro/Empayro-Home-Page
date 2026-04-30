@@ -41,6 +41,11 @@ const menus = [
 function NavbarLanding() {
   const [theme, setTheme] = useState("light");
 
+  const lightLogo =
+    "https://EMPAYRO-assets.s3.ap-south-1.amazonaws.com/assets/website-logo.png";
+  const darkLogo =
+    "https://empayro-assets.s3.ap-south-1.amazonaws.com/assets/Empayro+Header+White+TM.png"; // upload this
+
   useEffect(() => {
     const saved = localStorage.getItem("theme");
     if (saved) setTheme(saved);
@@ -132,9 +137,16 @@ function NavbarLanding() {
         >
           {/* LOGO */}
           <Link to="/">
-            <img
+            {/* <img
               // src={logo}
+
               src="https://EMPAYRO-assets.s3.ap-south-1.amazonaws.com/assets/website-logo.png"
+              alt="Logo"
+              className="lg:w-65 lg:h-auto w-50 h-auto"
+            /> */}
+
+            <img
+              src={theme === "dark" ? darkLogo : lightLogo}
               alt="Logo"
               className="lg:w-65 lg:h-auto w-50 h-auto"
             />

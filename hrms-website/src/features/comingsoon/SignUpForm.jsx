@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { logo, NewsLetter } from "@/assets";
 
 const SignUpForm = () => {
+  const lightLogo =
+    "https://EMPAYRO-assets.s3.ap-south-1.amazonaws.com/assets/website-logo.png";
+  const darkLogo =
+    "https://empayro-assets.s3.ap-south-1.amazonaws.com/assets/Empayro+Header+White+TM.png"; // upload this
+
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -46,35 +51,39 @@ const SignUpForm = () => {
 
       {/* Container */}
       <div className="relative max-w-3xl mx-auto text-center">
-        
         {/* Logo */}
         <div className="flex justify-center items-center mb-4 sm:mb-6">
-          {/* <img
-            src={logo}
-            alt="EMPAYRO"
-            className="w-60 md:w-75 md:h-auto"
-          /> */}
+          
+
           <img
-              // src={logo}
-              src="https://EMPAYRO-assets.s3.ap-south-1.amazonaws.com/assets/website-logo.png"
-              alt="Logo"
-              className="lg:w-65 lg:h-auto w-50 h-auto"
-            />
+            src={lightLogo}
+            alt="Logo"
+            className="lg:w-65 w-50 block dark:hidden"
+          />
+
+          <img
+            src={darkLogo}
+            alt="Logo"
+            className="lg:w-65 w-50 hidden dark:block"
+          />
         </div>
 
         {/* Title Box */}
         <div className="bg-blue-100/60 dark:border dark:bg-black backdrop-blur-md rounded-xl sm:rounded-2xl px-5 sm:px-8 py-5 sm:py-6 mb-8 sm:mb-10 shadow-sm">
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-slate-800 dark:text-white mb-2 sm:mb-3">
-            Don't let your team miss <br /> <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text ">India's HR, Finally Sorted.</span> 
+            Don't let your team miss <br />{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text ">
+              India's HR, Finally Sorted.
+            </span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-            Secure your place at the front of the queue. Get first access <br /> the moment EMPAYRO goes live.
+            Secure your place at the front of the queue. Get first access <br />{" "}
+            the moment EMPAYRO goes live.
           </p>
         </div>
 
         {/* Illustration */}
         <div className="relative flex justify-center items-center mb-8 sm:mb-10">
-          
           <div className="relative rounded-2xl p-4 sm:p-6 w-[220px] sm:w-[260px] md:w-[320px]">
             <img src={NewsLetter} alt="" className="w-full h-auto" />
           </div>
@@ -160,9 +169,7 @@ const SignUpForm = () => {
         </form>
 
         {/* Messages */}
-        {error && (
-          <p className="mt-3 text-sm text-red-500">{error}</p>
-        )}
+        {error && <p className="mt-3 text-sm text-red-500">{error}</p>}
         {submitted && (
           <p className="mt-3 text-sm sm:text-base text-primary font-medium">
             Thank you for joining! We'll keep you updated.

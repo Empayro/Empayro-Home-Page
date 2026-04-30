@@ -29,7 +29,7 @@ export default function HeroSection() {
     {
       subtitle: "Mobile Ready",
       title: "Mobile-First for Field Teams",
-      desc: "Geo-fenced attendance, selfie clock-in, mobile payslips - purpose-built for workforces that aren't always at a desk.",
+      desc: "Geo-fenced attendance, selfie clock-in, mobile payslips. Purpose-built for workforces that aren't always at a desk.",
       color: "#F47B20",
       accent: "#FDE8D4",
       // content:"Automate payroll calculations, deductions, and compliance without worrying about mistakes.",

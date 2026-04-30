@@ -221,7 +221,7 @@ export default function Features() {
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               Everything for HR <br />
               <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-                In one platform.
+                in one platform.
               </span>
             </h1>
             <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">

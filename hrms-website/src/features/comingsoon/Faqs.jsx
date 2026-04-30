@@ -15,7 +15,7 @@ const Faqs = () => {
       num: "01",
       title: "When is EMPAYRO launching?",
       content:
-        "We're launching this winter. Waitlist members get early access before the general public - giving you time to set up your company, explore the platform, and be fully ready from day one.",
+        "We're launching this winter. Waitlist members get early access before the general public - giving you time to set up your company, explore the platform and be fully ready from day one.",
     },
     {
       num: "02",
@@ -27,7 +27,7 @@ const Faqs = () => {
       num: "03",
       title: "We already use another HRMS. How hard is migration?",
       content:
-        "Our onboarding team handles the heavy lifting. We support Excel and CSV imports, and direct integrations with most commonly used tools. Most companies are fully live within 2 hours — employee data, leave balances, and payroll history included.",
+        "Our onboarding team handles the heavy lifting. We support Excel and CSV imports, and direct integrations with most commonly used tools. Most companies are fully live within 2 hours - employee data, leave balances and payroll history included.",
     },
     {
       num: "04",
@@ -43,13 +43,13 @@ const Faqs = () => {
       content:
         // "Your data is stored on servers physically located in India. Fully compliant with the DPDP Act 2023 and IT Act 2000. We use AES-256 encryption, role-based access controls, and regular third-party security audits. Your employee data never leaves Indian borders.",
         // "Fully compliant with the DPDP Act 2023 and IT Act 2000. We use AES-256 encryption, role-based access controls, and regular third-party security audits. Your employee data never leaves Indian borders.",
-        "Fully compliant with the DPDP Act 2023 and IT Act 2000. We use AES-256 encryption, role-based access controls, and regular third-party security audits.",
+        "Fully compliant with the DPDP Act 2023 and IT Act 2000. We use AES-256 encryption, role-based access controls.",
     },
     {
       num: "06",
       title: "What's the advantage of joining the waitlist now?",
       content:
-        "Waitlist members get first access before general availability, priority onboarding support, early-adopter status, and the ability to earn add-on rewards through referrals — all of which are only available during the pre-launch period.",
+        "Waitlist members get first access before general availability, priority onboarding support, early-adopter status and the ability to earn add-on rewards through referrals. All of which are only available during the pre-launch period.",
     },
   ];
 

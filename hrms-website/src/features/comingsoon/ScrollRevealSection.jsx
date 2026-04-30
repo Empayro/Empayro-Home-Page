@@ -6,7 +6,7 @@ export default function ScrollRevealSection() {
 
   const text = [
     "One", "platform.", "Total", "control.", "Zero", "chaos.",
-    "EMPAYRO", "brings", "attendance,", "payroll,", "and", "people",
+    "EMPAYRO", "brings", "attendance,", "payroll", "and", "people",
     "management", "into", "perfect", "sync."
   ];
 
